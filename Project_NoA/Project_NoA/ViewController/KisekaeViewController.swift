@@ -10,6 +10,18 @@ import UIKit
 
 class KisekaeViewController: UIViewController {
     
+    @IBOutlet weak var hat_blue: UIImageView!
+    
+    @IBAction func tapblue_hat(_ sender: Any) {
+        // 画像はAssetsに入れてないのとjpgなので拡張子を入れます
+        let image1:UIImage = UIImage(named:"帽子_青.png")!
+        // UIImageView 初期化
+        let imageView = UIImageView(image:image1)
+        // 画像の中心を画面の中心に設定
+        imageView.center = CGPoint(x:375.0/2+10, y:130)
+        // UIImageViewのインスタンスをビューに追加
+        self.view.addSubview(imageView)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
  
