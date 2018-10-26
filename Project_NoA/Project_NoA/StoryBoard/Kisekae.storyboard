@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sah-XG-JBq">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--お着替え画面-->
+        <scene sceneID="gnZ-fc-GAk">
+            <objects>
+                <viewController title="お着替え画面" id="Sah-XG-JBq" customClass="KisekaeViewController" customModule="Project_NoA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1pi-lC-BRe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone_お着替え" translatesAutoresizingMaskIntoConstraints="NO" id="Wze-xP-Db1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gag-N7-KLb">
+                                <rect key="frame" x="7" y="19" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="5ts-RL-wAI" kind="unwind" unwindAction="modoruWithSegue:" id="rBf-R0-9N0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Wze-xP-Db1" firstAttribute="top" secondItem="1pi-lC-BRe" secondAttribute="top" id="0lz-Uw-zg5"/>
+                            <constraint firstItem="Wze-xP-Db1" firstAttribute="bottom" secondItem="8ZU-jp-cag" secondAttribute="bottom" id="1fg-uJ-6Mt"/>
+                            <constraint firstItem="Wze-xP-Db1" firstAttribute="leading" secondItem="8ZU-jp-cag" secondAttribute="leading" id="BVL-4h-EhE"/>
+                            <constraint firstItem="Wze-xP-Db1" firstAttribute="trailing" secondItem="8ZU-jp-cag" secondAttribute="trailing" id="dwW-eY-sjz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8ZU-jp-cag"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="おきがえ" id="rDe-g1-jPb">
+                        <barButtonItem key="backBarButtonItem" title="mmmmm" id="Ozu-Bv-VBt"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zJV-35-D9X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5ts-RL-wAI" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="160.80000000000001" y="-469.1154422788606"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="iPhone_お着替え" width="750" height="1334"/>
+    </resources>
+</document>

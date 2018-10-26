@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hmh-ma-tQI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Setting View Controller-->
+        <scene sceneID="81G-aU-Cdq">
+            <objects>
+                <viewController id="hmh-ma-tQI" customClass="SettingViewController" customModule="Project_NoA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fqe-Ff-34t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone_設定" translatesAutoresizingMaskIntoConstraints="NO" id="WVC-Sd-izZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5g-ye-yWY">
+                                <rect key="frame" x="7" y="19" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="FOW-qw-keV" kind="unwind" unwindAction="modoruWithSegue:" id="663-iM-xNH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WVC-Sd-izZ" firstAttribute="top" secondItem="Fqe-Ff-34t" secondAttribute="top" id="IEj-yS-bYI"/>
+                            <constraint firstItem="WVC-Sd-izZ" firstAttribute="trailing" secondItem="tTW-6i-G0U" secondAttribute="trailing" id="SYG-Ix-MDo"/>
+                            <constraint firstItem="WVC-Sd-izZ" firstAttribute="bottom" secondItem="tTW-6i-G0U" secondAttribute="bottom" id="XxZ-f9-Ubc"/>
+                            <constraint firstItem="WVC-Sd-izZ" firstAttribute="leading" secondItem="tTW-6i-G0U" secondAttribute="leading" id="pKz-5q-dvM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tTW-6i-G0U"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nXi-Hy-jfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="FOW-qw-keV" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="72.799999999999997" y="169.56521739130437"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="iPhone_設定" width="750" height="1334"/>
+    </resources>
+</document>

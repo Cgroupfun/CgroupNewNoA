@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mmQ-1d-2wm">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Name View Controller-->
+        <scene sceneID="tr7-bZ-7wg">
+            <objects>
+                <viewController id="mmQ-1d-2wm" customClass="NameViewController" customModule="Project_NoA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wju-3A-lVO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1iO-h1-Odh">
+                                <rect key="frame" x="139" y="194" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNo-cv-mal">
+                                <rect key="frame" x="172" y="318" width="31" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="決定"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="V6c-Tq-L5A"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="szI-Nl-1U7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m4T-zA-4p0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-700" y="133"/>
+        </scene>
+        <!--ホーム画面-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="ホーム画面" id="BYZ-38-t0r" customClass="ViewController" customModule="Project_NoA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone_top" translatesAutoresizingMaskIntoConstraints="NO" id="MR0-ma-A2E">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NoA_黄_全身1_嬉" translatesAutoresizingMaskIntoConstraints="NO" id="hMZ-nk-yfx">
+                                <rect key="frame" x="128" y="277" width="118" height="113"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kha-eH-5rU">
+                                <rect key="frame" x="10" y="517" width="113" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="qoN-PH-Rcc" kind="presentation" id="gIj-9V-TBc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZiR-N1-nnD">
+                                <rect key="frame" x="131" y="517" width="112" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="BBr-Ht-uCS" kind="presentation" id="RiH-Uw-gq0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9v-m9-j8T">
+                                <rect key="frame" x="251" y="517" width="113" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="eLJ-Tm-W5H" kind="presentation" id="DQA-PQ-feM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="MR0-ma-A2E" firstAttribute="bottom" secondItem="Uee-0j-aNJ" secondAttribute="bottom" id="Ea0-bW-wvF"/>
+                            <constraint firstItem="MR0-ma-A2E" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" id="FFN-rQ-S2I"/>
+                            <constraint firstItem="MR0-ma-A2E" firstAttribute="trailing" secondItem="Uee-0j-aNJ" secondAttribute="trailing" id="iZI-02-ltS"/>
+                            <constraint firstItem="MR0-ma-A2E" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rBQ-2n-SWW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Uee-0j-aNJ"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="nZI-jl-EdO" appends="YES" id="1FB-6E-mGu"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="NoA_Karada" destination="hMZ-nk-yfx" id="Caz-5d-hxN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="nZI-jl-EdO">
+                    <connections>
+                        <action selector="tapView:" destination="BYZ-38-t0r" id="wea-L7-weG"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="140" y="132.68365817091455"/>
+        </scene>
+        <!--Kisekae-->
+        <scene sceneID="qU5-rg-7vT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Kisekae" id="qoN-PH-Rcc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vme-gL-Gn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960" y="18"/>
+        </scene>
+        <!--Shop-->
+        <scene sceneID="XtE-pg-are">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Shop" id="BBr-Ht-uCS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g8x-5D-eiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="946" y="132"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="zgr-pw-YF9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Setting" id="eLJ-Tm-W5H" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QOF-KU-rG5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="957" y="251"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NoA_黄_全身1_嬉" width="156" height="156"/>
+        <image name="iPhone_top" width="750" height="1334"/>
+    </resources>
+</document>
