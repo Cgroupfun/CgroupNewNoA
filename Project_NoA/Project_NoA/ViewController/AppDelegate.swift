@@ -13,6 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    var item_image:[String] = [
+        "帽子_赤",
+        "帽子_青",
+        "ツノ_青"
+    ]
+    
+    var NoA_name:String?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
