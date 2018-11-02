@@ -9,12 +9,32 @@
 import WatchKit
 import Foundation
 import UIKit
-
+import WatchConnectivity
 
 class InterfaceController: WKInterfaceController {
 
-    
+    @IBOutlet var NoA: WKInterfaceImage!
+    //画像受信側の処理
+    func session( session: WCSession, didReceiveFile file: WCSessionFile ) {
+        let data: NSData = NSData( contentsOf: file.fileURL )!
+        let image: UIImage = UIImage( data: data as Data )!
+        self.NoA.setImage( image )
+    }
     @IBOutlet var ZZZ: WKInterfaceLabel!
+    //タッチで喋る、動く
+    @IBAction func Move(sender: AnyObject) {
+        animate(withDuration: 0.5) { () -> Void in
+            self.NoA.setHorizontalAlignment(WKInterfaceObjectHorizontalAlignment.right)
+        }
+        
+        self.animate(withDuration: 1) { () -> Void in
+            self.NoA.setHorizontalAlignment(WKInterfaceObjectHorizontalAlignment.left)
+        }
+        
+        self.animate(withDuration: 1.5) { () -> Void in
+            self.NoA.setHorizontalAlignment(WKInterfaceObjectHorizontalAlignment.center)
+        }
+    }
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
