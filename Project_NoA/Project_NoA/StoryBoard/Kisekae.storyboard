@@ -33,7 +33,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="kettei_botton:" destination="Sah-XG-JBq" eventType="touchUpInside" id="gfJ-1S-bN3"/>
-                                    <segue destination="5ts-RL-wAI" kind="unwind" unwindAction="modoruWithSegue:" id="62q-RG-yUK"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="帽子_赤" translatesAutoresizingMaskIntoConstraints="NO" id="DTW-NI-9j8">
@@ -125,6 +124,10 @@
                                 <rect key="frame" x="123" y="78" width="129" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="krD-5X-BME">
+                                <rect key="frame" x="109" y="64" width="240" height="380"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -140,6 +143,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="NoA_item" destination="a8c-7F-wUi" id="2AX-k0-xJ8"/>
+                        <outlet property="sample" destination="krD-5X-BME" id="J4D-uY-WqT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJV-35-D9X" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,11 +10,20 @@ import UIKit
 
 class ShopViewController: UIViewController {
 
+    @IBAction func tsuno_button(_ sender: UIButton) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Shop", bundle: nil)
+        
+        let popupView2: ShopPopupViewController = storyBoard.instantiateViewController(withIdentifier: "ShopPopup") as! ShopPopupViewController
+        popupView2.modalPresentationStyle = .overFullScreen
+        popupView2.modalTransitionStyle = .crossDissolve
+        
+        self.present(popupView2, animated: false, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //背景
-        view.backgroundColor = UIColor(red: 0.984, green: 0.956, blue: 0.866, alpha: 1.0)
+        
     }
     
     override func didReceiveMemoryWarning() {
