@@ -32,7 +32,8 @@
                                 <rect key="frame" x="282" y="19" width="85" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="5ts-RL-wAI" kind="unwind" unwindAction="modoruWithSegue:" id="eD0-vV-KaC"/>
+                                    <action selector="kettei_botton:" destination="Sah-XG-JBq" eventType="touchUpInside" id="gfJ-1S-bN3"/>
+                                    <segue destination="5ts-RL-wAI" kind="unwind" unwindAction="modoruWithSegue:" id="62q-RG-yUK"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="帽子_赤" translatesAutoresizingMaskIntoConstraints="NO" id="DTW-NI-9j8">

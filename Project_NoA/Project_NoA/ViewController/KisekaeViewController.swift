@@ -12,6 +12,23 @@ class KisekaeViewController: UIViewController {
     
     var myAp = UIApplication.shared.delegate as! AppDelegate
     
+    @IBOutlet weak var sample: UIImageView!
+    
+    @IBAction func kettei_botton(_ sender: UIButton) {
+//        let backImg = UIImage(named: "noa_ver2") //背景画像
+//        let ufoImg = UIImage(named: myAp.item_image[item_number]) //上に合成する画像
+//        //オフスクリーンのContext作る
+//        UIGraphicsBeginImageContext(view.frame.size)
+//        //背景をContextに描画
+//        backImg?.draw(in: CGRect(origin: CGPoint.zero, size: view.frame.size))
+//        //合成する画像を位置を指定して描画
+//        ufoImg?.draw(in: CGRect(x: 100, y: 100, width: 242, height: 140))
+//        //context上に合成された画像を得る
+//        let compositedImage = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        sample.image = compositedImage
+    }
+    
     @IBOutlet weak var NoA_item: UIImageView!
     //画像番号定数
     var item_number:Int = 0

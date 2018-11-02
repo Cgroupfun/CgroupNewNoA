@@ -12,11 +12,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
+    //ノアのアイテム
     var item_image:[String] = [
         "帽子_赤",
         "帽子_青",
         "ツノ_青"
+    ]
+    //アイテム番号
+    var NoA_image_number = 0
+    //ノアのカスタマイズバージョン
+    var NoA_image:[String] = [
+        "NoA_黄_全身1_嬉",
+        "",
+        "",
     ]
     
     var NoA_name:String?
