@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class KisekaeViewController: UIViewController {
+class KisekaeViewController: UIViewController, WCSessionDelegate{
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        <#code#>
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        <#code#>
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        <#code#>
+    }
+    
+    
     
     var myAp = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet weak var sample: UIImageView!
     
     @IBAction func kettei_botton(_ sender: UIButton) {
-        let backImg = UIImage(named: "noa_ver2") //背景画像
+        /*let backImg = UIImage(named: "noa_ver2") //背景画像
         let ufoImg = UIImage(named: myAp.item_image[item_number]) //上に合成する画像
         //オフスクリーンのContext作る
         UIGraphicsBeginImageContext(view.frame.size)
@@ -27,7 +41,16 @@ class KisekaeViewController: UIViewController {
         let compositedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         print(type(of: compositedImage))
-        sample.image = compositedImage
+        sample.image = compositedImage*/
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            session.delegate = self
+            session.activate()
+        }
+        
+        let transferFile: NSURL = NSURL( fileURLWithPath: imagePath )
+        WCSession.defaultSession().transferFile( transferFile, metadata: qrcodeImage.properties )
+        
     }
     
     @IBOutlet weak var NoA_item: UIImageView!

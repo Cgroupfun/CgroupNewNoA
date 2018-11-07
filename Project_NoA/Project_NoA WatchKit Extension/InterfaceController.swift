@@ -9,12 +9,39 @@
 import WatchKit
 import Foundation
 import UIKit
-
+import WatchConnectivity
 
 class InterfaceController: WKInterfaceController {
 
-    
+    @IBOutlet var NoA: WKInterfaceImage!
+    //画像受信側の処理
+    func session( session: WCSession, didReceiveFile file: WCSessionFile ) {
+        let data: NSData = NSData( contentsOf: file.fileURL )!
+        let image: UIImage = UIImage( data: data as Data )!
+        self.NoA.setImage( image )
+    }
     @IBOutlet var ZZZ: WKInterfaceLabel!
+    //タッチで喋る、動く
+    @IBAction func Move(_ sender: Any) {
+         self.ZZZ.setText("反応あり")
+    animate(withDuration: 0.5) { () -> Void in
+            self.NoA.setHorizontalAlignment(WKInterfaceObjectHorizontalAlignment.right)
+        }
+        
+        self.animate(withDuration: 1.0) { () -> Void in
+            self.NoA.setHorizontalAlignment(WKInterfaceObjectHorizontalAlignment.left)
+        }
+        
+        self.animate(withDuration: 1.5) { () -> Void in
+            self.NoA.setHorizontalAlignment(WKInterfaceObjectHorizontalAlignment.center)
+        }
+    }
+    
+    @IBAction func ouenn() {
+        self.ZZZ.setText("反応")
+        pushController(withName: "Ouenn", context: nil)
+    }
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -27,6 +54,9 @@ class InterfaceController: WKInterfaceController {
         //充電時の画面遷移
         if WKInterfaceDevice.current().batteryState == WKInterfaceDeviceBatteryState.charging{
             self.ZZZ.setText("おやすみ")
+            
+            //NoAの寝てる画像に移動
+            presentController(withName: "Oyasumi", context: nil)
         }
        
     }
@@ -34,7 +64,20 @@ class InterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // アプリが起動してない状態の動作
         super.didDeactivate()
+        //iPhoneだとこれ（↓）でできる。。。
+    //NoA.animatedImage = suiminNoA()
         
+    }
+    //コマ送りのイメージの配列を作る（再生は別）
+    func suiminNoA () -> Array<UIImage> {
+        var theArray = Array<UIImage>()
+        for num in 1...4 {
+            let imageName = "AppleWatch_睡眠" + String(num)
+            let image = UIImage(named: imageName)
+            
+            theArray.append(image!)
+        }
+        return theArray
     }
 
 }

@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
     </dependencies>
     <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="N2M-bA-6IO">
+            <objects>
+                <controller id="B6K-GN-zN4"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="15"/>
+        </scene>
         <!--heya-->
         <scene sceneID="aou-V4-d1y">
             <objects>
@@ -17,14 +24,29 @@
                         <label alignment="left" text="おはよー！" id="C36-FE-ylf">
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </label>
-                        <imageView width="78" height="70" alignment="center" verticalAlignment="bottom" image="sampleNoA" id="jiQ-kT-Pdd"/>
+                        <button width="1" height="32" alignment="left" title="おうえん" id="fvM-xN-soM">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="ouenn" destination="AgC-eL-Hgc" id="hOu-5v-Vff"/>
+                                <segue destination="Tkc-re-DAx" kind="modal" id="sKu-A8-MnF"/>
+                            </connections>
+                        </button>
+                        <imageView width="75" height="70" alignment="center" verticalAlignment="bottom" image="sampleNoA" id="jiQ-kT-Pdd">
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="vFx-wn-hOh">
+                                    <connections>
+                                        <action selector="Move:" destination="AgC-eL-Hgc" id="NWX-eM-QHy"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                            </gestureRecognizers>
+                        </imageView>
                     </items>
                     <connections>
                         <outlet property="ZZZ" destination="C36-FE-ylf" id="s0G-CL-tAk"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="220" y="358"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -41,6 +63,17 @@
                 </notificationController>
             </objects>
             <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Ouenn-->
+        <scene sceneID="OpR-vb-9cZ">
+            <objects>
+                <controller identifier="Ouenn" title="Ouenn" id="Tkc-re-DAx">
+                    <items>
+                        <group width="1" height="147" alignment="left" backgroundImage="AppleWatch_応援" animationDuration="7" id="ErO-K7-2Jz"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="506" y="365"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
