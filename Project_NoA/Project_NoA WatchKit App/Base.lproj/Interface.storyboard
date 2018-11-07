@@ -31,7 +31,7 @@
                                 <segue destination="Tkc-re-DAx" kind="modal" id="sKu-A8-MnF"/>
                             </connections>
                         </button>
-                        <imageView width="75" height="70" alignment="center" verticalAlignment="bottom" image="sampleNoA" id="jiQ-kT-Pdd">
+                        <imageView width="76" height="76" alignment="center" verticalAlignment="bottom" image="NoA_normal" id="jiQ-kT-Pdd">
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="vFx-wn-hOh">
                                     <connections>
@@ -42,6 +42,7 @@
                         </imageView>
                     </items>
                     <connections>
+                        <outlet property="NoA" destination="jiQ-kT-Pdd" id="6CC-ea-VoF"/>
                         <outlet property="ZZZ" destination="C36-FE-ylf" id="s0G-CL-tAk"/>
                     </connections>
                 </controller>
