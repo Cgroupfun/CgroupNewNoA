@@ -7,6 +7,7 @@
 //
 
 import WatchKit
+import WatchConnectivity
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     //コマ送りのイメージの配列を作る（再生は別）
@@ -19,6 +20,14 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             theArray.append(image!)
         }
         return theArray
+    }
+    
+    func detaSentFunc(){
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            session.delegate = self as? WCSessionDelegate
+            session.activate()
+        }
     }
 
     func applicationDidFinishLaunching() {

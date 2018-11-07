@@ -7,9 +7,18 @@
 //
 
 import UIKit
+import WatchConnectivity
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    func detaSentFunc(){
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            session.delegate = self as? WCSessionDelegate
+            session.activate()
+        }
+    }
     
     var window: UIWindow?
     //ノアのアイテム

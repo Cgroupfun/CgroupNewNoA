@@ -9,20 +9,7 @@
 import UIKit
 import WatchConnectivity
 
-class KisekaeViewController: UIViewController, WCSessionDelegate{
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        <#code#>
-    }
-    
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        <#code#>
-    }
-    
-    func sessionDidDeactivate(_ session: WCSession) {
-        <#code#>
-    }
-    
-    
+class KisekaeViewController: UIViewController{
     
     var myAp = UIApplication.shared.delegate as! AppDelegate
     
@@ -42,15 +29,14 @@ class KisekaeViewController: UIViewController, WCSessionDelegate{
         UIGraphicsEndImageContext()
         print(type(of: compositedImage))
         sample.image = compositedImage*/
-        if WCSession.isSupported() {
-            let session = WCSession.default
-            session.delegate = self
-            session.activate()
+        
+        if let path: String = Bundle.main.path(forResource: "NoA_黄_全身1_嬉", ofType: "png") {
+            
+            let transferFile: NSURL = NSURL( fileURLWithPath: path )
+            WCSession.default.transferFile(transferFile as URL, metadata: nil)
+        }else {
+            print("指定されたファイルが見つかりません")
         }
-        
-        let transferFile: NSURL = NSURL( fileURLWithPath: imagePath )
-        WCSession.defaultSession().transferFile( transferFile, metadata: qrcodeImage.properties )
-        
     }
     
     @IBOutlet weak var NoA_item: UIImageView!
