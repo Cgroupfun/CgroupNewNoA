@@ -12,18 +12,16 @@ import UIKit
 import WatchConnectivity
 
 class InterfaceController: WKInterfaceController {
-
+    
+    //のNoAの画像
     @IBOutlet var NoA: WKInterfaceImage!
-    //画像受信側の処理
-    func session( session: WCSession, didReceiveFile file: WCSessionFile ) {
-        let data: NSData = NSData( contentsOf: file.fileURL )!
-        let image: UIImage = UIImage( data: data as Data )!
-        self.NoA.setImage( image )
-    }
-    @IBOutlet var ZZZ: WKInterfaceLabel!
+    
+    //画像取得のための変数2つ
+    var task: URLSessionDataTask?
+    var isActive: Bool = false
+
     //タッチで喋る、動く
     @IBAction func Move(_ sender: Any) {
-         self.ZZZ.setText("反応あり")
     animate(withDuration: 0.5) { () -> Void in
             self.NoA.setHorizontalAlignment(WKInterfaceObjectHorizontalAlignment.right)
         }
@@ -37,26 +35,32 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
+    //とりあえずでボタン押したら応援
     @IBAction func ouenn() {
-        self.ZZZ.setText("反応")
         pushController(withName: "Ouenn", context: nil)
+    }
+    
+    //画像更新に関する機能
+    @IBAction func getImageBtnTapped() {
+        getImage()
     }
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
         // Configure interface objects here.
+        getImage()
     }
     
     override func willActivate() {
         // アプリが起動している時の動作
         super.willActivate()
+        //画像取得に関するもの
+        isActive = true
         //充電時の画面遷移
         if WKInterfaceDevice.current().batteryState == WKInterfaceDeviceBatteryState.charging{
-            self.ZZZ.setText("おやすみ")
-            
-            //NoAの寝てる画像に移動
-            presentController(withName: "Oyasumi", context: nil)
+        
+            //NoAが寝てる状態に移動
+            presentController(withName: "Suimin", context: nil)
         }
        
     }
@@ -64,20 +68,35 @@ class InterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // アプリが起動してない状態の動作
         super.didDeactivate()
-        //iPhoneだとこれ（↓）でできる。。。
-    //NoA.animatedImage = suiminNoA()
-        
-    }
-    //コマ送りのイメージの配列を作る（再生は別）
-    func suiminNoA () -> Array<UIImage> {
-        var theArray = Array<UIImage>()
-        for num in 1...4 {
-            let imageName = "AppleWatch_睡眠" + String(num)
-            let image = UIImage(named: imageName)
-            
-            theArray.append(image!)
+        //画像取得に関するもの
+        isActive = false
+        if let t = task {
+            if t.state == URLSessionTask.State.running {
+                t.cancel()
+            }
         }
-        return theArray
     }
-
+    
+    //リモートの画像取得する関数
+    func getImage() -> Void {
+        let url = URL(string:"Image_URL")!
+        let conf = URLSessionConfiguration.default
+        let session = URLSession(configuration: conf)
+        task = session.dataTask(with: url) { (data, res, error) -> Void in
+            if let e = error {
+                print("dataTaskWithURL fail: \(e.localizedDescription)")
+                return
+            }
+            if let d = data {
+                let image = UIImage(data: d)
+                DispatchQueue.main.async(execute: {
+                    if self.isActive {
+                        self.NoA.setImage(image)
+                    }
+                })
+            }
+        }
+        return task!.resume()
+    }
+   
 }

@@ -10,17 +10,6 @@ import WatchKit
 import WatchConnectivity
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
-    //コマ送りのイメージの配列を作る（再生は別）
-    func suiminNoA () -> Array<UIImage> {
-        var theArray = Array<UIImage>()
-        for num in 1...4 {
-            let imageName = "AppleWatch_睡眠" + String(num)
-            let image = UIImage(named: imageName)
-            
-            theArray.append(image!)
-        }
-        return theArray
-    }
     
     func detaSentFunc(){
         if WCSession.isSupported() {
@@ -29,7 +18,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             session.activate()
         }
     }
-
+    var NoA_image:[String] = [
+        "NoA_黄_全身1_嬉"
+        ]
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
     }

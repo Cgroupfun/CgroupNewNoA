@@ -30,6 +30,7 @@ class KisekaeViewController: UIViewController{
         print(type(of: compositedImage))
         sample.image = compositedImage*/
         
+        //Assetの中のパスの広い方がわからない
         if let path: String = Bundle.main.path(forResource: "NoA_黄_全身1_嬉", ofType: "png") {
             
             let transferFile: NSURL = NSURL( fileURLWithPath: path )

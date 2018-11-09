@@ -9,21 +9,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
-        <scene sceneID="N2M-bA-6IO">
-            <objects>
-                <controller id="B6K-GN-zN4"/>
-            </objects>
-            <point key="canvasLocation" x="220" y="15"/>
-        </scene>
         <!--heya-->
         <scene sceneID="aou-V4-d1y">
             <objects>
                 <controller backgroundImage="heya" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Project_NoA_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="left" text="おはよー！" id="C36-FE-ylf">
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </label>
                         <button width="1" height="32" alignment="left" title="おうえん" id="fvM-xN-soM">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -31,7 +21,13 @@
                                 <segue destination="Tkc-re-DAx" kind="modal" id="sKu-A8-MnF"/>
                             </connections>
                         </button>
-                        <imageView width="75" height="70" alignment="center" verticalAlignment="bottom" image="sampleNoA" id="jiQ-kT-Pdd">
+                        <button width="1" alignment="left" title="画像更新" id="7uS-8u-Qk0">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="getImageBtnTapped" destination="AgC-eL-Hgc" id="FO4-og-AP1"/>
+                            </connections>
+                        </button>
+                        <imageView width="75" height="70" alignment="center" verticalAlignment="bottom" image="NoA_黄_全身1_嬉" id="jiQ-kT-Pdd">
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="vFx-wn-hOh">
                                     <connections>
@@ -42,7 +38,7 @@
                         </imageView>
                     </items>
                     <connections>
-                        <outlet property="ZZZ" destination="C36-FE-ylf" id="s0G-CL-tAk"/>
+                        <outlet property="NoA" destination="jiQ-kT-Pdd" id="oqh-8d-TqB"/>
                     </connections>
                 </controller>
             </objects>
@@ -73,14 +69,14 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="506" y="365"/>
+            <point key="canvasLocation" x="486" y="358"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
                 <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Project_NoA_WatchKit_App" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="486" y="643"/>
         </scene>
     </scenes>
 </document>
