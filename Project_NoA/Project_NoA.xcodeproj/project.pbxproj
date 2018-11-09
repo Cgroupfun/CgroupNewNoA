@@ -158,6 +158,13 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		28EAC5CE2192C632003C910F /* image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
 		4D13B59B215DFE6400095F97 = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +188,7 @@
 		4D13B5A6215DFE6400095F97 /* Project_NoA */ = {
 			isa = PBXGroup;
 			children = (
+				28EAC5CE2192C632003C910F /* image */,
 				2857485D2179C06000FB7C6C /* ViewController */,
 				2857485C2179C04700FB7C6C /* StoryBoard */,
 				2857485E2179C0A300FB7C6C /* Splash */,

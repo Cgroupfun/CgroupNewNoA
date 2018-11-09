@@ -20,14 +20,26 @@ class KisekaeViewController: UIViewController {
         //オフスクリーンのContext作る
         UIGraphicsBeginImageContext(view.frame.size)
         //背景をContextに描画
-        backImg?.draw(in: CGRect(origin: CGPoint.zero, size: view.frame.size))
+//        backImg?.draw(in: CGRect(origin: CGPoint.zero, size: view.frame.size))
+        backImg?.draw(at : CGPoint(x: 0, y: 0/*, width: 242, height: 140*/))
         //合成する画像を位置を指定して描画
-        ufoImg?.draw(in: CGRect(x: 100, y: 100, width: 242, height: 140))
+        ufoImg?.draw(at : CGPoint(x: 100, y: 100/*, width: 242, height: 140*/))
         //context上に合成された画像を得る
-        let compositedImage = UIGraphicsGetImageFromCurrentImageContext()
+        let compositedImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        print(type(of: compositedImage))
-        sample.image = compositedImage
+        
+//        // ファイルパスを指定する
+//        var imagePath: String {
+//            let doc = NSSearchPathForDirectoriesInDomains( .documentDirectory, .userDomainMask, true )[0] as String
+//            return ( doc as NSString ).appendingPathComponent( "send.jpg" )
+//        }
+//
+//        // 指定したファイルパスに保存する
+//        //let data: NSData = UIImageJPEGRepresentation(resizeImage, 0.9 )!
+//        data.write( toFile: imagePath, atomically: true )
+//
+//        let transferFile: NSURL = NSURL( fileURLWithPath: imagePath )
+//        WCSession.defaultSession().transferFile( transferFile, metadata: qrcodeImage.properties )
     }
     
     @IBOutlet weak var NoA_item: UIImageView!
