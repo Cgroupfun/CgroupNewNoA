@@ -16,10 +16,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var item_image:[String] = [
         "帽子_赤",
         "帽子_青",
-        "ツノ_青"
+        "リボン_赤",
+        "リボン_青",
+        "かえる帽子",
+        "星",
+        "おばけ",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
     ]
-    //アイテム番号
+    //ショップアイテム
+    var shop_item:[String] = [
+        "つの",
+        "めがね_あお",
+        "めがね_あか",
+        "はっと",
+        "はな",
+        "おにのお面",
+        "ねこ",
+        "ティアラ",
+        "おうかん"
+    ]
+    //所持アイテム番号
     var NoA_image_number = 0
+    //ショップアイテム番号
+    var shop_item_number = 0
     //ノアのカスタマイズバージョン
     var NoA_image:[String] = [
         "NoA_黄_全身1_嬉",

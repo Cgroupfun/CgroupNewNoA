@@ -7,24 +7,53 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class MovieViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    //吸入ボタン
+    @IBAction func breathe(_ sender: UIButton) {
+        guard let url = URL(string: "") else {
+            return
+        }
+        let player = AVPlayer(url: url)
+        let controller = AVPlayerViewController()
+        controller.player = player
+        // 動画再生
+        present(controller, animated: true) {
+            player.play()
+        }
+    }
+    //採血ボタン
+    @IBAction func blood(_ sender: UIButton) {
+        guard let url = URL(string: "") else {
+            return
+        }
+        let player = AVPlayer(url: url)
+        let controller = AVPlayerViewController()
+        controller.player = player
+        // 動画再生
+        present(controller, animated: true) {
+            player.play()
+        }
+    }
+    //MRIボタン
+    @IBAction func mri(_ sender: UIButton) {
+        guard let url = URL(string: "") else {
+            return
+        }
+        let player = AVPlayer(url: url)
+        let controller = AVPlayerViewController()
+        controller.player = player
+        // 動画再生
+        present(controller, animated: true) {
+            player.play()
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
     }
-    */
-
 }

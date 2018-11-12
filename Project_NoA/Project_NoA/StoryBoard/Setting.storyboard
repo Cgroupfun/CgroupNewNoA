@@ -23,7 +23,7 @@
                                 <gestureRecognizers/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5g-ye-yWY">
-                                <rect key="frame" x="7" y="19" width="86" height="30"/>
+                                <rect key="frame" x="7" y="24" width="86" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <segue destination="FOW-qw-keV" kind="unwind" unwindAction="modoruWithSegue:" id="663-iM-xNH"/>
