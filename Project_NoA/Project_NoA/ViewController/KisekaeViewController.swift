@@ -183,6 +183,16 @@ class KisekaeViewController: UIViewController {
         itemimage_information()
     }
     
+    class func ComposeImage(UIImageArray : [UIImage], width: CGFloat, height : CGFloat)->UIImage!{
+        UIGraphicsBeginImageContext(CGSize(width: width, height: height))
+        for image : UIImage in UIImageArray {
+            
+        }
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //背景
