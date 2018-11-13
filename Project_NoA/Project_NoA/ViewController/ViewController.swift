@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var myAp = UIApplication.shared.delegate as! AppDelegate
+    
     @IBAction func modoru(segue: UIStoryboardSegue) {
     }
     
@@ -19,7 +21,6 @@ class ViewController: UIViewController {
         //タップされた座標を調べる
         let tapPoint = sender.location(in: view)
         if tapPoint.y < 459.5 {
-        print(tapPoint)
         
         UIView.animate(withDuration: 1.0,
                        delay: 0,
@@ -39,6 +40,9 @@ class ViewController: UIViewController {
         bg.image = UIImage(named: "iPhone6_Top.png")
         bg.layer.zPosition = -1
         self.view.addSubview(bg)
+        
+        //ノアの画像表示
+        NoA_Karada.image = UIImage(named: myAp.NoA_image[myAp.NoA_image_number])
     }
     
 
