@@ -30,7 +30,7 @@ class ShopPopupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //アイテム画像の位置
         let imagename = myAp.shop_item[myAp.shop_item_number]
         if  (imagename == "つの") {
             shopitem.frame = CGRect(x:152, y:250, width:71, height:142)
