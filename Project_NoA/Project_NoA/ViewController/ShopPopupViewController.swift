@@ -54,5 +54,5 @@ class ShopPopupViewController: UIViewController {
         let itemimage = UIImage(named: imagename)
         shopitem.image = itemimage
     }
-
+    
 }

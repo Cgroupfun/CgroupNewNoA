@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28123EE0219ABEDC001D5D04 /* ShopPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28123EDF219ABEDC001D5D04 /* ShopPopupViewController.swift */; };
+		28123EE2219ABF0C001D5D04 /* ShopPopup2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28123EE1219ABF0C001D5D04 /* ShopPopup2ViewController.swift */; };
+		28123EE4219AC0F9001D5D04 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28123EE3219AC0F9001D5D04 /* MovieViewController.swift */; };
+		28123EE8219AC14D001D5D04 /* Movie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28123EE7219AC14D001D5D04 /* Movie.storyboard */; };
 		285748572179BAA500FB7C6C /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285748562179BAA500FB7C6C /* ShopViewController.swift */; };
 		2864D96E2170866F0003E01C /* KisekaeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2864D96D2170866F0003E01C /* KisekaeViewController.swift */; };
 		2864D972217086AE0003E01C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2864D971217086AE0003E01C /* SettingViewController.swift */; };
+		289E21A5219AC62B002175D8 /* se.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289E21A3219AC62B002175D8 /* se.wav */; };
+		289E21A6219AC62B002175D8 /* se2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289E21A4219AC62B002175D8 /* se2.wav */; };
 		28DDDE5B2179B1F100C679D8 /* Kisekae.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DDDE5A2179B1F100C679D8 /* Kisekae.storyboard */; };
 		28DDDE5D2179B20300C679D8 /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DDDE5C2179B20300C679D8 /* Shop.storyboard */; };
 		28DDDE5F2179B22600C679D8 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DDDE5E2179B22600C679D8 /* Setting.storyboard */; };
@@ -72,9 +78,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		28123EDF219ABEDC001D5D04 /* ShopPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopPopupViewController.swift; sourceTree = "<group>"; };
+		28123EE1219ABF0C001D5D04 /* ShopPopup2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopPopup2ViewController.swift; sourceTree = "<group>"; };
+		28123EE3219AC0F9001D5D04 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		28123EE7219AC14D001D5D04 /* Movie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movie.storyboard; sourceTree = "<group>"; };
 		285748562179BAA500FB7C6C /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		2864D96D2170866F0003E01C /* KisekaeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisekaeViewController.swift; sourceTree = "<group>"; };
 		2864D971217086AE0003E01C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		289E21A3219AC62B002175D8 /* se.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = se.wav; sourceTree = "<group>"; };
+		289E21A4219AC62B002175D8 /* se2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = se2.wav; sourceTree = "<group>"; };
 		28DDDE5A2179B1F100C679D8 /* Kisekae.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Kisekae.storyboard; sourceTree = "<group>"; };
 		28DDDE5C2179B20300C679D8 /* Shop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shop.storyboard; sourceTree = "<group>"; };
 		28DDDE5E2179B22600C679D8 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
@@ -124,6 +136,7 @@
 				28DDDE5A2179B1F100C679D8 /* Kisekae.storyboard */,
 				28DDDE5C2179B20300C679D8 /* Shop.storyboard */,
 				28DDDE5E2179B22600C679D8 /* Setting.storyboard */,
+				28123EE7219AC14D001D5D04 /* Movie.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -136,6 +149,9 @@
 				2864D96D2170866F0003E01C /* KisekaeViewController.swift */,
 				285748562179BAA500FB7C6C /* ShopViewController.swift */,
 				2864D971217086AE0003E01C /* SettingViewController.swift */,
+				28123EDF219ABEDC001D5D04 /* ShopPopupViewController.swift */,
+				28123EE1219ABF0C001D5D04 /* ShopPopup2ViewController.swift */,
+				28123EE3219AC0F9001D5D04 /* MovieViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -194,6 +210,8 @@
 		4D13B5C9215DFE6800095F97 /* Project_NoA WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				289E21A3219AC62B002175D8 /* se.wav */,
+				289E21A4219AC62B002175D8 /* se2.wav */,
 				4D13B5CA215DFE6800095F97 /* InterfaceController.swift */,
 				4D13B5CC215DFE6800095F97 /* ExtensionDelegate.swift */,
 				4D13B5CE215DFE6800095F97 /* NotificationController.swift */,
@@ -307,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D13B5B2215DFE6700095F97 /* LaunchScreen.storyboard in Resources */,
+				28123EE8219AC14D001D5D04 /* Movie.storyboard in Resources */,
 				28DDDE5D2179B20300C679D8 /* Shop.storyboard in Resources */,
 				4D13B5AF215DFE6700095F97 /* Assets.xcassets in Resources */,
 				28DDDE5B2179B1F100C679D8 /* Kisekae.storyboard in Resources */,
@@ -329,6 +348,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				289E21A6219AC62B002175D8 /* se2.wav in Resources */,
+				289E21A5219AC62B002175D8 /* se.wav in Resources */,
 				4D13B5D1215DFE6800095F97 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,9 +362,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2864D96E2170866F0003E01C /* KisekaeViewController.swift in Sources */,
+				28123EE0219ABEDC001D5D04 /* ShopPopupViewController.swift in Sources */,
 				4D13B5AA215DFE6400095F97 /* ViewController.swift in Sources */,
+				28123EE4219AC0F9001D5D04 /* MovieViewController.swift in Sources */,
 				285748572179BAA500FB7C6C /* ShopViewController.swift in Sources */,
 				4D13B5A8215DFE6400095F97 /* AppDelegate.swift in Sources */,
+				28123EE2219ABF0C001D5D04 /* ShopPopup2ViewController.swift in Sources */,
 				2864D972217086AE0003E01C /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
