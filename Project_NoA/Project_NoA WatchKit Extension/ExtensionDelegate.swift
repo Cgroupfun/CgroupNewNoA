@@ -9,17 +9,6 @@
 import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
-    //コマ送りのイメージの配列を作る（再生は別）
-    func suiminNoA () -> Array<UIImage> {
-        var theArray = Array<UIImage>()
-        for num in 1...4 {
-            let imageName = "AppleWatch_睡眠" + String(num)
-            let image = UIImage(named: imageName)
-            
-            theArray.append(image!)
-        }
-        return theArray
-    }
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
