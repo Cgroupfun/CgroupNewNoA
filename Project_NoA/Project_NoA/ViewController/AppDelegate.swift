@@ -7,9 +7,19 @@
 //
 
 import UIKit
+import WatchConnectivity
+import AWSCognito
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    func detaSentFunc(){
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            session.delegate = self as? WCSessionDelegate
+            session.activate()
+        }
+    }
     
     var window: UIWindow?
     //ノアのアイテム
@@ -58,6 +68,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        // Amazon Cognito 認証情報プロバイダーを初期化します
+        
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.APNortheast1,
+                                                                identityPoolId:"ap-northeast-1:f87a1475-afa6-48f6-9a8e-e86448bba568")
+        
+        let configuration = AWSServiceConfiguration(region:.APNortheast1, credentialsProvider:credentialsProvider)
+        
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
+
         return true
     }
     
