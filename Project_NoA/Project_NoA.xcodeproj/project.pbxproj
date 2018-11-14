@@ -31,6 +31,9 @@
 		4D13B5CD215DFE6800095F97 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13B5CC215DFE6800095F97 /* ExtensionDelegate.swift */; };
 		4D13B5CF215DFE6800095F97 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13B5CE215DFE6800095F97 /* NotificationController.swift */; };
 		4D13B5D1215DFE6800095F97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D13B5D0215DFE6800095F97 /* Assets.xcassets */; };
+		4EFEF2E8D7B71671787339BB /* Pods_Project_NoA_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527A3E01CAE5330CB260438B /* Pods_Project_NoA_WatchKit_Extension.framework */; };
+		518527B2AD06D8C32350AEBB /* Pods_Project_NoA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92598F91A36023763A13B87A /* Pods_Project_NoA.framework */; };
+		937A054D99D44E1D361448F5 /* libPods-Project_NoA WatchKit App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B34099420161816BE0E4FAC5 /* libPods-Project_NoA WatchKit App.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,7 @@
 		28EAC598218B13D0003C910F /* Movie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movie.storyboard; sourceTree = "<group>"; };
 		28EAC5C0218C1E51003C910F /* ShopPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopPopupViewController.swift; sourceTree = "<group>"; };
 		28EAC5C2218C2222003C910F /* ShopPopup2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopPopup2ViewController.swift; sourceTree = "<group>"; };
+		34F003242286F9CFBEC63787 /* Pods-Project_NoA WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_NoA WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-Project_NoA WatchKit App/Pods-Project_NoA WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		4D006FE52194365F00945168 /* Suimin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Suimin.storyboard; sourceTree = "<group>"; };
 		4D13B5A4215DFE6400095F97 /* Project_NoA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_NoA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D13B5A7215DFE6400095F97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +109,14 @@
 		4D13B5D0215DFE6800095F97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D13B5D2215DFE6800095F97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D13B5D3215DFE6800095F97 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		527A3E01CAE5330CB260438B /* Pods_Project_NoA_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_NoA_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E59FE4A3C1682E237950423 /* Pods-Project_NoA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_NoA.release.xcconfig"; path = "Target Support Files/Pods-Project_NoA/Pods-Project_NoA.release.xcconfig"; sourceTree = "<group>"; };
+		8328F811F2A8053146DE2881 /* Pods-Project_NoA WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_NoA WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-Project_NoA WatchKit Extension/Pods-Project_NoA WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		89B942DC4250A4D8A9CD47EB /* Pods-Project_NoA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_NoA.debug.xcconfig"; path = "Target Support Files/Pods-Project_NoA/Pods-Project_NoA.debug.xcconfig"; sourceTree = "<group>"; };
+		92598F91A36023763A13B87A /* Pods_Project_NoA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_NoA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF3A3E82BA9844AF3C181792 /* Pods-Project_NoA WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_NoA WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-Project_NoA WatchKit Extension/Pods-Project_NoA WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		B34099420161816BE0E4FAC5 /* libPods-Project_NoA WatchKit App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project_NoA WatchKit App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8478511654B71B692FECBC5 /* Pods-Project_NoA WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_NoA WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-Project_NoA WatchKit App/Pods-Project_NoA WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				518527B2AD06D8C32350AEBB /* Pods_Project_NoA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +132,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EFEF2E8D7B71671787339BB /* Pods_Project_NoA_WatchKit_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D78DB8717277A8F41A320F92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				937A054D99D44E1D361448F5 /* libPods-Project_NoA WatchKit App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +189,8 @@
 				4D13B5BA215DFE6700095F97 /* Project_NoA WatchKit App */,
 				4D13B5C9215DFE6800095F97 /* Project_NoA WatchKit Extension */,
 				4D13B5A5215DFE6400095F97 /* Products */,
+				76356E23620ACEBCE6D4C4B1 /* Pods */,
+				CD8BB6D516318E910623D91E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -216,6 +240,30 @@
 			path = "Project_NoA WatchKit Extension";
 			sourceTree = "<group>";
 		};
+		76356E23620ACEBCE6D4C4B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				89B942DC4250A4D8A9CD47EB /* Pods-Project_NoA.debug.xcconfig */,
+				5E59FE4A3C1682E237950423 /* Pods-Project_NoA.release.xcconfig */,
+				34F003242286F9CFBEC63787 /* Pods-Project_NoA WatchKit App.debug.xcconfig */,
+				F8478511654B71B692FECBC5 /* Pods-Project_NoA WatchKit App.release.xcconfig */,
+				AF3A3E82BA9844AF3C181792 /* Pods-Project_NoA WatchKit Extension.debug.xcconfig */,
+				8328F811F2A8053146DE2881 /* Pods-Project_NoA WatchKit Extension.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CD8BB6D516318E910623D91E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92598F91A36023763A13B87A /* Pods_Project_NoA.framework */,
+				B34099420161816BE0E4FAC5 /* libPods-Project_NoA WatchKit App.a */,
+				527A3E01CAE5330CB260438B /* Pods_Project_NoA_WatchKit_Extension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -223,10 +271,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D13B5DE215DFE6800095F97 /* Build configuration list for PBXNativeTarget "Project_NoA" */;
 			buildPhases = (
+				EC82DC9DCEC375F8FC191D10 /* [CP] Check Pods Manifest.lock */,
 				4D13B5A0215DFE6400095F97 /* Sources */,
 				4D13B5A1215DFE6400095F97 /* Frameworks */,
 				4D13B5A2215DFE6400095F97 /* Resources */,
 				4D13B5DD215DFE6800095F97 /* Embed Watch Content */,
+				D2C9A7711347526D6E00AAF5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -242,8 +292,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D13B5DA215DFE6800095F97 /* Build configuration list for PBXNativeTarget "Project_NoA WatchKit App" */;
 			buildPhases = (
+				F8BF159A36AABF1A3F8DF739 /* [CP] Check Pods Manifest.lock */,
 				4D13B5B4215DFE6700095F97 /* Resources */,
 				4D13B5D9215DFE6800095F97 /* Embed App Extensions */,
+				D78DB8717277A8F41A320F92 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -259,6 +311,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D13B5D6215DFE6800095F97 /* Build configuration list for PBXNativeTarget "Project_NoA WatchKit Extension" */;
 			buildPhases = (
+				80945619B24620C1F46238B5 /* [CP] Check Pods Manifest.lock */,
 				4D13B5C1215DFE6800095F97 /* Sources */,
 				4D13B5C2215DFE6800095F97 /* Frameworks */,
 				4D13B5C3215DFE6800095F97 /* Resources */,
@@ -347,6 +400,101 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		80945619B24620C1F46238B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project_NoA WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2C9A7711347526D6E00AAF5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Project_NoA/Pods-Project_NoA-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognito.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project_NoA/Pods-Project_NoA-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC82DC9DCEC375F8FC191D10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project_NoA-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8BF159A36AABF1A3F8DF739 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project_NoA WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4D13B5A0215DFE6400095F97 /* Sources */ = {
@@ -533,6 +681,7 @@
 		};
 		4D13B5D7215DFE6800095F97 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF3A3E82BA9844AF3C181792 /* Pods-Project_NoA WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -555,6 +704,7 @@
 		};
 		4D13B5D8215DFE6800095F97 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8328F811F2A8053146DE2881 /* Pods-Project_NoA WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -577,6 +727,7 @@
 		};
 		4D13B5DB215DFE6800095F97 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34F003242286F9CFBEC63787 /* Pods-Project_NoA WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -596,6 +747,7 @@
 		};
 		4D13B5DC215DFE6800095F97 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8478511654B71B692FECBC5 /* Pods-Project_NoA WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -615,10 +767,11 @@
 		};
 		4D13B5DF215DFE6800095F97 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89B942DC4250A4D8A9CD47EB /* Pods-Project_NoA.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FBX28493GR;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Project_NoA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -633,10 +786,11 @@
 		};
 		4D13B5E0215DFE6800095F97 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E59FE4A3C1682E237950423 /* Pods-Project_NoA.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FBX28493GR;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Project_NoA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -8,10 +8,12 @@
 
 import UIKit
 import WatchConnectivity
+import AWSS3
 
 class KisekaeViewController: UIViewController{
     
     var myAp = UIApplication.shared.delegate as! AppDelegate
+    let S3BucketName: String = "noastorage"
     
     @IBOutlet weak var sample: UIImageView!
     
@@ -38,6 +40,34 @@ class KisekaeViewController: UIViewController{
         }else {
             print("指定されたファイルが見つかりません")
         }
+        
+        /*// Documentsディレクトリ絶対パス
+        let documentDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+        // アーカイブファイル名
+        let archiveFile = "noa.png"
+        // アーカイブファイル絶対パス
+        let archivePath = documentDir.appendingPathComponent(archiveFile)
+        
+        func uploadData(archivePath: String, archiveFile: String, complete: @escaping () -> Void, failure: @escaping (Error?) -> Void) {
+            // Documentsディレクトリの絶対パス
+            /*let transferUtility = AWSS3TransferUtility.default()
+            let url = URL(fileURLWithPath: archivePath)
+            let bucket = "noastorage"
+            let contentType = "image/png"*/
+            
+            _ = AWSS3TransferUtility.default()
+            _ = URL(fileURLWithPath: archivePath)
+            _ = "noastorage"
+            _ = "image/png"
+            
+            // アップロード中の処理
+            let expression = AWSS3TransferUtilityUploadExpression()
+            expression.progressBlock = {(task, progress) in
+                DispatchQueue.main.async {
+                    // Do something e.g. Update a progress bar.
+                }
+            }
+        }*/
     }
     
     @IBOutlet weak var NoA_item: UIImageView!
