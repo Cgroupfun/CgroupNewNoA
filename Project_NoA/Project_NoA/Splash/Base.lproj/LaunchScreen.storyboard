@@ -18,12 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="スプラッシュ画面" translatesAutoresizingMaskIntoConstraints="NO" id="YuK-qc-ZLg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="iPhone_スプラッシュ画面" translatesAutoresizingMaskIntoConstraints="NO" id="tLM-nO-Ksc">
+                                <rect key="frame" x="0.0" y="0.0" width="376" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tLM-nO-Ksc" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="-6" id="01H-0W-6FC"/>
+                            <constraint firstItem="tLM-nO-Ksc" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="DcF-oe-OID"/>
+                            <constraint firstItem="tLM-nO-Ksc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="RM4-Qz-hbF"/>
+                            <constraint firstItem="tLM-nO-Ksc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nLd-Ik-mIG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -33,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="スプラッシュ画面" width="750" height="1334"/>
+        <image name="iPhone_スプラッシュ画面" width="750" height="1334"/>
     </resources>
 </document>

@@ -21,7 +21,7 @@ class InterfaceController: WKInterfaceController {
     
     //タッチで喋る、動く
     @IBAction func Move(_ sender: Any) {
-        musicSet(name:"se2", type:"wav")
+        musicSet(name:"NoA挨拶サンプル", type:"mp3")
         // オーディオファイルの再生をスケジュールする
         self.audioPlayerNode.scheduleFile(self.audioFile!, at: nil, completionHandler: nil)
         // 再生する
@@ -76,7 +76,7 @@ class InterfaceController: WKInterfaceController {
     
     
     @IBAction func outSound() {
-        musicSet(name:"se", type:"wav")
+        musicSet(name:"se2", type:"wav")
         // オーディオファイルの再生をスケジュールする
         self.audioPlayerNode.scheduleFile(self.audioFile!, at: nil, completionHandler: nil)
         // 再生する
