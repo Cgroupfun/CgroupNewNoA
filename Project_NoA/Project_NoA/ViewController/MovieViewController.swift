@@ -14,7 +14,7 @@ class MovieViewController: UIViewController {
     
     //吸入ボタン
     @IBAction func breathe(_ sender: UIButton) {
-        guard let url = URL(string: "") else {
+        guard let url = URL(string: "https://s3-ap-northeast-1.amazonaws.com/noastorage/NoA%E5%90%B8%E5%85%A5v1.mov") else {
             return
         }
         let player = AVPlayer(url: url)
