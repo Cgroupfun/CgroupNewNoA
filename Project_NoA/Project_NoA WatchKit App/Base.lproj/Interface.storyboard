@@ -21,7 +21,7 @@
                                 <segue destination="Tkc-re-DAx" kind="modal" id="sKu-A8-MnF"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="音声出力" id="tP5-0X-J28">
+                        <button width="1" alignment="left" title="画像取得" id="tP5-0X-J28">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="outSound" destination="AgC-eL-Hgc" id="qvt-k4-Ubx"/>
