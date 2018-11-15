@@ -12,6 +12,11 @@ class ViewController: UIViewController {
     
     var myAp = UIApplication.shared.delegate as! AppDelegate
     
+    @IBAction func goshop(_ sender: UIButton) {
+        if let controller = self.presentingViewController as? ShopViewController {
+            controller.buy_after()
+        }
+    }
     @IBAction func modoru(segue: UIStoryboardSegue) {
     }
     

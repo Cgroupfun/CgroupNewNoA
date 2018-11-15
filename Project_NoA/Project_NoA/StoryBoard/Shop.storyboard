@@ -186,6 +186,7 @@
                                 <rect key="frame" x="117" y="418" width="142" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
+                                    <action selector="back_shop:" destination="B8X-aI-C6l" eventType="touchUpInside" id="WPD-L9-Grq"/>
                                     <segue destination="GUe-uL-6YI" kind="presentation" id="4TZ-5e-WJ9"/>
                                 </connections>
                             </button>
