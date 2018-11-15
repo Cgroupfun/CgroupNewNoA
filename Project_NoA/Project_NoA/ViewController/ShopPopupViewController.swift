@@ -19,6 +19,7 @@ class ShopPopupViewController: UIViewController {
     }
     //かうボタン
     @IBAction func nextButton(_ sender: UIButton) {
+        myAp.shop_buy_number[myAp.shop_item_number] = 1
         let storyBoard: UIStoryboard = UIStoryboard(name: "Shop", bundle: nil)
         
         let popupView: ShopPopup2ViewController = storyBoard.instantiateViewController(withIdentifier: "ShopPopup2") as! ShopPopup2ViewController

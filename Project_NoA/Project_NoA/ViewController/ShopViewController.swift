@@ -14,7 +14,9 @@ class ShopViewController: UIViewController {
 
     @IBAction func tsuno_button(_ sender: UIButton) {
         myAp.shop_item_number = 0
-        popup()
+        if (myAp.shop_buy_number[0] == 0){
+            popup()
+        }
     }
     //青眼鏡
     @IBAction func bluemegane_button(_ sender: UIButton) {
@@ -57,10 +59,10 @@ class ShopViewController: UIViewController {
         popup()
     }
     
+    @IBOutlet weak var tsuno_buy_after: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,5 +78,11 @@ class ShopViewController: UIViewController {
         popupView2.modalTransitionStyle = .crossDissolve
         
         self.present(popupView2, animated: false, completion: nil)
+    }
+    
+    func buy_after(){
+        if(myAp.shop_buy_number[myAp.shop_item_number] == 1){
+            tsuno_buy_after.image = UIImage(named: "売り切れ")
+        }
     }
 }

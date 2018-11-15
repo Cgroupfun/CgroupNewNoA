@@ -91,6 +91,10 @@
                                     <action selector="crown:" destination="1p9-Sd-FUm" eventType="touchUpInside" id="ARf-B9-qo6"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p20-fm-IX1">
+                                <rect key="frame" x="31" y="227" width="91" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -101,6 +105,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HAC-TM-jan"/>
                     </view>
+                    <connections>
+                        <outlet property="tsuno_buy_after" destination="p20-fm-IX1" id="mTF-k1-y1g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kDg-BW-HkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="1AI-nw-H98" userLabel="Exit" sceneMemberID="exit"/>
