@@ -19,6 +19,16 @@ class ShopPopupViewController: UIViewController {
     }
     //かうボタン
     @IBAction func nextButton(_ sender: UIButton) {
+        myAp.item_image[myAp.item_addnumber] = myAp.shop_item[myAp.shop_item_number]
+        if(myAp.item_addnumber < 16){
+            myAp.item_addnumber = myAp.item_addnumber + 1
+        }
+        print(myAp.item_addnumber)
+        
+        if let controller = self.presentingViewController as? KisekaeViewController {
+            controller.additem()
+        }
+        
         let storyBoard: UIStoryboard = UIStoryboard(name: "Shop", bundle: nil)
         
         let popupView: ShopPopup2ViewController = storyBoard.instantiateViewController(withIdentifier: "ShopPopup2") as! ShopPopup2ViewController

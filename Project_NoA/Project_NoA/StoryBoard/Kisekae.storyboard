@@ -179,6 +179,42 @@
                                 <rect key="frame" x="123" y="78" width="129" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pxv-tX-c11">
+                                <rect key="frame" x="282" y="404" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x4r-b1-5sX">
+                                <rect key="frame" x="28" y="490" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yt5-Iu-PGa">
+                                <rect key="frame" x="197" y="490" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hNL-ju-3LE">
+                                <rect key="frame" x="282" y="490" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="coW-3u-ypH">
+                                <rect key="frame" x="28" y="576" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NuD-Mj-cNK">
+                                <rect key="frame" x="113" y="575" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="02B-qg-mjC">
+                                <rect key="frame" x="197" y="575" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wlE-Q7-V8v">
+                                <rect key="frame" x="282" y="575" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QAu-50-Foo">
+                                <rect key="frame" x="113" y="490" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -194,6 +230,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="NoA_item" destination="a8c-7F-wUi" id="2AX-k0-xJ8"/>
+                        <outlet property="itemnumber10" destination="QAu-50-Foo" id="9ve-bd-pHP"/>
+                        <outlet property="itemnumber11" destination="yt5-Iu-PGa" id="GL2-77-Odj"/>
+                        <outlet property="itemnumber12" destination="hNL-ju-3LE" id="BBV-Ps-buT"/>
+                        <outlet property="itemnumber13" destination="coW-3u-ypH" id="erv-QJ-PgV"/>
+                        <outlet property="itemnumber14" destination="NuD-Mj-cNK" id="09b-V0-vGf"/>
+                        <outlet property="itemnumber15" destination="02B-qg-mjC" id="dhP-xx-kvT"/>
+                        <outlet property="itemnumber16" destination="wlE-Q7-V8v" id="3GU-HK-h3D"/>
+                        <outlet property="itemnumber8" destination="pxv-tX-c11" id="mGE-Jh-hYD"/>
+                        <outlet property="itemnumber9" destination="x4r-b1-5sX" id="1gS-Yc-LqQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJV-35-D9X" userLabel="First Responder" sceneMemberID="firstResponder"/>
