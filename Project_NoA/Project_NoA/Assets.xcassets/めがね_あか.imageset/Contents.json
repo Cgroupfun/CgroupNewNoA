@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "めがね_あか.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "めがね _あか-1.png",
       "scale" : "2x"
     },
     {

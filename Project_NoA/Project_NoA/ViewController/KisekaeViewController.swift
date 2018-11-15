@@ -12,34 +12,62 @@ class KisekaeViewController: UIViewController {
     
     var myAp = UIApplication.shared.delegate as! AppDelegate
     
-    @IBOutlet weak var sample: UIImageView!
-    
     @IBAction func kettei_botton(_ sender: UIButton) {
-        let backImg = UIImage(named: "noa_ver2") //背景画像
-        let ufoImg = UIImage(named: myAp.item_image[item_number]) //上に合成する画像
+        let imagename = myAp.item_image[item_number]
+        let backImg = UIImage(named: "NoA_黄_全身1_嬉") //背景画像
+        let ufoImg = UIImage(named: imagename) //上に合成する画像
         //オフスクリーンのContext作る
-        UIGraphicsBeginImageContext(view.frame.size)
+        UIGraphicsBeginImageContext(CGSize(width: 128, height: 200))
         //背景をContextに描画
-//        backImg?.draw(in: CGRect(origin: CGPoint.zero, size: view.frame.size))
-        backImg?.draw(at : CGPoint(x: 0, y: 0/*, width: 242, height: 140*/))
+            backImg?.draw(in: CGRect(x: 5, y: 50, width: 118, height: 113))
         //合成する画像を位置を指定して描画
-        ufoImg?.draw(at : CGPoint(x: 100, y: 100/*, width: 242, height: 140*/))
+        if (imagename == "帽子_赤") || (imagename == "帽子_青"){
+            ufoImg?.draw(in: CGRect(x: 33, y: 37, width:83, height:27))
+        }else if (imagename == "リボン_赤") || (imagename == "リボン_青"){
+            ufoImg?.draw(in: CGRect(x: 50, y: 114, width:32, height:18))
+        }else if (imagename == "かえる帽子"){
+            ufoImg?.draw(in: CGRect(x: 6, y: 38, width:111, height:21))
+        }else if (imagename == "星") || (imagename == "おばけ"){
+            ufoImg?.draw(in: CGRect(x: 83, y: 55, width:29, height:25))
+        }else if (imagename == "おうかん"){
+            ufoImg?.draw(in: CGRect(x: 37, y: 15, width:55, height:44))
+        }else if (imagename == "ティアラ"){
+            ufoImg?.draw(in: CGRect(x: 37, y: 30, width:55, height:28))
+        }else if (imagename == "つの"){
+            ufoImg?.draw(in: CGRect(x: 56, y: 15, width:17, height:40))
+        }else if (imagename == "ねこ"){
+            ufoImg?.draw(in: CGRect(x: 38, y: 6, width:50, height:51))
+        }else if (imagename == "はっと"){
+            ufoImg?.draw(in: CGRect(x: 36, y: 21, width:58, height:44))
+        }else if (imagename == "めがね_あか") || (imagename == "めがね_あお"){
+            ufoImg?.draw(in: CGRect(x: 41, y: 70, width:48, height:15))
+        }else if (imagename == "はな"){
+            ufoImg?.draw(in: CGRect(x: 88, y: 57, width:21, height:21))
+        }else if (imagename == "おにのお面"){
+            ufoImg?.draw(in: CGRect(x: 3, y: 19, width:59, height:82))
+        }
         //context上に合成された画像を得る
         let compositedImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
+        //コンテキストを閉じる
         UIGraphicsEndImageContext()
+        //UIImageをpngに変換
+        var NoA_data:NSData = UIImagePNGRepresentation(compositedImage!)! as NSData
+        //let paths:NSArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        //let DocumentsDirPath:NSString = [paths lastObject]
+        let exportFilename:NSString = "sample.png"
+        //let exportFilePath:NSString = [DocumentsDirPath stringByAppendingPathComponent:exportFilename]
         
-//        // ファイルパスを指定する
-//        var imagePath: String {
-//            let doc = NSSearchPathForDirectoriesInDomains( .documentDirectory, .userDomainMask, true )[0] as String
-//            return ( doc as NSString ).appendingPathComponent( "send.jpg" )
-//        }
-//
-//        // 指定したファイルパスに保存する
-//        //let data: NSData = UIImageJPEGRepresentation(resizeImage, 0.9 )!
-//        data.write( toFile: imagePath, atomically: true )
-//
-//        let transferFile: NSURL = NSURL( fileURLWithPath: imagePath )
-//        WCSession.defaultSession().transferFile( transferFile, metadata: qrcodeImage.properties )
+        //if ([data writeToFile: exportFilePath atomically:YES]) {
+         //   NSLog(@"ほぞんOK");
+        //} else {
+          //  NSLog(@"ほぞんError");
+        //}*/
+        
+        //ホームノアイメージの更新
+        myAp.NoA_compose = compositedImage
+        if let controller = self.presentingViewController as? ViewController {
+            controller.NoA_Image()
+        }
     }
     
     @IBOutlet weak var NoA_item: UIImageView!
@@ -181,16 +209,6 @@ class KisekaeViewController: UIViewController {
         item_number = 15
         //画像表示
         itemimage_information()
-    }
-    
-    class func ComposeImage(UIImageArray : [UIImage], width: CGFloat, height : CGFloat)->UIImage!{
-        UIGraphicsBeginImageContext(CGSize(width: width, height: height))
-        for image : UIImage in UIImageArray {
-            
-        }
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return newImage
     }
     
     override func viewDidLoad() {
