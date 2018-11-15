@@ -11,9 +11,6 @@ import UIKit
 class ShopPopup2ViewController: UIViewController {
 
     @IBAction func back_shop(_ sender: UIButton) {
-        if let controller = self.presentingViewController as? ShopViewController {
-            controller.buy_after()
-        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
