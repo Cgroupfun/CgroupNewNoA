@@ -22,6 +22,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     var window: UIWindow?
+    //アイテム購入判定番号
+    var shop_buy_number:[Int] = [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+    ]
     //ノアのアイテム
     var item_image:[String] = [
         "帽子_赤",

@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     
     var myAp = UIApplication.shared.delegate as! AppDelegate
+    //ショップ画面
+    @IBAction func goshop(_ sender: UIButton) {
+    }
     
     @IBAction func modoru(segue: UIStoryboardSegue) {
     }
