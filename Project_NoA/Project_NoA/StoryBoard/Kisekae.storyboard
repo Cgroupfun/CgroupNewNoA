@@ -179,6 +179,14 @@
                                 <rect key="frame" x="123" y="78" width="129" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdQ-Kp-U3y">
+                                <rect key="frame" x="28" y="176" width="122" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fug-d4-aE2">
+                                <rect key="frame" x="194" y="178" width="120" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -194,6 +202,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="NoA_item" destination="a8c-7F-wUi" id="2AX-k0-xJ8"/>
+                        <outlet property="megane_image" destination="fug-d4-aE2" id="CMr-dD-KmL"/>
+                        <outlet property="ribbon_image" destination="pdQ-Kp-U3y" id="iid-XE-DOe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJV-35-D9X" userLabel="First Responder" sceneMemberID="firstResponder"/>
