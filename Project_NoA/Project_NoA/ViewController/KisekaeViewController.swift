@@ -11,7 +11,7 @@ import UIKit
 class KisekaeViewController: UIViewController {
     
     var myAp = UIApplication.shared.delegate as! AppDelegate
-    
+    //決定ボタン
     @IBAction func kettei_botton(_ sender: UIButton) {
         let backImg = UIImage(named: "NoA_黄_全身1_嬉") //背景画像
         let ufoImg = UIImage(named: itemname) //上に合成する画像
