@@ -69,6 +69,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var NoA_image_number = 0
     //ショップアイテム番号
     var shop_item_number = 0
+    //アイテム追加する順番
+    var item_addnumber = 7
     //ノアのカスタマイズバージョン
     var NoA_image:[String] = [
         "NoA_黄_全身1_嬉",
