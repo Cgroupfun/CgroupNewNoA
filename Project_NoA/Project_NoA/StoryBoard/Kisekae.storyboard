@@ -33,6 +33,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="kettei_botton:" destination="Sah-XG-JBq" eventType="touchUpInside" id="gfJ-1S-bN3"/>
+                                    <segue destination="5ts-RL-wAI" kind="unwind" unwindAction="modoruWithSegue:" id="231-Q9-fRT"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="帽子_赤" translatesAutoresizingMaskIntoConstraints="NO" id="DTW-NI-9j8">
@@ -187,6 +188,42 @@
                                 <rect key="frame" x="194" y="178" width="120" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pNz-DU-jgv">
+                                <rect key="frame" x="282" y="405" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rqe-gE-4Yo">
+                                <rect key="frame" x="28" y="489" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qyb-9P-cQk">
+                                <rect key="frame" x="113" y="489" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sNe-wX-iDp">
+                                <rect key="frame" x="197" y="489" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LI0-mB-A7L">
+                                <rect key="frame" x="282" y="489" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DJQ-8d-HKJ">
+                                <rect key="frame" x="28" y="575" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPH-CF-OZG">
+                                <rect key="frame" x="113" y="575" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LaY-ar-E2t">
+                                <rect key="frame" x="197" y="575" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kNl-1J-TWd">
+                                <rect key="frame" x="282" y="575" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -202,6 +239,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="NoA_item" destination="a8c-7F-wUi" id="2AX-k0-xJ8"/>
+                        <outlet property="itemnumber10" destination="qyb-9P-cQk" id="wd5-Vi-sGa"/>
+                        <outlet property="itemnumber11" destination="sNe-wX-iDp" id="R2U-YV-0yL"/>
+                        <outlet property="itemnumber12" destination="LI0-mB-A7L" id="oYZ-VS-sTv"/>
+                        <outlet property="itemnumber13" destination="DJQ-8d-HKJ" id="wwY-cP-D8Y"/>
+                        <outlet property="itemnumber14" destination="cPH-CF-OZG" id="LSP-El-qhk"/>
+                        <outlet property="itemnumber15" destination="LaY-ar-E2t" id="R17-3u-uBj"/>
+                        <outlet property="itemnumber16" destination="kNl-1J-TWd" id="Uyx-qI-MGv"/>
+                        <outlet property="itemnumber8" destination="pNz-DU-jgv" id="Ysu-lk-3oo"/>
+                        <outlet property="itemnumber9" destination="rqe-gE-4Yo" id="vhe-xg-sdt"/>
                         <outlet property="megane_image" destination="fug-d4-aE2" id="CMr-dD-KmL"/>
                         <outlet property="ribbon_image" destination="pdQ-Kp-U3y" id="iid-XE-DOe"/>
                     </connections>
