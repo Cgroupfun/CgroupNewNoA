@@ -74,9 +74,11 @@ class KisekaeViewController: UIViewController {
             controller.NoA_Image()
         }
     }
-    
+    //ノアアイテム
     @IBOutlet weak var NoA_item: UIImageView!
+    //リボン
     @IBOutlet weak var ribbon_image: UIImageView!
+    //眼鏡
     @IBOutlet weak var megane_image: UIImageView!
     //画像番号定数
     var item_number:Int = 0
