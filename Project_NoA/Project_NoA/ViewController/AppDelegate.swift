@@ -73,10 +73,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var item_addnumber = 7
     //ノアのカスタマイズバージョン
     var NoA_image:[String] = [
-        "NoA_黄_全身1_嬉",
-        "",
-        "",
+        "NoA_黄_全身1_嬉"
     ]
+    
+    var NoA_compose:UIImage?
     
     var NoA_name:String?
     

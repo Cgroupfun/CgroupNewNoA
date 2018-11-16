@@ -44,10 +44,19 @@ class ViewController: UIViewController {
         bg.layer.zPosition = -1
         self.view.addSubview(bg)
         
-        //ノアの画像表示
-        NoA_Karada.image = UIImage(named: myAp.NoA_image[myAp.NoA_image_number])
+        NoA_Image()
     }
     
+    func NoA_Image(){
+        //ノアの画像表示
+        if(myAp.NoA_compose == nil){
+            NoA_Karada.frame = CGRect(x:128, y:277, width:118, height:113)
+            NoA_Karada.image = UIImage(named: myAp.NoA_image[myAp.NoA_image_number])
+        }else {
+            NoA_Karada.frame = CGRect(x:128, y:277, width:128, height:200)
+            NoA_Karada.image = myAp.NoA_compose
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

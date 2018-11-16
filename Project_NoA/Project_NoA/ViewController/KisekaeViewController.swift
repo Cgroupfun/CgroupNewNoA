@@ -11,81 +11,122 @@ import UIKit
 class KisekaeViewController: UIViewController {
     
     var myAp = UIApplication.shared.delegate as! AppDelegate
-    
-    @IBOutlet weak var sample: UIImageView!
-    
+    //決定ボタン
     @IBAction func kettei_botton(_ sender: UIButton) {
-        let backImg = UIImage(named: "noa_ver2") //背景画像
-        let ufoImg = UIImage(named: myAp.item_image[item_number]) //上に合成する画像
+        let backImg = UIImage(named: "NoA_黄_全身1_嬉") //背景画像
+        let ufoImg = UIImage(named: itemname) //上に合成する画像
+        let ribbonimage = UIImage(named: ribbon)
+        let meganeimage = UIImage(named: megane)
         //オフスクリーンのContext作る
-        UIGraphicsBeginImageContext(view.frame.size)
+        UIGraphicsBeginImageContext(CGSize(width: 128, height: 200))
         //背景をContextに描画
-//        backImg?.draw(in: CGRect(origin: CGPoint.zero, size: view.frame.size))
-        backImg?.draw(at : CGPoint(x: 0, y: 0/*, width: 242, height: 140*/))
+        backImg?.draw(in: CGRect(x: 5, y: 50, width: 118, height: 113))
         //合成する画像を位置を指定して描画
-        ufoImg?.draw(at : CGPoint(x: 100, y: 100/*, width: 242, height: 140*/))
+        if (itemname == "帽子_赤") || (itemname == "帽子_青"){
+            ufoImg?.draw(in: CGRect(x: 33, y: 37, width:83, height:27))
+        }else if (itemname == "かえる帽子"){
+            ufoImg?.draw(in: CGRect(x: 6, y: 38, width:111, height:21))
+        }else if (itemname == "星") || (itemname == "おばけ"){
+            ufoImg?.draw(in: CGRect(x: 83, y: 55, width:29, height:25))
+        }else if (itemname == "おうかん"){
+            ufoImg?.draw(in: CGRect(x: 37, y: 15, width:55, height:44))
+        }else if (itemname == "ティアラ"){
+            ufoImg?.draw(in: CGRect(x: 37, y: 30, width:55, height:28))
+        }else if (itemname == "つの"){
+            ufoImg?.draw(in: CGRect(x: 56, y: 15, width:17, height:40))
+        }else if (itemname == "ねこ"){
+            ufoImg?.draw(in: CGRect(x: 38, y: 6, width:50, height:51))
+        }else if (itemname == "はっと"){
+            ufoImg?.draw(in: CGRect(x: 36, y: 21, width:58, height:44))
+        }else if (itemname == "はな"){
+            ufoImg?.draw(in: CGRect(x: 88, y: 57, width:21, height:21))
+        }else if (itemname == "おにのお面"){
+            ufoImg?.draw(in: CGRect(x: 3, y: 19, width:59, height:82))
+        }
+        //リボンの画像合成
+        if (ribbon == "リボン_赤") || (ribbon == "リボン_青"){
+            ribbonimage?.draw(in: CGRect(x: 50, y: 114, width:32, height:18))
+        }
+        //眼鏡の画像合成
+        if (megane == "めがね_あか") || (megane == "めがね_あお"){
+            meganeimage?.draw(in: CGRect(x: 41, y: 70, width:48, height:15))
+        }
         //context上に合成された画像を得る
         let compositedImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
+        //コンテキストを閉じる
         UIGraphicsEndImageContext()
+        //UIImageをpngに変換
+//        var NoA_data:NSData = UIImagePNGRepresentation(compositedImage!)! as NSData
+        //let paths:NSArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        //let DocumentsDirPath:NSString = [paths lastObject]
+//        let exportFilename:NSString = "sample.png"
+        //let exportFilePath:NSString = [DocumentsDirPath stringByAppendingPathComponent:exportFilename]
         
-//        // ファイルパスを指定する
-//        var imagePath: String {
-//            let doc = NSSearchPathForDirectoriesInDomains( .documentDirectory, .userDomainMask, true )[0] as String
-//            return ( doc as NSString ).appendingPathComponent( "send.jpg" )
-//        }
-//
-//        // 指定したファイルパスに保存する
-//        //let data: NSData = UIImageJPEGRepresentation(resizeImage, 0.9 )!
-//        data.write( toFile: imagePath, atomically: true )
-//
-//        let transferFile: NSURL = NSURL( fileURLWithPath: imagePath )
-//        WCSession.defaultSession().transferFile( transferFile, metadata: qrcodeImage.properties )
+        //if ([data writeToFile: exportFilePath atomically:YES]) {
+         //   NSLog(@"ほぞんOK");
+        //} else {
+          //  NSLog(@"ほぞんError");
+        //}
+        
+        //ホームノアイメージの更新
+        myAp.NoA_compose = compositedImage
+        if let controller = self.presentingViewController as? ViewController {
+            controller.NoA_Image()
+        }
     }
     
     @IBOutlet weak var NoA_item: UIImageView!
-    
-    @IBOutlet weak var itemnumber8: UIImageView!
-    @IBOutlet weak var itemnumber9: UIImageView!
-    @IBOutlet weak var itemnumber10: UIImageView!
-    @IBOutlet weak var itemnumber11: UIImageView!
-    @IBOutlet weak var itemnumber12: UIImageView!
-    @IBOutlet weak var itemnumber13: UIImageView!
-    @IBOutlet weak var itemnumber14: UIImageView!
-    @IBOutlet weak var itemnumber15: UIImageView!
-    @IBOutlet weak var itemnumber16: UIImageView!
+    @IBOutlet weak var ribbon_image: UIImageView!
+    @IBOutlet weak var megane_image: UIImageView!
     //画像番号定数
     var item_number:Int = 0
-    
-    //ノアにつける画像表示関数
+    //選択アイテム
+    var itemname = ""
+    var ribbon:String = ""
+    var megane:String = ""
+    //画像表示関数
     func itemimage_information(){
         let imagename = myAp.item_image[item_number]
         if  (imagename == "帽子_赤") || (imagename == "帽子_青"){
+            itemname = imagename
             NoA_item.frame = CGRect(x:140, y:105, width:121, height:43)
         }else if (imagename == "リボン_赤") || (imagename == "リボン_青"){
-            NoA_item.frame = CGRect(x:165, y:218, width:46, height:29)
+            ribbon = imagename
+            ribbon_image.frame = CGRect(x:165, y:218, width:46, height:29)
         }else if (imagename == "かえる帽子"){
+            itemname = imagename
             NoA_item.frame = CGRect(x:100, y:112, width:161, height:33)
         }else if (imagename == "星") || (imagename == "おばけ"){
+            itemname = imagename
             NoA_item.frame = CGRect(x:212, y:129, width:43, height:40)
         }else if (imagename == "おうかん"){
+            itemname = imagename
             NoA_item.frame = CGRect(x:147, y:69, width:80, height:70)
         }else if (imagename == "ティアラ"){
+            itemname = imagename
             NoA_item.frame = CGRect(x:146, y:95, width:80, height:45)
         }else if (imagename == "つの"){
+            itemname = imagename
             NoA_item.frame = CGRect(x:173, y:70, width:25, height:64)
         }else if (imagename == "ねこ"){
+            itemname = imagename
             NoA_item.frame = CGRect(x:147, y:56, width:73, height:82)
         }else if (imagename == "はっと"){
+            itemname = imagename
             NoA_item.frame = CGRect(x:143, y:79, width:85, height:70)
         }else if (imagename == "めがね_あか") || (imagename == "めがね_あお"){
-            NoA_item.frame = CGRect(x:153, y:154, width:70, height:25)
+            megane = imagename
+            megane_image.frame = CGRect(x:153, y:154, width:70, height:25)
         }else if (imagename == "はな"){
+            itemname = imagename
             NoA_item.frame = CGRect(x:219, y:135, width:30, height:30)
         }else if (imagename == "おにのお面"){
+            itemname = imagename
             NoA_item.frame = CGRect(x:94, y:79, width:85, height:130)
         }
-        let itemimage = UIImage(named: imagename)
-        NoA_item.image = itemimage
+        NoA_item.image = UIImage(named: itemname)
+        ribbon_image.image = UIImage(named: ribbon)
+        megane_image.image = UIImage(named: megane)
     }
     //ぼうし_赤
     @IBAction func red_cap(_ sender: UIButton) {
@@ -192,72 +233,11 @@ class KisekaeViewController: UIViewController {
         //画像表示
         itemimage_information()
     }
-    //アイテム追加関数
-    func additem(){
-        if(myAp.item_image[7] != ""){
-            itemnumber8.image = UIImage(named: myAp.item_image[7])
-            item_place(additem: myAp.item_image[7], addImageView: itemnumber8, x_point: 282, y_point: 404)
-        }
-        if(myAp.item_image[8] != ""){
-            itemnumber9.image = UIImage(named: myAp.item_image[8])
-            item_place(additem: myAp.item_image[8], addImageView: itemnumber9, x_point: 28, y_point: 490)
-        }
-        if(myAp.item_image[9] != ""){
-            itemnumber10.image = UIImage(named: myAp.item_image[9])
-            item_place(additem: myAp.item_image[9], addImageView: itemnumber10, x_point: 113, y_point: 490)
-        }
-        if(myAp.item_image[10] != ""){
-            itemnumber11.image = UIImage(named: myAp.item_image[10])
-            item_place(additem: myAp.item_image[10], addImageView: itemnumber11, x_point: 197, y_point: 490)
-        }
-        if(myAp.item_image[11] != ""){
-            itemnumber12.image = UIImage(named: myAp.item_image[11])
-            item_place(additem: myAp.item_image[11], addImageView: itemnumber12, x_point: 282, y_point: 490)
-        }
-        if(myAp.item_image[12] != ""){
-            itemnumber13.image = UIImage(named: myAp.item_image[12])
-            item_place(additem: myAp.item_image[12], addImageView: itemnumber13, x_point: 28, y_point: 575)
-        }
-        if(myAp.item_image[13] != ""){
-            itemnumber14.image = UIImage(named: myAp.item_image[13])
-            item_place(additem: myAp.item_image[13], addImageView: itemnumber14, x_point: 113, y_point: 575)
-        }
-        if(myAp.item_image[14] != ""){
-            itemnumber15.image = UIImage(named: myAp.item_image[14])
-            item_place(additem: myAp.item_image[14], addImageView: itemnumber15, x_point: 197, y_point: 575)
-        }
-        if(myAp.item_image[15] != ""){
-            itemnumber16.image = UIImage(named: myAp.item_image[15])
-            item_place(additem: myAp.item_image[15], addImageView: itemnumber16, x_point: 282, y_point: 575)
-        }
-    }
-    //アイテム欄に表示する画像の位置
-    func item_place(additem: String, addImageView: UIImageView, x_point:Int, y_point:Int){
-        if (additem == "おうかん"){
-            addImageView.frame = CGRect(x:x_point + 2, y:y_point + 6, width:60, height:52)
-        }else if (additem == "ティアラ"){
-            addImageView.frame = CGRect(x:x_point + 2, y:y_point + 16, width:60, height:34)
-        }else if (additem == "つの"){
-            addImageView.frame = CGRect(x:x_point + 18, y:y_point, width:25, height:64)
-        }else if (additem == "ねこ"){
-            addImageView.frame = CGRect(x:x_point + 6, y:y_point + 3, width:53, height:60)
-        }else if (additem == "はっと"){
-            addImageView.frame = CGRect(x:x_point + 2, y:y_point + 8, width:60, height:50)
-        }else if (additem == "めがね_あか") || (additem == "めがね_あお"){
-            addImageView.frame = CGRect(x:x_point + 2, y:y_point + 23, width:60, height:22)
-        }else if (additem == "はな"){
-            addImageView.frame = CGRect(x:x_point + 2, y:y_point + 3, width:60, height:60)
-        }else if (additem == "おにのお面"){
-            addImageView.frame = CGRect(x:x_point + 3, y:y_point - 11, width:59, height:90)
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //背景
         view.backgroundColor = UIColor(red: 0.984, green: 0.956, blue: 0.866, alpha: 1.0)
-        //アイテムの追加
-        additem()
     }
     
     override func didReceiveMemoryWarning() {
