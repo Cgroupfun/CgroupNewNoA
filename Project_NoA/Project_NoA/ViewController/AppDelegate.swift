@@ -22,6 +22,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     var window: UIWindow?
+    //ノアコイン
+    var NoA_coin:Int = 10
+    //コイン足りるか判定
+    var NoAcoin_compare:[Int] = [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+    ]
     //アイテム購入判定番号
     var shop_buy_number:[Int] = [
         0,

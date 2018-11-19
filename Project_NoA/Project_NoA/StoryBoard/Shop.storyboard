@@ -188,6 +188,13 @@
                                 <rect key="frame" x="32" y="234" width="91" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8L-zd-tNj">
+                                <rect key="frame" x="292" y="55" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -199,6 +206,7 @@
                         <viewLayoutGuide key="safeArea" id="HAC-TM-jan"/>
                     </view>
                     <connections>
+                        <outlet property="NoAcoin" destination="F8L-zd-tNj" id="RyZ-lf-YSW"/>
                         <outlet property="bluemegane_buy_after" destination="1Li-Ty-T4U" id="1Tb-CU-YrD"/>
                         <outlet property="bluemegane_view" destination="QiO-8g-ega" id="4kI-uh-9EQ"/>
                         <outlet property="cat_buy_after" destination="RT8-5x-cAZ" id="6aY-5w-P5l"/>
@@ -232,7 +240,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iPhone_shop_a" translatesAutoresizingMaskIntoConstraints="NO" id="pu8-WI-HPZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shop_popup" translatesAutoresizingMaskIntoConstraints="NO" id="pu8-WI-HPZ">
                                 <rect key="frame" x="43" y="150" width="289" height="367"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -254,11 +262,24 @@
                                 <rect key="frame" x="107" y="262" width="160" height="143"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRB-xp-fNw">
+                                <rect key="frame" x="236" y="455" width="79" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPY-bH-5Iw">
+                                <rect key="frame" x="78" y="182" width="218" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.045539183937823857" green="0.045539183937823857" blue="0.045539183937823857" alpha="0.20485805457746478" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="acU-a8-MM9"/>
                     </view>
                     <connections>
+                        <outlet property="buy_image" destination="uRB-xp-fNw" id="lXT-Hs-oJ3"/>
+                        <outlet property="buyquestion" destination="iPY-bH-5Iw" id="hY3-WZ-NB9"/>
                         <outlet property="shopitem" destination="8O7-JB-gVx" id="sJl-zP-mjS"/>
                     </connections>
                 </viewController>
@@ -329,7 +350,7 @@
     </scenes>
     <resources>
         <image name="iPhone_shop" width="750" height="1334"/>
-        <image name="iPhone_shop_a" width="629" height="764"/>
         <image name="iPhone_shop_b" width="630" height="763"/>
+        <image name="shop_popup" width="629" height="764"/>
     </resources>
 </document>

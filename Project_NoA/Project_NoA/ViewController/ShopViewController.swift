@@ -11,9 +11,14 @@ import UIKit
 class ShopViewController: UIViewController {
     
     var myAp = UIApplication.shared.delegate as! AppDelegate
-
+    //つの
     @IBAction func tsuno_button(_ sender: UIButton) {
         myAp.shop_item_number = 0
+        myAp.NoAcoin_compare[0] = 0
+        if(myAp.NoA_coin >= 10){
+            myAp.NoAcoin_compare[0] = 1
+            popup()
+        }
         if (myAp.shop_buy_number[0] == 0){
             popup()
         }
@@ -21,13 +26,24 @@ class ShopViewController: UIViewController {
     //青眼鏡
     @IBAction func bluemegane_button(_ sender: UIButton) {
         myAp.shop_item_number = 1
-        if (myAp.shop_buy_number[1] == 0){
-        popup()
+        myAp.NoAcoin_compare[1] = 0
+        if(myAp.NoA_coin >= 20){
+                myAp.NoAcoin_compare[1] = 1
+                popup()
         }
+        if (myAp.shop_buy_number[1] == 0){
+            popup()
+        }
+        
     }
     //赤眼鏡
     @IBAction func redmegane_button(_ sender: UIButton) {
         myAp.shop_item_number = 2
+        myAp.NoAcoin_compare[2] = 0
+        if(myAp.NoA_coin >= 20){
+            myAp.NoAcoin_compare[2] = 1
+            popup()
+        }
         if (myAp.shop_buy_number[2] == 0){
             popup()
         }
@@ -35,6 +51,11 @@ class ShopViewController: UIViewController {
     //はっと
     @IBAction func hat_button(_ sender: UIButton) {
         myAp.shop_item_number = 3
+        myAp.NoAcoin_compare[3] = 0
+        if(myAp.NoA_coin >= 30){
+            myAp.NoAcoin_compare[3] = 1
+            popup()
+        }
         if (myAp.shop_buy_number[3] == 0){
             popup()
         }
@@ -42,6 +63,11 @@ class ShopViewController: UIViewController {
     //おはな
     @IBAction func flower_button(_ sender: UIButton) {
         myAp.shop_item_number = 4
+        myAp.NoAcoin_compare[4] = 0
+        if(myAp.NoA_coin >= 30){
+            myAp.NoAcoin_compare[4] = 1
+            popup()
+        }
         if (myAp.shop_buy_number[4] == 0){
             popup()
         }
@@ -49,6 +75,11 @@ class ShopViewController: UIViewController {
     //おにのおめん
     @IBAction func omen_button(_ sender: UIButton) {
         myAp.shop_item_number = 5
+        myAp.NoAcoin_compare[5] = 0
+        if(myAp.NoA_coin >= 50){
+            myAp.NoAcoin_compare[5] = 1
+            popup()
+        }
         if (myAp.shop_buy_number[5] == 0){
             popup()
         }
@@ -56,6 +87,11 @@ class ShopViewController: UIViewController {
     //猫
     @IBAction func cat_button(_ sender: UIButton) {
         myAp.shop_item_number = 6
+        myAp.NoAcoin_compare[6] = 0
+        if(myAp.NoA_coin >= 50){
+            myAp.NoAcoin_compare[6] = 1
+            popup()
+        }
         if (myAp.shop_buy_number[6] == 0){
             popup()
         }
@@ -63,6 +99,11 @@ class ShopViewController: UIViewController {
     //ティアラ
     @IBAction func tiara(_ sender: UIButton) {
         myAp.shop_item_number = 7
+        myAp.NoAcoin_compare[7] = 0
+        if(myAp.NoA_coin >= 80){
+            myAp.NoAcoin_compare[7] = 1
+            popup()
+        }
         if (myAp.shop_buy_number[7] == 0){
             popup()
         }
@@ -70,6 +111,11 @@ class ShopViewController: UIViewController {
     //おうかん
     @IBAction func crown(_ sender: UIButton) {
         myAp.shop_item_number = 8
+        myAp.NoAcoin_compare[8] = 0
+        if(myAp.NoA_coin >= 100){
+            myAp.NoAcoin_compare[8] = 1
+            popup()
+        }
         if (myAp.shop_buy_number[8] == 0){
             popup()
         }
@@ -94,11 +140,18 @@ class ShopViewController: UIViewController {
     @IBOutlet weak var cat_view: UIView!
     @IBOutlet weak var tiara_view: UIView!
     @IBOutlet weak var crown_view: UIView!
+    //ノアコインテキスト
+    @IBOutlet weak var NoAcoin: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         buy_after()
+        NoAcoin_show()
+    }
+    //ノアコインの表示
+    func NoAcoin_show(){
+        NoAcoin.text = String(myAp.NoA_coin)
     }
     
     override func didReceiveMemoryWarning() {
