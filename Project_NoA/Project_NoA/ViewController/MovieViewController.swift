@@ -11,9 +11,12 @@ import AVKit
 import AVFoundation
 
 class MovieViewController: UIViewController {
-    
+    //応援ボタン
+    @IBAction func ouenButton(_ sender: UIButton) {
+    }
     //吸入ボタン
     @IBAction func breathe(_ sender: UIButton) {
+        
         guard let url = URL(string: "https://s3-ap-northeast-1.amazonaws.com/noastorage/NoA%E5%90%B8%E5%85%A5%E9%9F%B3%E3%81%82%E3%82%8Av1.mp4") else {
             return
         }

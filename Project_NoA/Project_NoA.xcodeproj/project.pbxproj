@@ -269,7 +269,6 @@
 				89BDB9B5136F8C53AAFF6BCA /* Pods-Project_NoA WatchKit Extension.debug.xcconfig */,
 				20EF08DF13C0C7C101741523 /* Pods-Project_NoA WatchKit Extension.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
