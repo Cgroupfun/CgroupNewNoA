@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     //ノアコイン
-    var NoA_coin:Int = 10
+    var NoA_coin:Int = 100
     //コイン足りるか判定
     var NoAcoin_compare:[Int] = [
         0,
