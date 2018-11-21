@@ -249,6 +249,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="returnButton:" destination="2K7-78-ROZ" eventType="touchUpInside" id="Z8e-Lh-p0c"/>
+                                    <segue destination="hQW-lA-fzX" kind="unwind" unwindAction="goShopWithSegue:" id="L0u-Jg-PxD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nci-JK-W2U">
@@ -284,6 +285,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ix5-BU-V1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hQW-lA-fzX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="701.60000000000002" y="149.77511244377811"/>
         </scene>
@@ -295,26 +297,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iPhone_shop_b" translatesAutoresizingMaskIntoConstraints="NO" id="nHg-Tx-tQP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="popup_shop" translatesAutoresizingMaskIntoConstraints="NO" id="nHg-Tx-tQP">
                                 <rect key="frame" x="43" y="150" width="289" height="367"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMZ-FQ-ny5">
-                                <rect key="frame" x="116" y="306" width="143" height="30"/>
+                                <rect key="frame" x="116" y="244" width="143" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
+                                    <action selector="goHome:" destination="B8X-aI-C6l" eventType="touchUpInside" id="VjE-HR-Zpv"/>
                                     <segue destination="NCP-JJ-FK1" kind="unwind" unwindAction="modoruWithSegue:" id="0DF-NC-qAe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tww-vd-dRt">
-                                <rect key="frame" x="116" y="362" width="143" height="30"/>
+                                <rect key="frame" x="116" y="300" width="143" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
+                                    <action selector="goOkigae:" destination="B8X-aI-C6l" eventType="touchUpInside" id="2SN-B9-5Si"/>
                                     <segue destination="wAr-Ho-z08" kind="presentation" id="9xx-QN-xOB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcW-y1-kQB">
-                                <rect key="frame" x="117" y="418" width="142" height="30"/>
+                                <rect key="frame" x="117" y="356" width="142" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="back_shop:" destination="B8X-aI-C6l" eventType="touchUpInside" id="WPD-L9-Grq"/>
@@ -350,7 +354,7 @@
     </scenes>
     <resources>
         <image name="iPhone_shop" width="750" height="1334"/>
-        <image name="iPhone_shop_b" width="630" height="763"/>
+        <image name="popup_shop" width="630" height="763"/>
         <image name="shop_popup" width="629" height="764"/>
     </resources>
 </document>

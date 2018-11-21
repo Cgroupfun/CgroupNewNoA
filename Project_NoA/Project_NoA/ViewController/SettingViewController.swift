@@ -7,8 +7,23 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    var audioPlayer: AVAudioPlayer!
+    
+    @IBAction func goSetting(segue: UIStoryboardSegue) {
+        playSound(name: "sousaon")
+    }
+    
+    @IBAction func backButton(_ sender: UIButton) {
+        playSound(name: "sousaon")
+    }
+    @IBAction func ketteiButton(_ sender: UIButton) {
+        playSound(name: "ketteion")
+        popup()
+    }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return pickOption.count
     }
@@ -206,6 +221,17 @@ class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         medi_dinner.text = userDefaults.object(forKey: "medi_dinner") as? String
     }
     
+    //次のポップアップ表示
+    func popup() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Setting", bundle: nil)
+
+        let popupView2: SettingPopupViewController = storyBoard.instantiateViewController(withIdentifier: "SettingPopup") as! SettingPopupViewController
+        popupView2.modalPresentationStyle = .overFullScreen
+        popupView2.modalTransitionStyle = .crossDissolve
+
+        self.present(popupView2, animated: false, completion: nil)
+    }
+    
     @IBAction func tapView(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
@@ -213,5 +239,26 @@ class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+
+extension SettingViewController: AVAudioPlayerDelegate {
+    func playSound(name: String) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+            print("音源ファイルが見つかりません")
+            return
+        }
+        
+        do {
+            // AVAudioPlayerのインスタンス化
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            
+            // AVAudioPlayerのデリゲートをセット
+            audioPlayer.delegate = self
+            
+            // 音声の再生
+            audioPlayer.play()
+        } catch {
+        }
     }
 }

@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ShopPopupViewController: UIViewController {
+    
+    var audioPlayer: AVAudioPlayer!
     
     var myAp = UIApplication.shared.delegate as! AppDelegate
     //アイテム画像
@@ -18,8 +21,8 @@ class ShopPopupViewController: UIViewController {
     //買うボタン画像
     @IBOutlet weak var buy_image: UIImageView!
     //戻るボタン
-    @IBAction func returnButton(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+    @IBAction func returnButton(_ sender: UIButton) {
+        playSound(name: "sousaon")
     }
     //かうボタン
     @IBAction func nextButton(_ sender: UIButton) {
@@ -43,6 +46,7 @@ class ShopPopupViewController: UIViewController {
                 controller.additem()
             }
             let storyBoard: UIStoryboard = UIStoryboard(name: "Shop", bundle: nil)
+            playSound(name: "ketteion")
             
             let popupView: ShopPopup2ViewController = storyBoard.instantiateViewController(withIdentifier: "ShopPopup2") as! ShopPopup2ViewController
             popupView.modalPresentationStyle = .overFullScreen
@@ -122,4 +126,25 @@ class ShopPopupViewController: UIViewController {
         
     }
     
+}
+
+extension ShopPopupViewController: AVAudioPlayerDelegate {
+    func playSound(name: String) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+            print("音源ファイルが見つかりません")
+            return
+        }
+        
+        do {
+            // AVAudioPlayerのインスタンス化
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            
+            // AVAudioPlayerのデリゲートをセット
+            audioPlayer.delegate = self
+            
+            // 音声の再生
+            audioPlayer.play()
+        } catch {
+        }
+    }
 }

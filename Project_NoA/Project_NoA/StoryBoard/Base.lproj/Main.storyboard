@@ -30,6 +30,7 @@
                                 <rect key="frame" x="10" y="517" width="113" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
+                                    <action selector="gookigae:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gbQ-gq-wPo"/>
                                     <segue destination="qoN-PH-Rcc" kind="presentation" id="gIj-9V-TBc"/>
                                 </connections>
                             </button>
@@ -37,6 +38,7 @@
                                 <rect key="frame" x="306" y="452" width="57" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
+                                    <action selector="gosetting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="him-at-9ZR"/>
                                     <segue destination="eLJ-Tm-W5H" kind="presentation" id="DQA-PQ-feM"/>
                                 </connections>
                             </button>
@@ -44,6 +46,7 @@
                                 <rect key="frame" x="252" y="517" width="111" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
+                                    <action selector="gomovie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Il3-0L-hjx"/>
                                     <segue destination="hfs-fc-Ngn" kind="presentation" id="w6B-b5-jLj"/>
                                 </connections>
                             </button>

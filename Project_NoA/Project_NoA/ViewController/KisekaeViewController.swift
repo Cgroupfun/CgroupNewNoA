@@ -7,11 +7,18 @@
 //
 
 import UIKit
-import AWSS3
+import AVFoundation
 
 class KisekaeViewController: UIViewController {
     
+    var audioPlayer: AVAudioPlayer!
+    
     var myAp = UIApplication.shared.delegate as! AppDelegate
+    
+    @IBAction func goKisekae(segue: UIStoryboardSegue) {
+        playSound(name: "sousaon")
+    }
+    
     //決定ボタン
     @IBAction func kettei_botton(_ sender: UIButton) {
         let backImg = UIImage(named: "NoA_黄_全身1_嬉") //背景画像
@@ -50,47 +57,12 @@ class KisekaeViewController: UIViewController {
         }
         //眼鏡の画像合成
         if (megane == "めがね_あか") || (megane == "めがね_あお"){
-            meganeimage?.draw(in: CGRect(x: 40, y: 70, width:48, height:15))
+            meganeimage?.draw(in: CGRect(x: 41, y: 70, width:48, height:15))
         }
         //context上に合成された画像を得る
         let compositedImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
         //コンテキストを閉じる
         UIGraphicsEndImageContext()
-        
-        let NoA_data : Data = (UIImagePNGRepresentation(compositedImage!)! as NSData) as Data
-        
-        let data: Data =  NoA_data// Data to be uploaded
-        
-        let expression = AWSS3TransferUtilityUploadExpression()
-        expression.setValue("public-read", forRequestHeader: "x-amz-acl")
-        
-        
-        var completionHandler: AWSS3TransferUtilityUploadCompletionHandlerBlock?
-        completionHandler = { (task, error) -> Void in
-            DispatchQueue.main.async(execute: {
-                // Do something e.g. Alert a user for transfer completion.
-                // On failed uploads, `error` contains the error object.
-            })
-        }
-        
-        let transferUtility = AWSS3TransferUtility.default()
-        
-        transferUtility.uploadData(data,
-                                   bucket: "noastorage",
-                                   key: "noa_change_clothes.png",
-                                   contentType: "image/png",
-                                   expression: expression,
-                                   completionHandler: completionHandler).continueWith {
-                                    (task) -> AnyObject? in
-                                    if let error = task.error {
-                                        print("Error: \(error.localizedDescription)")
-                                    }
-                                    if let _ = task.result {
-                                        // Do something with uploadTask.
-                                        print("OK")
-                                    }
-                                    return nil;
-        }
         //UIImageをpngに変換
 //        var NoA_data:NSData = UIImagePNGRepresentation(compositedImage!)! as NSData
         //let paths:NSArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -103,12 +75,13 @@ class KisekaeViewController: UIViewController {
         //} else {
           //  NSLog(@"ほぞんError");
         //}
-        
         //ホームノアイメージの更新
         myAp.NoA_compose = compositedImage
         if let controller = self.presentingViewController as? ViewController {
             controller.NoA_Image()
         }
+        playSound(name: "ketteion")
+        popup()
     }
     //ノアアイテム
     @IBOutlet weak var NoA_item: UIImageView!
@@ -182,6 +155,7 @@ class KisekaeViewController: UIViewController {
         item_number = 0
         //画像表示
         itemimage_information()
+        playSound(name: "itemselectSound")
     }
     //ぼうし_青
     @IBAction func blue_cap(_ sender: UIButton) {
@@ -342,6 +316,17 @@ class KisekaeViewController: UIViewController {
         }
     }
     
+    //次のポップアップ表示
+    func popup() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Kisekae", bundle: nil)
+        
+        let popupView2: KisekaePopupViewController = storyBoard.instantiateViewController(withIdentifier: "KisekaePopup") as! KisekaePopupViewController
+        popupView2.modalPresentationStyle = .overFullScreen
+        popupView2.modalTransitionStyle = .crossDissolve
+        
+        self.present(popupView2, animated: false, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //背景
@@ -354,5 +339,26 @@ class KisekaeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
 
+
+extension KisekaeViewController: AVAudioPlayerDelegate {
+    func playSound(name: String) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+            print("音源ファイルが見つかりません")
+            return
+        }
+        
+        do {
+            // AVAudioPlayerのインスタンス化
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            
+            // AVAudioPlayerのデリゲートをセット
+            audioPlayer.delegate = self
+            
+            // 音声の再生
+            audioPlayer.play()
+        } catch {
+        }
+    }
 }
