@@ -12,6 +12,9 @@ import UIKit
 import AVFoundation
 
 class InterfaceController: WKInterfaceController {
+    //時間関係の変数
+    var TimeSchedule : [String:String] = ["wake":"07:00","sleep":"20:00","breakfast":"08:00","study":"15:00"]
+    var string = "00:00"
     //音声に関する変数の生成
     let engine = AVAudioEngine()
     let audioPlayerNode = AVAudioPlayerNode()
@@ -45,7 +48,12 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func ouenn() {
-        pushController(withName: "Ouenn", context: nil)
+       // musicSet(name:"NoA挨拶サンプル", type:"mp3")
+        // オーディオファイルの再生をスケジュールする
+        self.audioPlayerNode.scheduleFile(self.audioFile!, at: nil, completionHandler: nil)
+        // 再生する
+        self.audioPlayerNode.play()
+
     }
     
     override func awake(withContext context: Any?) {
@@ -57,14 +65,19 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         // アプリが起動している時の動作
         super.willActivate()
+    
+        
+        Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(InterfaceController.getTime), userInfo: nil, repeats: true)
+       Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(InterfaceController.support), userInfo: nil, repeats: true)
+
         //画像取得に関するもの
         isActive = true
         //充電時の画面遷移
-        if WKInterfaceDevice.current().batteryState == WKInterfaceDeviceBatteryState.charging{
+        if WKInterfaceDevice.current().batteryState == WKInterfaceDeviceBatteryState.charging ||  WKInterfaceDevice.current().batteryState == WKInterfaceDeviceBatteryState.full{
+            print("充電検知")
             //NoAの寝てる画像に移動
-            presentController(withName: "Oyasumi", context: nil)
+            pushController(withName: "Oyasumi", context: "none")
         }
-       
     }
     
     override func didDeactivate() {
@@ -101,6 +114,26 @@ class InterfaceController: WKInterfaceController {
         } catch {
             fatalError("\(error)")
         }
+    }
+    
+    //生活支援に関する関数
+    @objc func support (){
+                for (Schedule,ScheduleTime)in  TimeSchedule{
+                    if string == ScheduleTime{
+                 pushController(withName: "\(Schedule)", context: "none")
+                        print("\(Schedule)")
+                    }
+                }
+           }
+    //時間取得の関数
+    @objc func getTime(){
+        
+        let now = NSDate()
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        
+        string = formatter.string(from: now as Date)
     }
     //リモートの画像取得
     func getImage() -> Void {

@@ -9,10 +9,21 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
     </dependencies>
     <scenes>
-        <!--heya-->
+        <!--Oyasumi-->
+        <scene sceneID="S4U-Ch-NFl">
+            <objects>
+                <controller identifier="Oyasumi" id="Kra-HJ-O9O">
+                    <items>
+                        <group width="1" height="151" alignment="left" backgroundImage="AppleWatch_睡眠" animationDuration="3" id="auQ-Q4-1x7"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="226" y="51"/>
+        </scene>
+        <!--home-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller backgroundImage="heya" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Project_NoA_WatchKit_App" customModuleProvider="target">
+                <controller identifier="home" backgroundImage="heya" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Project_NoA_WatchKit_App" customModuleProvider="target">
                     <items>
                         <button width="1" height="32" alignment="left" title="おうえん" id="fvM-xN-soM">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -42,7 +53,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="367"/>
+            <point key="canvasLocation" x="226" y="377"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -60,6 +71,39 @@
             </objects>
             <point key="canvasLocation" x="220" y="643"/>
         </scene>
+        <!--study-->
+        <scene sceneID="Bew-cx-Z6p">
+            <objects>
+                <controller identifier="study" id="RL0-1y-4Mt">
+                    <items>
+                        <group width="1" height="152" alignment="left" backgroundImage="seikatsu_study" animationDuration="2" id="UVi-oa-VlL"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="506" y="52"/>
+        </scene>
+        <!--wake-->
+        <scene sceneID="CfE-gX-K3Y">
+            <objects>
+                <controller identifier="wake" id="rwI-05-1Gd">
+                    <items>
+                        <group width="1" height="151" alignment="left" backgroundImage="seikatsu_kisyou" animationDuration="2" id="bbU-aL-9Kf"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="816" y="64"/>
+        </scene>
+        <!--sleep-->
+        <scene sceneID="g3y-a4-1L6">
+            <objects>
+                <controller identifier="sleep" id="Eqs-mU-N7W">
+                    <items>
+                        <group width="1" height="155" alignment="left" backgroundImage="seikatu_syushin" animationDuration="2" id="ZZi-DI-gh4"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="806" y="390"/>
+        </scene>
         <!--Ouenn-->
         <scene sceneID="OpR-vb-9cZ">
             <objects>
@@ -69,7 +113,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="506" y="365"/>
+            <point key="canvasLocation" x="506" y="378"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">

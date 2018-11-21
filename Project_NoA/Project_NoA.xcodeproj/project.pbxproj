@@ -20,7 +20,6 @@
 		28DDDE5B2179B1F100C679D8 /* Kisekae.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DDDE5A2179B1F100C679D8 /* Kisekae.storyboard */; };
 		28DDDE5D2179B20300C679D8 /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DDDE5C2179B20300C679D8 /* Shop.storyboard */; };
 		28DDDE5F2179B22600C679D8 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DDDE5E2179B22600C679D8 /* Setting.storyboard */; };
-		4D006FF221994EA900945168 /* oyasumi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D006FF121994EA900945168 /* oyasumi.storyboard */; };
 		4D13B5A8215DFE6400095F97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13B5A7215DFE6400095F97 /* AppDelegate.swift */; };
 		4D13B5AA215DFE6400095F97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13B5A9215DFE6400095F97 /* ViewController.swift */; };
 		4D13B5AD215DFE6400095F97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D13B5AB215DFE6400095F97 /* Main.storyboard */; };
@@ -97,7 +96,6 @@
 		28DDDE5C2179B20300C679D8 /* Shop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shop.storyboard; sourceTree = "<group>"; };
 		28DDDE5E2179B22600C679D8 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		39BE910690AACB9B67EB2383 /* Pods_Project_NoA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_NoA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D006FF121994EA900945168 /* oyasumi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = oyasumi.storyboard; sourceTree = "<group>"; };
 		4D13B5A4215DFE6400095F97 /* Project_NoA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_NoA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D13B5A7215DFE6400095F97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D13B5A9215DFE6400095F97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -238,7 +236,6 @@
 				4D13B5BB215DFE6700095F97 /* Interface.storyboard */,
 				4D13B5BE215DFE6700095F97 /* Assets.xcassets */,
 				4D13B5C0215DFE6800095F97 /* Info.plist */,
-				4D006FF121994EA900945168 /* oyasumi.storyboard */,
 			);
 			path = "Project_NoA WatchKit App";
 			sourceTree = "<group>";
@@ -269,7 +266,6 @@
 				89BDB9B5136F8C53AAFF6BCA /* Pods-Project_NoA WatchKit Extension.debug.xcconfig */,
 				20EF08DF13C0C7C101741523 /* Pods-Project_NoA WatchKit Extension.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -394,7 +390,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D006FF221994EA900945168 /* oyasumi.storyboard in Resources */,
 				4D13B5BF215DFE6700095F97 /* Assets.xcassets in Resources */,
 				4D13B5BD215DFE6700095F97 /* Interface.storyboard in Resources */,
 			);
@@ -783,8 +778,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R3ANXY333P;
+				DEVELOPMENT_TEAM = FBX28493GR;
 				INFOPLIST_FILE = Project_NoA/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -802,8 +798,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R3ANXY333P;
+				DEVELOPMENT_TEAM = FBX28493GR;
 				INFOPLIST_FILE = Project_NoA/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
