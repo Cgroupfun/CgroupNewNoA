@@ -7,14 +7,43 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ShopPopup2ViewController: UIViewController {
+    
+    var audioPlayer: AVAudioPlayer!
 
+    @IBAction func goHome(_ sender: UIButton) {
+        playSound(name: "sousaon")
+    }
+    @IBAction func goOkigae(_ sender: UIButton) {
+        playSound(name: "sousaon")
+    }
     @IBAction func back_shop(_ sender: UIButton) {
+        playSound(name: "sousaon")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension ShopPopup2ViewController: AVAudioPlayerDelegate {
+    func playSound(name: String) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+            print("音源ファイルが見つかりません")
+            return
+        }
+        
+        do {
+            // AVAudioPlayerのインスタンス化
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            
+            // AVAudioPlayerのデリゲートをセット
+            audioPlayer.delegate = self
+            
+            // 音声の再生
+            audioPlayer.play()
+        } catch {
+        }
     }
 }

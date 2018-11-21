@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class KisekaeViewController: UIViewController {
+    
+    var audioPlayer: AVAudioPlayer!
     
     var myAp = UIApplication.shared.delegate as! AppDelegate
     //決定ボタン
@@ -67,12 +70,12 @@ class KisekaeViewController: UIViewController {
         //} else {
           //  NSLog(@"ほぞんError");
         //}
-        
         //ホームノアイメージの更新
         myAp.NoA_compose = compositedImage
         if let controller = self.presentingViewController as? ViewController {
             controller.NoA_Image()
         }
+        playSound(name: "ketteion")
     }
     //ノアアイテム
     @IBOutlet weak var NoA_item: UIImageView!
@@ -318,5 +321,26 @@ class KisekaeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
 
+
+extension KisekaeViewController: AVAudioPlayerDelegate {
+    func playSound(name: String) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+            print("音源ファイルが見つかりません")
+            return
+        }
+        
+        do {
+            // AVAudioPlayerのインスタンス化
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            
+            // AVAudioPlayerのデリゲートをセット
+            audioPlayer.delegate = self
+            
+            // 音声の再生
+            audioPlayer.play()
+        } catch {
+        }
+    }
 }

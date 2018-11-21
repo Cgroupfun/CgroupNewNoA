@@ -7,19 +7,36 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
+    var audioPlayer: AVAudioPlayer!
+    
     var myAp = UIApplication.shared.delegate as! AppDelegate
+    //お着替えボタン
+    @IBAction func gookigae(_ sender: UIButton) {
+        playSound(name: "sousaon")
+    }
     //ショップ画面
     @IBAction func goshop(_ sender: UIButton) {
+        playSound(name: "sousaon")
     }
-    
+    //動画ボタン
+    @IBAction func gomovie(_ sender: UIButton) {
+        playSound(name: "sousaon")
+    }
+    //設定ボタン
+    @IBAction func gosetting(_ sender: UIButton) {
+        playSound(name: "sousaon")
+    }
+    //戻るボタン
     @IBAction func modoru(segue: UIStoryboardSegue) {
+        playSound(name: "sousaon")
     }
-    
+    //ノア本体
     @IBOutlet weak var NoA_Karada: UIImageView!
-    
+    //ノアが動く
     @IBAction func tapView(_ sender: UITapGestureRecognizer) {
         //タップされた座標を調べる
         let tapPoint = sender.location(in: view)
@@ -64,5 +81,26 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+extension ViewController: AVAudioPlayerDelegate {
+    func playSound(name: String) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+            print("音源ファイルが見つかりません")
+            return
+        }
+        
+        do {
+            // AVAudioPlayerのインスタンス化
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            
+            // AVAudioPlayerのデリゲートをセット
+            audioPlayer.delegate = self
+            
+            // 音声の再生
+            audioPlayer.play()
+        } catch {
+        }
+    }
 }
 

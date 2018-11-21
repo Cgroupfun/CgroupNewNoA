@@ -13,6 +13,8 @@
 		28123EE4219AC0F9001D5D04 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28123EE3219AC0F9001D5D04 /* MovieViewController.swift */; };
 		28123EE8219AC14D001D5D04 /* Movie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28123EE7219AC14D001D5D04 /* Movie.storyboard */; };
 		285748572179BAA500FB7C6C /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285748562179BAA500FB7C6C /* ShopViewController.swift */; };
+		2861503521A2A36F00251AD8 /* sousaon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2861503421A2A36F00251AD8 /* sousaon.mp3 */; };
+		2861503721A2A43400251AD8 /* ketteion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2861503621A2A43400251AD8 /* ketteion.mp3 */; };
 		2864D96E2170866F0003E01C /* KisekaeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2864D96D2170866F0003E01C /* KisekaeViewController.swift */; };
 		2864D972217086AE0003E01C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2864D971217086AE0003E01C /* SettingViewController.swift */; };
 		289E21A5219AC62B002175D8 /* se.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289E21A3219AC62B002175D8 /* se.wav */; };
@@ -89,6 +91,8 @@
 		28123EE3219AC0F9001D5D04 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		28123EE7219AC14D001D5D04 /* Movie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movie.storyboard; sourceTree = "<group>"; };
 		285748562179BAA500FB7C6C /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		2861503421A2A36F00251AD8 /* sousaon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sousaon.mp3; sourceTree = "<group>"; };
+		2861503621A2A43400251AD8 /* ketteion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ketteion.mp3; sourceTree = "<group>"; };
 		2864D96D2170866F0003E01C /* KisekaeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisekaeViewController.swift; sourceTree = "<group>"; };
 		2864D971217086AE0003E01C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		289E21A3219AC62B002175D8 /* se.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = se.wav; sourceTree = "<group>"; };
@@ -188,6 +192,15 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		2861503321A2A34A00251AD8 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				2861503421A2A36F00251AD8 /* sousaon.mp3 */,
+				2861503621A2A43400251AD8 /* ketteion.mp3 */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		2D36554D9650108B10C9C6AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +236,7 @@
 		4D13B5A6215DFE6400095F97 /* Project_NoA */ = {
 			isa = PBXGroup;
 			children = (
+				2861503321A2A34A00251AD8 /* Sound */,
 				2857485D2179C06000FB7C6C /* ViewController */,
 				2857485C2179C04700FB7C6C /* StoryBoard */,
 				2857485E2179C0A300FB7C6C /* Splash */,
@@ -269,7 +283,6 @@
 				89BDB9B5136F8C53AAFF6BCA /* Pods-Project_NoA WatchKit Extension.debug.xcconfig */,
 				20EF08DF13C0C7C101741523 /* Pods-Project_NoA WatchKit Extension.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -381,7 +394,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D13B5B2215DFE6700095F97 /* LaunchScreen.storyboard in Resources */,
+				2861503521A2A36F00251AD8 /* sousaon.mp3 in Resources */,
 				28123EE8219AC14D001D5D04 /* Movie.storyboard in Resources */,
+				2861503721A2A43400251AD8 /* ketteion.mp3 in Resources */,
 				28DDDE5D2179B20300C679D8 /* Shop.storyboard in Resources */,
 				4D13B5AF215DFE6700095F97 /* Assets.xcassets in Resources */,
 				28DDDE5B2179B1F100C679D8 /* Kisekae.storyboard in Resources */,

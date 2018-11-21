@@ -26,6 +26,7 @@
                                 <rect key="frame" x="7" y="24" width="86" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
+                                    <action selector="backButton:" destination="hmh-ma-tQI" eventType="touchUpInside" id="ybD-HU-ODj"/>
                                     <segue destination="FOW-qw-keV" kind="unwind" unwindAction="modoruWithSegue:" id="663-iM-xNH"/>
                                 </connections>
                             </button>
@@ -113,6 +114,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEg-Vs-a1Z">
+                                <rect key="frame" x="283" y="24" width="85" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="ketteiButton:" destination="hmh-ma-tQI" eventType="touchUpInside" id="maD-aT-hqh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
