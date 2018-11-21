@@ -13,11 +13,16 @@ class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     var audioPlayer: AVAudioPlayer!
     
+    @IBAction func goSetting(segue: UIStoryboardSegue) {
+        playSound(name: "sousaon")
+    }
+    
     @IBAction func backButton(_ sender: UIButton) {
         playSound(name: "sousaon")
     }
     @IBAction func ketteiButton(_ sender: UIButton) {
         playSound(name: "ketteion")
+        popup()
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return pickOption.count
@@ -214,6 +219,17 @@ class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         pickerView12.tag = 12
         medi_dinner.inputView = pickerView12
         medi_dinner.text = userDefaults.object(forKey: "medi_dinner") as? String
+    }
+    
+    //次のポップアップ表示
+    func popup() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Setting", bundle: nil)
+
+        let popupView2: SettingPopupViewController = storyBoard.instantiateViewController(withIdentifier: "SettingPopup") as! SettingPopupViewController
+        popupView2.modalPresentationStyle = .overFullScreen
+        popupView2.modalTransitionStyle = .crossDissolve
+
+        self.present(popupView2, animated: false, completion: nil)
     }
     
     @IBAction func tapView(_ sender: UITapGestureRecognizer) {

@@ -14,6 +14,11 @@ class KisekaeViewController: UIViewController {
     var audioPlayer: AVAudioPlayer!
     
     var myAp = UIApplication.shared.delegate as! AppDelegate
+    
+    @IBAction func goKisekae(segue: UIStoryboardSegue) {
+        playSound(name: "sousaon")
+    }
+    
     //決定ボタン
     @IBAction func kettei_botton(_ sender: UIButton) {
         let backImg = UIImage(named: "NoA_黄_全身1_嬉") //背景画像
@@ -52,7 +57,7 @@ class KisekaeViewController: UIViewController {
         }
         //眼鏡の画像合成
         if (megane == "めがね_あか") || (megane == "めがね_あお"){
-            meganeimage?.draw(in: CGRect(x: 40, y: 70, width:48, height:15))
+            meganeimage?.draw(in: CGRect(x: 41, y: 70, width:48, height:15))
         }
         //context上に合成された画像を得る
         let compositedImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
@@ -76,6 +81,7 @@ class KisekaeViewController: UIViewController {
             controller.NoA_Image()
         }
         playSound(name: "ketteion")
+        popup()
     }
     //ノアアイテム
     @IBOutlet weak var NoA_item: UIImageView!
@@ -149,6 +155,7 @@ class KisekaeViewController: UIViewController {
         item_number = 0
         //画像表示
         itemimage_information()
+        playSound(name: "itemselectSound")
     }
     //ぼうし_青
     @IBAction func blue_cap(_ sender: UIButton) {
@@ -307,6 +314,17 @@ class KisekaeViewController: UIViewController {
         }else if (additem == "おにのお面"){
             addImageView.frame = CGRect(x:x_point + 3, y:y_point - 11, width:59, height:90)
         }
+    }
+    
+    //次のポップアップ表示
+    func popup() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Kisekae", bundle: nil)
+        
+        let popupView2: KisekaePopupViewController = storyBoard.instantiateViewController(withIdentifier: "KisekaePopup") as! KisekaePopupViewController
+        popupView2.modalPresentationStyle = .overFullScreen
+        popupView2.modalTransitionStyle = .crossDissolve
+        
+        self.present(popupView2, animated: false, completion: nil)
     }
     
     override func viewDidLoad() {

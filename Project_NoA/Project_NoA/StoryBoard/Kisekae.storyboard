@@ -256,9 +256,48 @@
             </objects>
             <point key="canvasLocation" x="160.80000000000001" y="-469.1154422788606"/>
         </scene>
+        <!--Kisekae Popup View Controller-->
+        <scene sceneID="k28-7p-wmw">
+            <objects>
+                <viewController storyboardIdentifier="KisekaePopup" id="2hZ-he-rsL" customClass="KisekaePopupViewController" customModule="Project_NoA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c4N-xs-E2D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="popup_kigae" translatesAutoresizingMaskIntoConstraints="NO" id="Vci-2o-Cmo">
+                                <rect key="frame" x="43" y="150" width="289" height="367"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Rr-iM-Jtl">
+                                <rect key="frame" x="115" y="281" width="143" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="goHome:" destination="2hZ-he-rsL" eventType="touchUpInside" id="9Ky-aj-H2F"/>
+                                    <segue destination="Kjw-vx-HcQ" kind="unwind" unwindAction="modoruWithSegue:" id="2Ad-8f-AMO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q17-hY-llV">
+                                <rect key="frame" x="115" y="344" width="143" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="goBack:" destination="2hZ-he-rsL" eventType="touchUpInside" id="Mja-cN-fuw"/>
+                                    <segue destination="Kjw-vx-HcQ" kind="unwind" unwindAction="goKisekaeWithSegue:" id="d6v-1j-vR3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="mmu-Ok-nNn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iXa-HG-Yzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Kjw-vx-HcQ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="837.60000000000002" y="-469.1154422788606"/>
+        </scene>
     </scenes>
     <resources>
         <image name="iPhone_お着替え" width="750" height="1334"/>
+        <image name="popup_kigae" width="630" height="763"/>
         <image name="おばけ" width="103" height="114"/>
         <image name="かえる帽子" width="248" height="58"/>
         <image name="リボン_赤" width="46" height="29"/>

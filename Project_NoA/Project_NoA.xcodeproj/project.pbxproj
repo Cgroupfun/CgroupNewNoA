@@ -12,6 +12,9 @@
 		28123EE2219ABF0C001D5D04 /* ShopPopup2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28123EE1219ABF0C001D5D04 /* ShopPopup2ViewController.swift */; };
 		28123EE4219AC0F9001D5D04 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28123EE3219AC0F9001D5D04 /* MovieViewController.swift */; };
 		28123EE8219AC14D001D5D04 /* Movie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28123EE7219AC14D001D5D04 /* Movie.storyboard */; };
+		28143C8521A52E28008636C9 /* KisekaePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28143C8421A52E28008636C9 /* KisekaePopupViewController.swift */; };
+		28143C8721A53B77008636C9 /* SettingPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28143C8621A53B77008636C9 /* SettingPopupViewController.swift */; };
+		28143C8921A53DED008636C9 /* itemselectSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 28143C8821A53DED008636C9 /* itemselectSound.mp3 */; };
 		285748572179BAA500FB7C6C /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285748562179BAA500FB7C6C /* ShopViewController.swift */; };
 		2861503521A2A36F00251AD8 /* sousaon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2861503421A2A36F00251AD8 /* sousaon.mp3 */; };
 		2861503721A2A43400251AD8 /* ketteion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2861503621A2A43400251AD8 /* ketteion.mp3 */; };
@@ -90,6 +93,9 @@
 		28123EE1219ABF0C001D5D04 /* ShopPopup2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopPopup2ViewController.swift; sourceTree = "<group>"; };
 		28123EE3219AC0F9001D5D04 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		28123EE7219AC14D001D5D04 /* Movie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movie.storyboard; sourceTree = "<group>"; };
+		28143C8421A52E28008636C9 /* KisekaePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisekaePopupViewController.swift; sourceTree = "<group>"; };
+		28143C8621A53B77008636C9 /* SettingPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPopupViewController.swift; sourceTree = "<group>"; };
+		28143C8821A53DED008636C9 /* itemselectSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = itemselectSound.mp3; sourceTree = "<group>"; };
 		285748562179BAA500FB7C6C /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		2861503421A2A36F00251AD8 /* sousaon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sousaon.mp3; sourceTree = "<group>"; };
 		2861503621A2A43400251AD8 /* ketteion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ketteion.mp3; sourceTree = "<group>"; };
@@ -175,11 +181,13 @@
 				4D13B5A7215DFE6400095F97 /* AppDelegate.swift */,
 				4D13B5A9215DFE6400095F97 /* ViewController.swift */,
 				2864D96D2170866F0003E01C /* KisekaeViewController.swift */,
+				28143C8421A52E28008636C9 /* KisekaePopupViewController.swift */,
 				285748562179BAA500FB7C6C /* ShopViewController.swift */,
-				2864D971217086AE0003E01C /* SettingViewController.swift */,
 				28123EDF219ABEDC001D5D04 /* ShopPopupViewController.swift */,
 				28123EE1219ABF0C001D5D04 /* ShopPopup2ViewController.swift */,
 				28123EE3219AC0F9001D5D04 /* MovieViewController.swift */,
+				2864D971217086AE0003E01C /* SettingViewController.swift */,
+				28143C8621A53B77008636C9 /* SettingPopupViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -195,6 +203,7 @@
 		2861503321A2A34A00251AD8 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				28143C8821A53DED008636C9 /* itemselectSound.mp3 */,
 				2861503421A2A36F00251AD8 /* sousaon.mp3 */,
 				2861503621A2A43400251AD8 /* ketteion.mp3 */,
 			);
@@ -398,6 +407,7 @@
 				28123EE8219AC14D001D5D04 /* Movie.storyboard in Resources */,
 				2861503721A2A43400251AD8 /* ketteion.mp3 in Resources */,
 				28DDDE5D2179B20300C679D8 /* Shop.storyboard in Resources */,
+				28143C8921A53DED008636C9 /* itemselectSound.mp3 in Resources */,
 				4D13B5AF215DFE6700095F97 /* Assets.xcassets in Resources */,
 				28DDDE5B2179B1F100C679D8 /* Kisekae.storyboard in Resources */,
 				4D13B5AD215DFE6400095F97 /* Main.storyboard in Resources */,
@@ -530,6 +540,8 @@
 			files = (
 				2864D96E2170866F0003E01C /* KisekaeViewController.swift in Sources */,
 				28123EE0219ABEDC001D5D04 /* ShopPopupViewController.swift in Sources */,
+				28143C8721A53B77008636C9 /* SettingPopupViewController.swift in Sources */,
+				28143C8521A52E28008636C9 /* KisekaePopupViewController.swift in Sources */,
 				4D13B5AA215DFE6400095F97 /* ViewController.swift in Sources */,
 				28123EE4219AC0F9001D5D04 /* MovieViewController.swift in Sources */,
 				285748572179BAA500FB7C6C /* ShopViewController.swift in Sources */,
