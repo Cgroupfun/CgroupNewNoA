@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AWSS3
 import AVFoundation
 
 class KisekaeViewController: UIViewController {
@@ -63,18 +64,42 @@ class KisekaeViewController: UIViewController {
         let compositedImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
         //コンテキストを閉じる
         UIGraphicsEndImageContext()
-        //UIImageをpngに変換
-//        var NoA_data:NSData = UIImagePNGRepresentation(compositedImage!)! as NSData
-        //let paths:NSArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        //let DocumentsDirPath:NSString = [paths lastObject]
-//        let exportFilename:NSString = "sample.png"
-        //let exportFilePath:NSString = [DocumentsDirPath stringByAppendingPathComponent:exportFilename]
         
-        //if ([data writeToFile: exportFilePath atomically:YES]) {
-         //   NSLog(@"ほぞんOK");
-        //} else {
-          //  NSLog(@"ほぞんError");
-        //}
+        let NoA_data : Data = (UIImagePNGRepresentation(compositedImage!)! as NSData) as Data
+        
+        let data: Data =  NoA_data// Data to be uploaded
+        
+        let expression = AWSS3TransferUtilityUploadExpression()
+        expression.setValue("public-read", forRequestHeader: "x-amz-acl")
+        
+        
+        var completionHandler: AWSS3TransferUtilityUploadCompletionHandlerBlock?
+        completionHandler = { (task, error) -> Void in
+            DispatchQueue.main.async(execute: {
+                // Do something e.g. Alert a user for transfer completion.
+                // On failed uploads, ｀error｀ contains the error object.
+            })
+        }
+        
+        let transferUtility = AWSS3TransferUtility.default()
+        
+        transferUtility.uploadData(data,
+                                   bucket: "noastorage",
+                                   key: "noa_change.png",
+                                   contentType:"image/png",
+                                   expression: expression,
+                                   completionHandler: completionHandler).continueWith {
+                                    (task) -> AnyObject? in
+                                    if let error = task.error {
+                                        print("Error: \(error.localizedDescription)")
+                                    }
+                                    if let _ = task.result {
+                                        // Do something with uploadTask.
+                                        print("OK")
+                                    }
+                                    return nil;
+        }
+        
         //ホームノアイメージの更新
         myAp.NoA_compose = compositedImage
         if let controller = self.presentingViewController as? ViewController {
