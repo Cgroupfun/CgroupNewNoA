@@ -13,6 +13,7 @@ import AVFoundation
 class MovieViewController: UIViewController {
     //応援ボタン
     @IBAction func ouenButton(_ sender: UIButton) {
+        playSound(name: "sousaon")
     }
     //吸入ボタン
     @IBAction func breathe(_ sender: UIButton) {
