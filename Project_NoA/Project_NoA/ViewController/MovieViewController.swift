@@ -11,6 +11,8 @@ import AVKit
 import AVFoundation
 
 class MovieViewController: UIViewController {
+    
+    var audioPlayer: AVAudioPlayer!
     //応援ボタン
     @IBAction func ouenButton(_ sender: UIButton) {
         playSound(name: "sousaon")
@@ -59,5 +61,26 @@ class MovieViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+}
+
+extension MovieViewController: AVAudioPlayerDelegate {
+    func playSound(name: String) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+            print("音源ファイルが見つかりません")
+            return
+        }
+        
+        do {
+            // AVAudioPlayerのインスタンス化
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            
+            // AVAudioPlayerのデリゲートをセット
+            audioPlayer.delegate = self
+            
+            // 音声の再生
+            audioPlayer.play()
+        } catch {
+        }
     }
 }
