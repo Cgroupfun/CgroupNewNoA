@@ -104,7 +104,7 @@ class InterfaceController: WKInterfaceController {
     }
     //リモートの画像取得
     func getImage() -> Void {
-        let url = URL(string:"https://s3-ap-northeast-1.amazonaws.com/noastorage/noa.png")!
+        let url = URL(string:"https://s3-ap-northeast-1.amazonaws.com/noastorage/noa_change_clothes.png")!
         let conf = URLSessionConfiguration.default
         let session = URLSession(configuration: conf)
         task = session.dataTask(with: url) { (data, res, error) -> Void in
