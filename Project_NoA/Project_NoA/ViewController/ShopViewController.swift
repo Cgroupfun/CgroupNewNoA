@@ -13,6 +13,8 @@ class ShopViewController: UIViewController {
     
     var audioPlayer: AVAudioPlayer!
     
+    let userDefaults = UserDefaults.standard
+    
     var myAp = UIApplication.shared.delegate as! AppDelegate
     //つの
     @IBAction func tsuno_button(_ sender: UIButton) {
@@ -188,12 +190,15 @@ class ShopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userDefaults.register(defaults: ["NoA_coin" : 100,])
+        
         buy_after()
         NoAcoin_show()
     }
+    
     //ノアコインの表示
     func NoAcoin_show(){
-        NoAcoin.text = String(myAp.NoA_coin)
+        NoAcoin.text = String(userDefaults.object(forKey: "NoA_coin") as! Int)
     }
     
     override func didReceiveMemoryWarning() {
@@ -212,47 +217,56 @@ class ShopViewController: UIViewController {
     }
     //売り切れボタンの反映
     func buy_after(){
-        if(myAp.shop_buy_number[0] == 1){
+//        if(myAp.shop_buy_number[0] == 1){
+        if(userDefaults.object(forKey: "つの") as? Int == 1){
             tsuno_buy_after.image = UIImage(named: "売り切れ")
             tsuno_view.layer.cornerRadius = 4
             tsuno_view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         }
-        if(myAp.shop_buy_number[1] == 1){
+//        if(myAp.shop_buy_number[1] == 1){
+        if(userDefaults.object(forKey: "めがね_あお") as? Int == 1){
             bluemegane_buy_after.image = UIImage(named: "売り切れ")
             bluemegane_view.layer.cornerRadius = 4
             bluemegane_view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         }
-        if(myAp.shop_buy_number[2] == 1){
+//        if(myAp.shop_buy_number[2] == 1){
+        if(userDefaults.object(forKey: "めがね_あか") as? Int == 1){
             redmegane_buy_after.image = UIImage(named: "売り切れ")
             redmegane_view.layer.cornerRadius = 4
             redmegane_view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         }
-        if(myAp.shop_buy_number[3] == 1){
+//        if(myAp.shop_buy_number[3] == 1){
+        if(userDefaults.object(forKey: "はっと") as? Int == 1){
             hat_buy_after.image = UIImage(named: "売り切れ")
             hat_view.layer.cornerRadius = 4
             hat_view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         }
-        if(myAp.shop_buy_number[4] == 1){
+//        if(myAp.shop_buy_number[4] == 1){
+        if(userDefaults.object(forKey: "はな") as? Int == 1){
             flower_buy_after.image = UIImage(named: "売り切れ")
             flower_view.layer.cornerRadius = 4
             flower_view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         }
-        if(myAp.shop_buy_number[5] == 1){
+//        if(myAp.shop_buy_number[5] == 1){
+        if(userDefaults.object(forKey: "おにのお面") as? Int == 1){
             omen_buy_after.image = UIImage(named: "売り切れ")
             omen_view.layer.cornerRadius = 4
             omen_view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         }
-        if(myAp.shop_buy_number[6] == 1){
+//        if(myAp.shop_buy_number[6] == 1){
+        if(userDefaults.object(forKey: "ねこ") as? Int == 1){
             cat_buy_after.image = UIImage(named: "売り切れ")
             cat_view.layer.cornerRadius = 4
             cat_view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         }
-        if(myAp.shop_buy_number[7] == 1){
+//        if(myAp.shop_buy_number[7] == 1){
+        if(userDefaults.object(forKey: "ティアラ") as? Int == 1){
             tiara_buy_after.image = UIImage(named: "売り切れ")
             tiara_view.layer.cornerRadius = 4
             tiara_view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         }
-        if(myAp.shop_buy_number[8] == 1){
+//        if(myAp.shop_buy_number[8] == 1){
+        if(userDefaults.object(forKey: "おうかん") as? Int == 1){
             crown_buy_after.image = UIImage(named: "売り切れ")
             crown_view.layer.cornerRadius = 4
             crown_view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
@@ -266,14 +280,11 @@ extension ShopViewController: AVAudioPlayerDelegate {
             print("音源ファイルが見つかりません")
             return
         }
-        
         do {
             // AVAudioPlayerのインスタンス化
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            
             // AVAudioPlayerのデリゲートをセット
             audioPlayer.delegate = self
-            
             // 音声の再生
             audioPlayer.play()
         } catch {

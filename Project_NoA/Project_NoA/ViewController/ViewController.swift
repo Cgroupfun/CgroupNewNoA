@@ -12,8 +12,12 @@ import AVFoundation
 class ViewController: UIViewController {
     
     var audioPlayer: AVAudioPlayer!
+    //画像取得のための変数
+    var task: URLSessionDataTask?
+    var isActive: Bool = true
     
     var myAp = UIApplication.shared.delegate as! AppDelegate
+    
     //お着替えボタン
     @IBAction func gookigae(_ sender: UIButton) {
         playSound(name: "sousaon")
@@ -64,15 +68,35 @@ class ViewController: UIViewController {
         NoA_Image()
     }
     
-    func NoA_Image(){
-        //ノアの画像表示
-        if(myAp.NoA_compose == nil){
-            NoA_Karada.frame = CGRect(x:128, y:277, width:118, height:113)
-            NoA_Karada.image = UIImage(named: myAp.NoA_image[myAp.NoA_image_number])
-        }else {
-            NoA_Karada.frame = CGRect(x:128, y:277, width:128, height:200)
-            NoA_Karada.image = myAp.NoA_compose
+    func changeNoA(){
+        NoA_Karada.image = myAp.NoA_compose
+        NoA_Karada.frame = CGRect(x:128, y:277, width:128, height:200)
+    }
+    
+    func NoA_Image() -> Void {
+        let url = URL(string:"https://s3-ap-northeast-1.amazonaws.com/noastorage/noa_change.png")!
+        let conf = URLSessionConfiguration.default
+        let session = URLSession(configuration: conf)
+        task = session.dataTask(with: url) { (data, res, error) -> Void in
+            if let e = error {
+                print("dataTaskWithURL fail: \(e.localizedDescription)")
+                return
+            }
+            if let d = data {
+                let image = UIImage(data: d)
+                DispatchQueue.main.async(execute: {
+                    if self.isActive {
+                        self.NoA_Karada.frame = CGRect(x:128, y:277, width:128, height:200)
+                        self.NoA_Karada.image = image
+                    }
+                })
+            }
         }
+        return task!.resume()
+    }
+    
+    struct Constants {
+        static let TupacAmaruShakur = "NoA_Karada"
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,18 +113,14 @@ extension ViewController: AVAudioPlayerDelegate {
             print("音源ファイルが見つかりません")
             return
         }
-        
         do {
             // AVAudioPlayerのインスタンス化
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            
             // AVAudioPlayerのデリゲートをセット
             audioPlayer.delegate = self
-            
             // 音声の再生
             audioPlayer.play()
         } catch {
         }
     }
 }
-

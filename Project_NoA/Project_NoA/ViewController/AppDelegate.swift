@@ -24,17 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     //ノアコイン
     var NoA_coin:Int = 100
+    
     //コイン足りるか判定
     var NoAcoin_compare:[Int] = [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        0,0,0,0,0,0,0,0,0
+    ]
+    //購入アイテムキー
+    var buyitem_key:[String] = [
+        "number8","number9","number10","number11","number12","number13","number14","number15","number16"
     ]
     //アイテム購入判定番号
     var shop_buy_number:[Int] = [

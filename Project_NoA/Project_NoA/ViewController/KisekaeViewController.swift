@@ -103,11 +103,12 @@ class KisekaeViewController: UIViewController {
         //ホームノアイメージの更新
         myAp.NoA_compose = compositedImage
         if let controller = self.presentingViewController as? ViewController {
-            controller.NoA_Image()
+            controller.changeNoA()
         }
         playSound(name: "ketteion")
         popup()
     }
+    
     //ノアアイテム
     @IBOutlet weak var NoA_item: UIImageView!
     //リボン
@@ -173,114 +174,86 @@ class KisekaeViewController: UIViewController {
         NoA_item.image = UIImage(named: itemname)
         ribbon_image.image = UIImage(named: ribbon)
         megane_image.image = UIImage(named: megane)
+        playSound(name: "itemselectSound")
     }
-    //ぼうし_赤
-    @IBAction func red_cap(_ sender: UIButton) {
+    
+    //アイテム表示関数
+    func itemPresent(number: Int){
         //画像番号
-        item_number = 0
+        item_number = number
         //画像表示
         itemimage_information()
         playSound(name: "itemselectSound")
     }
+    
+    //追加アイテム表示関数
+    func additemPresent(number: Int){
+        //画像番号
+        item_number = number
+        if(myAp.item_image[item_number] != ""){
+            //画像表示
+            itemimage_information()
+            playSound(name: "itemselectSound")
+        }
+    }
+    
+    //ぼうし_赤
+    @IBAction func red_cap(_ sender: UIButton) {
+        itemPresent(number: 0)
+    }
     //ぼうし_青
     @IBAction func blue_cap(_ sender: UIButton) {
-        //画像番号
-        item_number = 1
-        //画像表示
-        itemimage_information()
+        itemPresent(number: 1)
     }
     //リボン_赤
     @IBAction func red_ribon(_ sender: UIButton) {
-        //画像番号
-        item_number = 2
-        //画像表示
-        itemimage_information()
+        itemPresent(number: 2)
     }
     //リボン_青
     @IBAction func blue_ribon(_ sender: UIButton) {
-        //画像番号
-        item_number = 3
-        //画像表示
-        itemimage_information()
+        itemPresent(number: 3)
     }
     //かえる
     @IBAction func flog(_ sender: UIButton) {
-        //画像番号
-        item_number = 4
-        //画像表示
-        itemimage_information()
+        itemPresent(number: 4)
     }
     //星
     @IBAction func star(_ sender: UIButton) {
-        //画像番号
-        item_number = 5
-        //画像表示
-        itemimage_information()
+        itemPresent(number: 5)
     }
     //おばけ
     @IBAction func gost(_ sender: UIButton) {
-        //画像番号
-        item_number = 6
-        //画像表示
-        itemimage_information()
+        itemPresent(number: 6)
     }
     @IBAction func item8(_ sender: UIButton) {
-        //画像番号
-        item_number = 7
-//        if(myAp.item_image[item_number] != ""){
-        //画像表示
-        itemimage_information()
-//        }
+        additemPresent(number: 7)
     }
     @IBAction func item9(_ sender: UIButton){
-        //画像番号
-        item_number = 8
-        //画像表示
-        itemimage_information()
+        additemPresent(number: 8)
     }
     @IBAction func item10(_ sender: UIButton){
-        //画像番号
-        item_number = 9
-        //画像表示
-        itemimage_information()
+        additemPresent(number: 9)
     }
     @IBAction func item11(_ sender: UIButton){
-        //画像番号
-        item_number = 10
-        //画像表示
-        itemimage_information()
+        additemPresent(number: 10)
     }
     @IBAction func item12(_ sender: UIButton){
-        //画像番号
-        item_number = 11
-        //画像表示
-        itemimage_information()
+        additemPresent(number: 11)
     }
     @IBAction func item13(_ sender: UIButton){
-        //画像番号
-        item_number = 12
-        //画像表示
-        itemimage_information()
+        additemPresent(number: 12)
     }
     @IBAction func item14(_ sender: UIButton){
-        //画像番号
-        item_number = 13
-        //画像表示
-        itemimage_information()
+        additemPresent(number: 13)
     }
     @IBAction func item15(_ sender: UIButton){
-        //画像番号
-        item_number = 14
-        //画像表示
-        itemimage_information()
+        additemPresent(number: 14)
     }
     @IBAction func item16(_ sender: UIButton){
-        //画像番号
-        item_number = 15
-        //画像表示
-        itemimage_information()
+        additemPresent(number: 15)
     }
     
+    //追加アイテムの表示位置
     func additem(){
         if(myAp.item_image[7] != ""){
             itemnumber8.image = UIImage(named: myAp.item_image[7])
@@ -366,7 +339,6 @@ class KisekaeViewController: UIViewController {
     }
 }
 
-
 extension KisekaeViewController: AVAudioPlayerDelegate {
     func playSound(name: String) {
         guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
@@ -377,10 +349,8 @@ extension KisekaeViewController: AVAudioPlayerDelegate {
         do {
             // AVAudioPlayerのインスタンス化
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            
             // AVAudioPlayerのデリゲートをセット
             audioPlayer.delegate = self
-            
             // 音声の再生
             audioPlayer.play()
         } catch {

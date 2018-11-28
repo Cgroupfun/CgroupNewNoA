@@ -272,7 +272,6 @@
                                 <rect key="frame" x="115" y="281" width="143" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="goHome:" destination="2hZ-he-rsL" eventType="touchUpInside" id="9Ky-aj-H2F"/>
                                     <segue destination="Kjw-vx-HcQ" kind="unwind" unwindAction="modoruWithSegue:" id="2Ad-8f-AMO"/>
                                 </connections>
                             </button>
@@ -280,7 +279,6 @@
                                 <rect key="frame" x="115" y="344" width="143" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="goBack:" destination="2hZ-he-rsL" eventType="touchUpInside" id="Mja-cN-fuw"/>
                                     <segue destination="Kjw-vx-HcQ" kind="unwind" unwindAction="goKisekaeWithSegue:" id="d6v-1j-vR3"/>
                                 </connections>
                             </button>
