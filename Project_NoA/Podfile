@@ -8,6 +8,7 @@ target 'Project_NoA' do
   # Pods for Project_NoA
   pod 'AWSS3'
   pod 'AWSCognito'
+  pod 'AWSDynamoDB'
 
 end
 

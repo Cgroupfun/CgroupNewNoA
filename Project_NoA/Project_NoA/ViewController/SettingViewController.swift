@@ -8,6 +8,36 @@
 
 import UIKit
 import AVFoundation
+import AWSDynamoDB
+
+//@objcMembers
+class NoAClass: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
+    
+    @objc var ID: String?
+    @objc var wake: String?
+    @objc var sleep: String?
+    @objc var breakfast: String?
+    @objc var lunch: String?
+    @objc var dineer: String?
+    @objc var tooth: String?
+    @objc var tooth2: String?
+    @objc var tooth3: String?
+    @objc var tooth4: String?
+    @objc var drug_breakfast: String?
+    @objc var drug_lunch: String?
+    @objc var drug_dinner: String?
+    
+    class func dynamoDBTableName() -> String {
+        
+        return "NoATable"
+    }
+    
+    class func hashKeyAttribute() -> String {
+        
+        return "ID"
+    }
+}
+
 
 class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -21,6 +51,56 @@ class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         playSound(name: "sousaon")
     }
     @IBAction func ketteiButton(_ sender: UIButton) {
+        
+        
+        //保存データ作成
+        
+        /*let NoA_TimeSchedule = [
+            "wAke":textField,
+            "sleep":textField2,
+            "breakfast":textField3,
+            "lunch":textField4,
+            "dineer":textField5,
+            "tooth":textField6,
+            "tooth2":textField7,
+            "tooth3":textField8,
+            "tooth4":textField9,
+            "drug_breakfast":textField10,
+            "drug_lunch":textField11,
+            "drug_dinner":textField12
+        ]*/
+        
+        //DBに保存
+        
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        
+        // Create data object using data models you downloaded from Mobile Hub
+        let NoAItem = NoAClass()
+        NoAItem?.ID = "NoA"
+        NoAItem?.wake = kisyo.text
+        NoAItem?.sleep = neru.text
+        NoAItem?.breakfast = breakfast.text//textField3
+        NoAItem?.lunch = lunch.text//textField4
+        NoAItem?.dineer = dinner.text//textField5
+        NoAItem?.tooth = tooth.text//textField6
+        NoAItem?.tooth2 = tooth2.text//textField7
+        NoAItem?.tooth3 = tooth3.text//textField8
+        NoAItem?.tooth4 = tooth4.text//textField9
+        NoAItem?.drug_breakfast = medi_breakfast.text //textField10
+        NoAItem?.drug_lunch = medi_lunch.text //textField11
+        NoAItem?.drug_dinner = medi_dinner.text//textField12
+        
+        //Save a new item
+        dynamoDbObjectMapper.save(NoAItem!).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
+            if let error = task.error as NSError? {
+                print("The request failed. Error: \(error)")
+            } else {
+                print("できたよ")
+            }
+            return nil
+        })
+        
+        
         playSound(name: "ketteion")
         popup()
     }
