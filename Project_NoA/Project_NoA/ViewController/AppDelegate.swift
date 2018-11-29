@@ -53,16 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         "リボン_青",
         "かえる帽子",
         "星",
-        "おばけ",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "おばけ"
     ]
     //ショップアイテム
     var shop_item:[String] = [
@@ -81,11 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //ショップアイテム番号
     var shop_item_number = 0
     //アイテム追加する順番
-    var item_addnumber = 7
-    //ノアのカスタマイズバージョン
-    var NoA_image:[String] = [
-        "NoA_黄_全身1_嬉"
-    ]
+    var item_addnumber = 0
     
     var NoA_compose:UIImage?
     

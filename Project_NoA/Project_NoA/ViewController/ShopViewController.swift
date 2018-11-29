@@ -12,154 +12,43 @@ import AVFoundation
 class ShopViewController: UIViewController {
     
     var audioPlayer: AVAudioPlayer!
-    
     let userDefaults = UserDefaults.standard
-    
     var myAp = UIApplication.shared.delegate as! AppDelegate
     //つの
     @IBAction func tsuno_button(_ sender: UIButton) {
-        myAp.shop_item_number = 0
-        myAp.NoAcoin_compare[0] = 0
-        if(myAp.shop_buy_number[0] == 0){
-            if(myAp.NoA_coin >= 10){
-                myAp.NoAcoin_compare[0] = 1
-                playSound(name: "sousaon")
-                popup()
-            }
-            if (myAp.shop_buy_number[0] == 0){
-                playSound(name: "sousaon")
-                popup()
-            }
-        }
+        itemReaction(buynumber: 0, price: 10)
     }
     //青眼鏡
     @IBAction func bluemegane_button(_ sender: UIButton) {
-        myAp.shop_item_number = 1
-        myAp.NoAcoin_compare[1] = 0
-        if(myAp.shop_buy_number[1] == 0){
-            if(myAp.NoA_coin >= 20){
-                myAp.NoAcoin_compare[1] = 1
-                playSound(name: "sousaon")
-                popup()
-            }
-            if (myAp.shop_buy_number[1] == 0){
-                playSound(name: "sousaon")
-                popup()
-            }
-        }
-        
+        itemReaction(buynumber: 1, price: 20)
     }
     //赤眼鏡
     @IBAction func redmegane_button(_ sender: UIButton) {
-        myAp.shop_item_number = 2
-        myAp.NoAcoin_compare[2] = 0
-        if(myAp.shop_buy_number[2] == 0){
-            if(myAp.NoA_coin >= 20){
-                myAp.NoAcoin_compare[2] = 1
-                playSound(name: "sousaon")
-                popup()
-            }
-            if (myAp.shop_buy_number[2] == 0){
-                playSound(name: "sousaon")
-                popup()
-            }
-        }
+        itemReaction(buynumber: 2, price: 20)
     }
     //はっと
     @IBAction func hat_button(_ sender: UIButton) {
-        myAp.shop_item_number = 3
-        myAp.NoAcoin_compare[3] = 0
-        if(myAp.shop_buy_number[3] == 0){
-            if(myAp.NoA_coin >= 30){
-                myAp.NoAcoin_compare[3] = 1
-                playSound(name: "sousaon")
-                popup()
-            }
-            if (myAp.shop_buy_number[3] == 0){
-                playSound(name: "sousaon")
-                popup()
-            }
-        }
+        itemReaction(buynumber: 3, price: 30)
     }
     //おはな
     @IBAction func flower_button(_ sender: UIButton) {
-        myAp.shop_item_number = 4
-        myAp.NoAcoin_compare[4] = 0
-        if(myAp.shop_buy_number[4] == 0){
-            if(myAp.NoA_coin >= 30){
-                myAp.NoAcoin_compare[4] = 1
-                playSound(name: "sousaon")
-                popup()
-            }
-            if (myAp.shop_buy_number[4] == 0){
-                playSound(name: "sousaon")
-                popup()
-            }
-        }
+        itemReaction(buynumber: 4, price: 30)
     }
     //おにのおめん
     @IBAction func omen_button(_ sender: UIButton) {
-        myAp.shop_item_number = 5
-        myAp.NoAcoin_compare[5] = 0
-        if(myAp.shop_buy_number[5] == 0){
-            if(myAp.NoA_coin >= 50){
-                myAp.NoAcoin_compare[5] = 1
-                playSound(name: "sousaon")
-                popup()
-            }
-            if (myAp.shop_buy_number[5] == 0){
-                playSound(name: "sousaon")
-                popup()
-            }
-        }
+        itemReaction(buynumber: 5, price: 50)
     }
     //猫
     @IBAction func cat_button(_ sender: UIButton) {
-        myAp.shop_item_number = 6
-        myAp.NoAcoin_compare[6] = 0
-        if(myAp.shop_buy_number[6] == 0){
-            if(myAp.NoA_coin >= 50){
-                myAp.NoAcoin_compare[6] = 1
-                playSound(name: "sousaon")
-                popup()
-            }
-            if (myAp.shop_buy_number[6] == 0){
-                playSound(name: "sousaon")
-                popup()
-            }
-        }
+        itemReaction(buynumber: 6, price: 50)
     }
     //ティアラ
     @IBAction func tiara(_ sender: UIButton) {
-        myAp.shop_item_number = 7
-        myAp.NoAcoin_compare[7] = 0
-        if(myAp.shop_buy_number[7] == 0){
-            if(myAp.NoA_coin >= 80){
-                myAp.NoAcoin_compare[7] = 1
-                playSound(name: "sousaon")
-                popup()
-            }
-            if (myAp.shop_buy_number[7] == 0){
-                playSound(name: "sousaon")
-                popup()
-            }
-        }
+        itemReaction(buynumber: 7, price: 80)
     }
     //おうかん
     @IBAction func crown(_ sender: UIButton) {
-        myAp.shop_item_number = 8
-        myAp.NoAcoin_compare[8] = 0
-        if(myAp.shop_buy_number[8] == 0){
-            if(myAp.NoA_coin >= 100){
-                myAp.NoAcoin_compare[8] = 1
-                playSound(name: "sousaon")
-                popup()
-            }
-            if (myAp.shop_buy_number[8] == 0){
-                playSound(name: "sousaon")
-                popup()
-            }
-        }
+        itemReaction(buynumber: 8, price: 100)
     }
     
     @IBOutlet weak var tsuno_buy_after: UIImageView!
@@ -190,12 +79,27 @@ class ShopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userDefaults.register(defaults: ["NoA_coin" : 100,])
+        userDefaults.register(defaults: ["NoA_coin" : 100])
         
         buy_after()
         NoAcoin_show()
     }
-    
+    //購入アイテムを押した時の関数
+    func itemReaction(buynumber:Int, price:Int){
+        myAp.shop_item_number = buynumber
+        myAp.NoAcoin_compare[buynumber] = 0
+        if(myAp.shop_buy_number[buynumber] == 0){
+            if(userDefaults.object(forKey: "NoA_coin") as! Int >= price){
+                myAp.NoAcoin_compare[buynumber] = 1
+                playSound(name: "sousaon")
+                popup()
+            }
+            if (myAp.shop_buy_number[buynumber] == 0){
+                playSound(name: "sousaon")
+                popup()
+            }
+        }
+    }
     //ノアコインの表示
     func NoAcoin_show(){
         NoAcoin.text = String(userDefaults.object(forKey: "NoA_coin") as! Int)
@@ -215,61 +119,40 @@ class ShopViewController: UIViewController {
         
         self.present(popupView2, animated: false, completion: nil)
     }
+    //売り切れ画像の反映
+    func buyover(buyimage:UIImageView, clearView:UIView){
+        buyimage.image = UIImage(named: "売り切れ")
+        clearView.layer.cornerRadius = 4
+        clearView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+    }
     //売り切れボタンの反映
     func buy_after(){
-//        if(myAp.shop_buy_number[0] == 1){
         if(userDefaults.object(forKey: "つの") as? Int == 1){
-            tsuno_buy_after.image = UIImage(named: "売り切れ")
-            tsuno_view.layer.cornerRadius = 4
-            tsuno_view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+            buyover(buyimage: tsuno_buy_after, clearView: tsuno_view)
         }
-//        if(myAp.shop_buy_number[1] == 1){
         if(userDefaults.object(forKey: "めがね_あお") as? Int == 1){
-            bluemegane_buy_after.image = UIImage(named: "売り切れ")
-            bluemegane_view.layer.cornerRadius = 4
-            bluemegane_view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+            buyover(buyimage: bluemegane_buy_after, clearView: bluemegane_view)
         }
-//        if(myAp.shop_buy_number[2] == 1){
         if(userDefaults.object(forKey: "めがね_あか") as? Int == 1){
-            redmegane_buy_after.image = UIImage(named: "売り切れ")
-            redmegane_view.layer.cornerRadius = 4
-            redmegane_view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+            buyover(buyimage: redmegane_buy_after, clearView: redmegane_view)
         }
-//        if(myAp.shop_buy_number[3] == 1){
         if(userDefaults.object(forKey: "はっと") as? Int == 1){
-            hat_buy_after.image = UIImage(named: "売り切れ")
-            hat_view.layer.cornerRadius = 4
-            hat_view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+            buyover(buyimage: hat_buy_after, clearView: hat_view)
         }
-//        if(myAp.shop_buy_number[4] == 1){
         if(userDefaults.object(forKey: "はな") as? Int == 1){
-            flower_buy_after.image = UIImage(named: "売り切れ")
-            flower_view.layer.cornerRadius = 4
-            flower_view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+            buyover(buyimage: flower_buy_after, clearView: flower_view)
         }
-//        if(myAp.shop_buy_number[5] == 1){
         if(userDefaults.object(forKey: "おにのお面") as? Int == 1){
-            omen_buy_after.image = UIImage(named: "売り切れ")
-            omen_view.layer.cornerRadius = 4
-            omen_view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+            buyover(buyimage: omen_buy_after, clearView: omen_view)
         }
-//        if(myAp.shop_buy_number[6] == 1){
         if(userDefaults.object(forKey: "ねこ") as? Int == 1){
-            cat_buy_after.image = UIImage(named: "売り切れ")
-            cat_view.layer.cornerRadius = 4
-            cat_view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+            buyover(buyimage: cat_buy_after, clearView: cat_view)
         }
-//        if(myAp.shop_buy_number[7] == 1){
         if(userDefaults.object(forKey: "ティアラ") as? Int == 1){
-            tiara_buy_after.image = UIImage(named: "売り切れ")
-            tiara_view.layer.cornerRadius = 4
-            tiara_view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+            buyover(buyimage: tiara_buy_after, clearView: tiara_view)
         }
-//        if(myAp.shop_buy_number[8] == 1){
         if(userDefaults.object(forKey: "おうかん") as? Int == 1){
-            crown_buy_after.image = UIImage(named: "売り切れ")
-            crown_view.layer.cornerRadius = 4
-            crown_view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+            buyover(buyimage: crown_buy_after, clearView: crown_view)
         }
     }
 }
@@ -277,15 +160,11 @@ class ShopViewController: UIViewController {
 extension ShopViewController: AVAudioPlayerDelegate {
     func playSound(name: String) {
         guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
-            print("音源ファイルが見つかりません")
             return
         }
         do {
-            // AVAudioPlayerのインスタンス化
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            // AVAudioPlayerのデリゲートをセット
             audioPlayer.delegate = self
-            // 音声の再生
             audioPlayer.play()
         } catch {
         }

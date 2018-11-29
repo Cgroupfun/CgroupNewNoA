@@ -45,12 +45,14 @@ class ShopPopupViewController: UIViewController {
                 controller.buy_after()
             }
             //インベントリに買ったアイテムを追加
-            myAp.item_image[myAp.item_addnumber] = myAp.shop_item[myAp.shop_item_number]
-//            userDefaults.set(myAp.item_image[myAp.item_addnumber], forKey: myAp.buyitem_key[myAp.shop_item_number])
-//            userDefaults.synchronize()
-            if(myAp.item_addnumber < 16){
-                myAp.item_addnumber = myAp.item_addnumber + 1
+            var buynumber:Int = userDefaults.object(forKey: "buyturn") as! Int
+            userDefaults.set(myAp.shop_item[myAp.shop_item_number], forKey: myAp.buyitem_key[buynumber])
+            userDefaults.synchronize()
+            if(buynumber < 9){
+                buynumber = buynumber + 1
             }
+            userDefaults.set(buynumber, forKey: "buyturn")
+            userDefaults.synchronize()
             
             if let controller = self.presentingViewController as? KisekaeViewController {
                 controller.additem()
@@ -69,39 +71,39 @@ class ShopPopupViewController: UIViewController {
     func coin_down(){
         let imagename = myAp.shop_item[myAp.shop_item_number]
         if  (imagename == "つの") {
-            myAp.NoA_coin = myAp.NoA_coin - 10
+            myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - 10
             userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
             userDefaults.synchronize()
         }else if(imagename == "めがね_あお"){
-            myAp.NoA_coin = myAp.NoA_coin - 20
+            myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - 20
             userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
             userDefaults.synchronize()
         }else if(imagename == "めがね_あか"){
-            myAp.NoA_coin = myAp.NoA_coin - 20
+            myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - 20
             userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
             userDefaults.synchronize()
         }else if(imagename == "はっと"){
-            myAp.NoA_coin = myAp.NoA_coin - 30
+            myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - 30
             userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
             userDefaults.synchronize()
         }else if(imagename == "はな"){
-            myAp.NoA_coin = myAp.NoA_coin - 30
+            myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - 30
             userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
             userDefaults.synchronize()
         }else if(imagename == "おにのお面"){
-            myAp.NoA_coin = myAp.NoA_coin - 50
+            myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - 50
             userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
             userDefaults.synchronize()
         }else if(imagename == "ねこ"){
-            myAp.NoA_coin = myAp.NoA_coin - 50
+            myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - 50
             userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
             userDefaults.synchronize()
         }else if(imagename == "ティアラ"){
-            myAp.NoA_coin = myAp.NoA_coin - 80
+            myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - 80
             userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
             userDefaults.synchronize()
         }else if(imagename == "おうかん"){
-            myAp.NoA_coin = myAp.NoA_coin - 100
+            myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - 100
             userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
             userDefaults.synchronize()
         }
@@ -123,11 +125,8 @@ class ShopPopupViewController: UIViewController {
             buyquestion.textAlignment = NSTextAlignment.center
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //アイテム画像の位置
+    //アイテム画像の位置
+    func image_present(){
         let imagename = myAp.shop_item[myAp.shop_item_number]
         if  (imagename == "つの") {
             shopitem.frame = CGRect(x:152, y:250, width:71, height:142)
@@ -150,11 +149,14 @@ class ShopPopupViewController: UIViewController {
         }
         let itemimage = UIImage(named: imagename)
         shopitem.image = itemimage
-        
-        buybutton()
-        
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        buybutton()
+        image_present()
+    }
 }
 
 extension ShopPopupViewController: AVAudioPlayerDelegate {

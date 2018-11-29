@@ -12,11 +12,11 @@ import AVFoundation
 class ViewController: UIViewController {
     
     var audioPlayer: AVAudioPlayer!
+    var myAp = UIApplication.shared.delegate as! AppDelegate
+    let userDefaults = UserDefaults.standard
     //画像取得のための変数
     var task: URLSessionDataTask?
     var isActive: Bool = true
-    
-    var myAp = UIApplication.shared.delegate as! AppDelegate
     
     //お着替えボタン
     @IBAction func gookigae(_ sender: UIButton) {
@@ -58,6 +58,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        userDefaults.register(defaults: [myAp.buyitem_key[0] : ""])
+        userDefaults.register(defaults: [myAp.buyitem_key[1] : ""])
+        userDefaults.register(defaults: [myAp.buyitem_key[2] : ""])
+        userDefaults.register(defaults: [myAp.buyitem_key[3] : ""])
+        userDefaults.register(defaults: [myAp.buyitem_key[4] : ""])
+        userDefaults.register(defaults: [myAp.buyitem_key[5] : ""])
+        userDefaults.register(defaults: [myAp.buyitem_key[6] : ""])
+        userDefaults.register(defaults: [myAp.buyitem_key[7] : ""])
+        userDefaults.register(defaults: [myAp.buyitem_key[8] : ""])
+        userDefaults.register(defaults: ["buyturn" : 0])
         
         //ホーム画面の背景
         let bg = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
