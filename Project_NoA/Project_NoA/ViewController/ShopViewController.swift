@@ -79,7 +79,7 @@ class ShopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userDefaults.register(defaults: ["NoA_coin" : 100])
+        userDefaults.register(defaults: ["NoA_coin" : 300])
         
         buy_after()
         NoAcoin_show()
