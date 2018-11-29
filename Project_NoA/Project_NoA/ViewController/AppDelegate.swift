@@ -24,17 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     //ノアコイン
     var NoA_coin:Int = 100
+    
     //コイン足りるか判定
     var NoAcoin_compare:[Int] = [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        0,0,0,0,0,0,0,0,0
+    ]
+    //購入アイテムキー
+    var buyitem_key:[String] = [
+        "number8","number9","number10","number11","number12","number13","number14","number15","number16"
     ]
     //アイテム購入判定番号
     var shop_buy_number:[Int] = [
@@ -56,16 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         "リボン_青",
         "かえる帽子",
         "星",
-        "おばけ",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "おばけ"
     ]
     //ショップアイテム
     var shop_item:[String] = [
@@ -84,11 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //ショップアイテム番号
     var shop_item_number = 0
     //アイテム追加する順番
-    var item_addnumber = 7
-    //ノアのカスタマイズバージョン
-    var NoA_image:[String] = [
-        "NoA_黄_全身1_嬉"
-    ]
+    var item_addnumber = 0
     
     var NoA_compose:UIImage?
     

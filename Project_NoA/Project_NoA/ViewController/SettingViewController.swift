@@ -311,7 +311,7 @@ class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
 
         self.present(popupView2, animated: false, completion: nil)
     }
-    
+    //画面クリックしたらピッカービューを閉じる
     @IBAction func tapView(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
@@ -332,10 +332,8 @@ extension SettingViewController: AVAudioPlayerDelegate {
         do {
             // AVAudioPlayerのインスタンス化
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            
             // AVAudioPlayerのデリゲートをセット
             audioPlayer.delegate = self
-            
             // 音声の再生
             audioPlayer.play()
         } catch {

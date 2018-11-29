@@ -13,7 +13,7 @@ import AVFoundation
 class KisekaeViewController: UIViewController {
     
     var audioPlayer: AVAudioPlayer!
-    
+    let userDefaults = UserDefaults.standard
     var myAp = UIApplication.shared.delegate as! AppDelegate
     
     @IBAction func goKisekae(segue: UIStoryboardSegue) {
@@ -103,11 +103,12 @@ class KisekaeViewController: UIViewController {
         //ホームノアイメージの更新
         myAp.NoA_compose = compositedImage
         if let controller = self.presentingViewController as? ViewController {
-            controller.NoA_Image()
+            controller.changeNoA()
         }
         playSound(name: "ketteion")
         popup()
     }
+    
     //ノアアイテム
     @IBOutlet weak var NoA_item: UIImageView!
     //リボン
@@ -132,7 +133,12 @@ class KisekaeViewController: UIViewController {
     var megane:String = ""
     //画像表示関数
     func itemimage_information(){
-        let imagename = myAp.item_image[item_number]
+        var imagename:String
+        if(item_number < 7){
+            imagename = myAp.item_image[item_number]
+        }else {
+            imagename = userDefaults.object(forKey: myAp.buyitem_key[myAp.item_addnumber]) as! String
+        }
         if  (imagename == "帽子_赤") || (imagename == "帽子_青"){
             itemname = imagename
             NoA_item.frame = CGRect(x:140, y:105, width:121, height:43)
@@ -173,150 +179,131 @@ class KisekaeViewController: UIViewController {
         NoA_item.image = UIImage(named: itemname)
         ribbon_image.image = UIImage(named: ribbon)
         megane_image.image = UIImage(named: megane)
+        playSound(name: "itemselectSound")
     }
-    //ぼうし_赤
-    @IBAction func red_cap(_ sender: UIButton) {
+    
+    //アイテム表示関数
+    func itemPresent(number: Int){
         //画像番号
-        item_number = 0
+        item_number = number
         //画像表示
         itemimage_information()
         playSound(name: "itemselectSound")
     }
+    
+    //追加アイテム表示関数
+    func additemPresent(number: Int){
+        //画像番号
+        item_number = number
+        if(userDefaults.object(forKey: myAp.buyitem_key[myAp.item_addnumber]) as! String != ""){
+            //画像表示
+            itemimage_information()
+            playSound(name: "itemselectSound")
+        }
+    }
+    
+    //ぼうし_赤
+    @IBAction func red_cap(_ sender: UIButton) {
+        itemPresent(number: 0)
+    }
     //ぼうし_青
     @IBAction func blue_cap(_ sender: UIButton) {
-        //画像番号
-        item_number = 1
-        //画像表示
-        itemimage_information()
+        itemPresent(number: 1)
     }
     //リボン_赤
     @IBAction func red_ribon(_ sender: UIButton) {
-        //画像番号
-        item_number = 2
-        //画像表示
-        itemimage_information()
+        itemPresent(number: 2)
     }
     //リボン_青
     @IBAction func blue_ribon(_ sender: UIButton) {
-        //画像番号
-        item_number = 3
-        //画像表示
-        itemimage_information()
+        itemPresent(number: 3)
     }
     //かえる
     @IBAction func flog(_ sender: UIButton) {
-        //画像番号
-        item_number = 4
-        //画像表示
-        itemimage_information()
+        itemPresent(number: 4)
     }
     //星
     @IBAction func star(_ sender: UIButton) {
-        //画像番号
-        item_number = 5
-        //画像表示
-        itemimage_information()
+        itemPresent(number: 5)
     }
     //おばけ
     @IBAction func gost(_ sender: UIButton) {
-        //画像番号
-        item_number = 6
-        //画像表示
-        itemimage_information()
+        itemPresent(number: 6)
     }
     @IBAction func item8(_ sender: UIButton) {
-        //画像番号
-        item_number = 7
-//        if(myAp.item_image[item_number] != ""){
-        //画像表示
-        itemimage_information()
-//        }
+        myAp.item_addnumber = 0
+        additemPresent(number: 7)
     }
     @IBAction func item9(_ sender: UIButton){
-        //画像番号
-        item_number = 8
-        //画像表示
-        itemimage_information()
+        myAp.item_addnumber = 1
+        additemPresent(number: 8)
     }
     @IBAction func item10(_ sender: UIButton){
-        //画像番号
-        item_number = 9
-        //画像表示
-        itemimage_information()
+        myAp.item_addnumber = 2
+        additemPresent(number: 9)
     }
     @IBAction func item11(_ sender: UIButton){
-        //画像番号
-        item_number = 10
-        //画像表示
-        itemimage_information()
+        myAp.item_addnumber = 3
+        additemPresent(number: 10)
     }
     @IBAction func item12(_ sender: UIButton){
-        //画像番号
-        item_number = 11
-        //画像表示
-        itemimage_information()
+        myAp.item_addnumber = 4
+        additemPresent(number: 11)
     }
     @IBAction func item13(_ sender: UIButton){
-        //画像番号
-        item_number = 12
-        //画像表示
-        itemimage_information()
+        myAp.item_addnumber = 5
+        additemPresent(number: 12)
     }
     @IBAction func item14(_ sender: UIButton){
-        //画像番号
-        item_number = 13
-        //画像表示
-        itemimage_information()
+        myAp.item_addnumber = 6
+        additemPresent(number: 13)
     }
     @IBAction func item15(_ sender: UIButton){
-        //画像番号
-        item_number = 14
-        //画像表示
-        itemimage_information()
+        myAp.item_addnumber = 7
+        additemPresent(number: 14)
     }
     @IBAction func item16(_ sender: UIButton){
-        //画像番号
-        item_number = 15
-        //画像表示
-        itemimage_information()
+        myAp.item_addnumber = 8
+        additemPresent(number: 15)
     }
     
+    //追加アイテムの表示位置
     func additem(){
-        if(myAp.item_image[7] != ""){
-            itemnumber8.image = UIImage(named: myAp.item_image[7])
-            item_place(additem: myAp.item_image[7], addImageView: itemnumber8, x_point: 282, y_point: 404)
+        if(userDefaults.object(forKey: myAp.buyitem_key[0]) as! String != ""){
+            itemnumber8.image = UIImage(named: userDefaults.object(forKey: myAp.buyitem_key[0]) as! String)
+            item_place(additem: userDefaults.object(forKey: myAp.buyitem_key[0]) as! String, addImageView: itemnumber8, x_point: 282, y_point: 404)
         }
-        if(myAp.item_image[8] != ""){
-            itemnumber9.image = UIImage(named: myAp.item_image[8])
-            item_place(additem: myAp.item_image[8], addImageView: itemnumber9, x_point: 28, y_point: 490)
+        if(userDefaults.object(forKey: myAp.buyitem_key[1]) as! String != ""){
+            itemnumber9.image = UIImage(named: userDefaults.object(forKey: myAp.buyitem_key[1]) as! String)
+            item_place(additem: userDefaults.object(forKey: myAp.buyitem_key[1]) as! String, addImageView: itemnumber9, x_point: 28, y_point: 490)
         }
-        if(myAp.item_image[9] != ""){
-            itemnumber10.image = UIImage(named: myAp.item_image[9])
-            item_place(additem: myAp.item_image[9], addImageView: itemnumber10, x_point: 113, y_point: 490)
+        if(userDefaults.object(forKey: myAp.buyitem_key[2]) as! String != ""){
+            itemnumber10.image = UIImage(named: userDefaults.object(forKey: myAp.buyitem_key[2]) as! String)
+            item_place(additem: userDefaults.object(forKey: myAp.buyitem_key[2]) as! String, addImageView: itemnumber10, x_point: 113, y_point: 490)
         }
-        if(myAp.item_image[10] != ""){
-            itemnumber11.image = UIImage(named: myAp.item_image[10])
-            item_place(additem: myAp.item_image[10], addImageView: itemnumber11, x_point: 197, y_point: 490)
+        if(userDefaults.object(forKey: myAp.buyitem_key[3]) as! String != ""){
+            itemnumber11.image = UIImage(named: userDefaults.object(forKey: myAp.buyitem_key[3]) as! String)
+            item_place(additem: userDefaults.object(forKey: myAp.buyitem_key[3]) as! String, addImageView: itemnumber11, x_point: 197, y_point: 490)
         }
-        if(myAp.item_image[11] != ""){
-            itemnumber12.image = UIImage(named: myAp.item_image[11])
-            item_place(additem: myAp.item_image[11], addImageView: itemnumber12, x_point: 282, y_point: 490)
+        if(userDefaults.object(forKey: myAp.buyitem_key[4]) as! String != ""){
+            itemnumber12.image = UIImage(named: userDefaults.object(forKey: myAp.buyitem_key[4]) as! String)
+            item_place(additem: userDefaults.object(forKey: myAp.buyitem_key[4]) as! String, addImageView: itemnumber12, x_point: 282, y_point: 490)
         }
-        if(myAp.item_image[12] != ""){
-            itemnumber13.image = UIImage(named: myAp.item_image[12])
-            item_place(additem: myAp.item_image[12], addImageView: itemnumber13, x_point: 28, y_point: 575)
+        if(userDefaults.object(forKey: myAp.buyitem_key[5]) as! String != ""){
+            itemnumber13.image = UIImage(named: userDefaults.object(forKey: myAp.buyitem_key[5]) as! String)
+            item_place(additem: userDefaults.object(forKey: myAp.buyitem_key[5]) as! String, addImageView: itemnumber13, x_point: 28, y_point: 575)
         }
-        if(myAp.item_image[13] != ""){
-            itemnumber14.image = UIImage(named: myAp.item_image[13])
-            item_place(additem: myAp.item_image[13], addImageView: itemnumber14, x_point: 113, y_point: 575)
+        if(userDefaults.object(forKey: myAp.buyitem_key[6]) as! String != ""){
+            itemnumber14.image = UIImage(named: userDefaults.object(forKey: myAp.buyitem_key[6]) as! String)
+            item_place(additem: userDefaults.object(forKey: myAp.buyitem_key[6]) as! String, addImageView: itemnumber14, x_point: 113, y_point: 575)
         }
-        if(myAp.item_image[14] != ""){
-            itemnumber15.image = UIImage(named: myAp.item_image[14])
-            item_place(additem: myAp.item_image[14], addImageView: itemnumber15, x_point: 197, y_point: 575)
+        if(userDefaults.object(forKey: myAp.buyitem_key[7]) as! String != ""){
+            itemnumber15.image = UIImage(named: userDefaults.object(forKey: myAp.buyitem_key[7]) as! String)
+            item_place(additem: userDefaults.object(forKey: myAp.buyitem_key[7]) as! String, addImageView: itemnumber15, x_point: 197, y_point: 575)
         }
-        if(myAp.item_image[15] != ""){
-            itemnumber16.image = UIImage(named: myAp.item_image[15])
-            item_place(additem: myAp.item_image[15], addImageView: itemnumber16, x_point: 282, y_point: 575)
+        if(userDefaults.object(forKey: myAp.buyitem_key[8]) as! String != ""){
+            itemnumber16.image = UIImage(named: userDefaults.object(forKey: myAp.buyitem_key[8]) as! String)
+            item_place(additem: userDefaults.object(forKey: myAp.buyitem_key[8]) as! String, addImageView: itemnumber16, x_point: 282, y_point: 575)
         }
     }
     
@@ -354,8 +341,7 @@ class KisekaeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //背景
-        view.backgroundColor = UIColor(red: 0.984, green: 0.956, blue: 0.866, alpha: 1.0)
+        
         //アイテムの追加
         additem()
     }
@@ -365,7 +351,6 @@ class KisekaeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 }
-
 
 extension KisekaeViewController: AVAudioPlayerDelegate {
     func playSound(name: String) {
@@ -377,10 +362,8 @@ extension KisekaeViewController: AVAudioPlayerDelegate {
         do {
             // AVAudioPlayerのインスタンス化
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            
             // AVAudioPlayerのデリゲートをセット
             audioPlayer.delegate = self
-            
             // 音声の再生
             audioPlayer.play()
         } catch {
