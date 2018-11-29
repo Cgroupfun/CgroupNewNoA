@@ -14,11 +14,11 @@
             <objects>
                 <controller identifier="Oyasumi" id="Kra-HJ-O9O">
                     <items>
-                        <group width="1" height="151" alignment="left" backgroundImage="AppleWatch_睡眠" animationDuration="3" id="auQ-Q4-1x7"/>
+                        <group width="1" height="169" alignment="left" backgroundImage="AppleWatch_睡眠" animationDuration="3" id="auQ-Q4-1x7"/>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="226" y="51"/>
+            <point key="canvasLocation" x="226" y="60"/>
         </scene>
         <!--home-->
         <scene sceneID="aou-V4-d1y">
@@ -74,46 +74,68 @@
         <!--study-->
         <scene sceneID="Bew-cx-Z6p">
             <objects>
-                <controller identifier="study" id="RL0-1y-4Mt">
+                <controller identifier="study" id="RL0-1y-4Mt" customClass="studyController" customModule="Project_NoA_WatchKit_Extension">
                     <items>
-                        <group width="1" height="152" alignment="left" backgroundImage="seikatsu_study" animationDuration="2" id="UVi-oa-VlL"/>
+                        <group width="1" height="162" alignment="left" backgroundImage="seikatsu_study" animationDuration="2" id="UVi-oa-VlL"/>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="506" y="52"/>
+            <point key="canvasLocation" x="506" y="56.5"/>
+        </scene>
+        <!--tooth-->
+        <scene sceneID="tnh-zm-yFA">
+            <objects>
+                <controller identifier="tooth" id="HnK-WY-riQ" customClass="toothController" customModule="Project_NoA_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="165" alignment="left" backgroundImage="seikatsu_hamigaki" animationDuration="1" id="fde-NE-Oq8"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="816" y="-245"/>
         </scene>
         <!--wake-->
         <scene sceneID="CfE-gX-K3Y">
             <objects>
-                <controller identifier="wake" id="rwI-05-1Gd">
+                <controller identifier="wake" id="rwI-05-1Gd" customClass="wakeController" customModule="Project_NoA_WatchKit_Extension">
                     <items>
-                        <group width="1" height="151" alignment="left" backgroundImage="seikatsu_kisyou" animationDuration="2" id="bbU-aL-9Kf"/>
+                        <group width="1" height="160" alignment="left" backgroundImage="seikatsu_kishou" animationDuration="2" id="bbU-aL-9Kf"/>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="816" y="64"/>
+            <point key="canvasLocation" x="816" y="68.5"/>
         </scene>
         <!--sleep-->
         <scene sceneID="g3y-a4-1L6">
             <objects>
-                <controller identifier="sleep" id="Eqs-mU-N7W">
+                <controller identifier="sleep" id="Eqs-mU-N7W" customClass="sleepController" customModule="Project_NoA_WatchKit_Extension">
                     <items>
-                        <group width="1" height="155" alignment="left" backgroundImage="seikatu_syushin" animationDuration="2" id="ZZi-DI-gh4"/>
+                        <group width="1" height="162" alignment="left" backgroundImage="seikatsu_syushin" animationDuration="2" id="ZZi-DI-gh4"/>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="806" y="390"/>
+            <point key="canvasLocation" x="806" y="393.5"/>
+        </scene>
+        <!--drug-->
+        <scene sceneID="Qz7-bY-7w4">
+            <objects>
+                <controller identifier="drug" id="Quj-he-ck9" customClass="drugController" customModule="Project_NoA_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="155" alignment="left" backgroundImage="seikatsu_kusuri" animationDuration="2" id="rr4-bg-LEn"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="790" y="664"/>
         </scene>
         <!--Ouenn-->
         <scene sceneID="OpR-vb-9cZ">
             <objects>
-                <controller identifier="Ouenn" title="Ouenn" id="Tkc-re-DAx">
+                <controller identifier="Ouenn" title="Ouenn" id="Tkc-re-DAx" customClass="ouennController" customModule="Project_NoA_WatchKit_Extension">
                     <items>
-                        <group width="1" height="147" alignment="left" backgroundImage="AppleWatch_応援" animationDuration="7" id="ErO-K7-2Jz"/>
+                        <group width="1" height="168" alignment="left" backgroundImage="AppleWatch_応援" animationDuration="7" id="ErO-K7-2Jz"/>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="506" y="378"/>
+            <point key="canvasLocation" x="506" y="387"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
