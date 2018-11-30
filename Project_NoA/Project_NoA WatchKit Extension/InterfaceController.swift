@@ -34,7 +34,7 @@ class InterfaceController: WKInterfaceController {
     
     //タッチで喋る、動く
     @IBAction func Move(_ sender: Any) {
-        let listUrl = "https://2kzwczqeb4.execute-api.ap-northeast-1.amazonaws.com/NoA/"
+        /*let listUrl = "https://2kzwczqeb4.execute-api.ap-northeast-1.amazonaws.com/NoA/"
         
         guard let url = URL(string: listUrl) else { return }
         
@@ -49,7 +49,17 @@ class InterfaceController: WKInterfaceController {
             let json = try? JSONDecoder().decode([Items].self, from: data!)
             //print(InterfaceController().Items.name)
             
-            }.resume()
+            }.resume()*/
+        
+        let url: URL = URL(string: "https://2kzwczqeb4.execute-api.ap-northeast-1.amazonaws.com/NoA")!
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url), completionHandler: { (data, response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            } else {
+                print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue) as Any)
+            }
+        })
+        task.resume()
         
             //print(json.wake)
             
