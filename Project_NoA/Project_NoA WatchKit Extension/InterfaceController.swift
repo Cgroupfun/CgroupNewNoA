@@ -12,14 +12,28 @@ import UIKit
 import AVFoundation
 
 class InterfaceController: WKInterfaceController {
+    var batteryLevel: Float = WKInterfaceDevice.current().batteryLevel
+
     //時間関係の変数
-    var TimeSchedule : [String:String] = ["wake":"16:35","sleep":"20:00","breakfast":"08:00","study":"16:26","drug":"16:32","tooth1":"19:34"]
+    var TimeSchedule : [String:String] = ["wake":"19:11","sleep":"20:00","breakfast":"08:00","study":"16:26","drug":"16:32","tooth1":"19:34"]
     var string = "00:00"
     //構造体
     struct Items : Codable{
-        var id : Int
         var name : String
+        var breakast :String
+        var dinner :String
+        var drug_breakfast :String
+        var drug_dinner :String
+        var drug_lunch :String
+        var lunch :String
+        var sleep :String
+        var tooth :String
+        var tooth2 :String
+        var tooth3 :String
+        var tooth4 :String
+        var wake :String
         }
+    
     
     //音声に関する変数の生成
     let engine = AVAudioEngine()
@@ -50,24 +64,22 @@ class InterfaceController: WKInterfaceController {
             //print(InterfaceController().Items.name)
             
             }.resume()*/
+        //データの受信
         
         let url: URL = URL(string: "https://2kzwczqeb4.execute-api.ap-northeast-1.amazonaws.com/NoA")!
         let task = URLSession.shared.dataTask(with: URLRequest(url: url), completionHandler: { (data, response, error) in
             if error != nil {
-                print(error!.localizedDescription)
+                //print(error!.localizedDescription)
             } else {
-                print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue) as Any)
+                print(String(data: data!, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue)) as Any)
+    //            let jsonString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+//              let weatherNews = try! JSONDecoder().decode(Items.self, from: jsonString.data(using: .utf8)!)
+
             }
         })
         task.resume()
-        
-            //print(json.wake)
-            
+
         musicSet(name:"NoA挨拶サンプル", type:"mp3")
-        // オーディオファイルの再生をスケジュールする
-        self.audioPlayerNode.scheduleFile(self.audioFile!, at: nil, completionHandler: nil)
-        // 再生する
-        self.audioPlayerNode.play()
 
     animate(withDuration: 0.5) { () -> Void in
             self.NoA.setHorizontalAlignment(WKInterfaceObjectHorizontalAlignment.right)
@@ -89,8 +101,10 @@ class InterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         // Configure interface objects here.
+        //充電監視の許可
+        WKInterfaceDevice.current().isBatteryMonitoringEnabled = true
+        //初期の画像取得
         getImage()
-        
     }
     
     override func willActivate() {
@@ -98,17 +112,13 @@ class InterfaceController: WKInterfaceController {
         super.willActivate()
     
         
-        Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(InterfaceController.getTime), userInfo: nil, repeats: true)
-       Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(InterfaceController.support), userInfo: nil, repeats: true)
-
+        Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(InterfaceController.getTime), userInfo: nil, repeats: true)
+       Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(InterfaceController.support), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(InterfaceController.zyuudenn), userInfo: nil, repeats: true)
         //画像取得に関するもの
         isActive = true
-        //充電時の画面遷移
-        if WKInterfaceDevice.current().batteryState == WKInterfaceDeviceBatteryState.charging ||  WKInterfaceDevice.current().batteryState == WKInterfaceDeviceBatteryState.full{
-            print("充電検知")
-            //NoAの寝てる画像に移動
-            pushController(withName: "Oyasumi", context: "none")
-        }
+        
+    
     }
     
     override func didDeactivate() {
@@ -124,8 +134,10 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func outSound() {
+        print("画像取得")
        getImage()
     }
+    
     //音楽をながす関数の作成
     func musicSet (name:String, type:String){
         do {
@@ -145,6 +157,10 @@ class InterfaceController: WKInterfaceController {
         } catch {
             fatalError("\(error)")
         }
+        // オーディオファイルの再生をスケジュールする
+        self.audioPlayerNode.scheduleFile(self.audioFile!, at: nil, completionHandler: nil)
+        // 再生する
+        self.audioPlayerNode.play()
     }
     
     //生活支援に関する関数
@@ -162,14 +178,21 @@ class InterfaceController: WKInterfaceController {
                     }
                 }
            }
-    
+    @objc func zyuudenn(){
+        let batteryState: WKInterfaceDeviceBatteryState = WKInterfaceDevice.current().batteryState
+
+        if (batteryState == WKInterfaceDeviceBatteryState.charging ||  batteryState == WKInterfaceDeviceBatteryState.full) {
+            //NoAの寝てる画像に移動
+            presentController(withName: "Oyasumi", context: "none")
+        }
+    }
     //時間取得の関数
     @objc func getTime(){
         
         let now = NSDate()
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
+        formatter.dateFormat = "HH : mm"
         
         string = formatter.string(from: now as Date)
     }
