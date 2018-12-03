@@ -104,7 +104,7 @@ class InterfaceController: WKInterfaceController {
             let decoder = JSONDecoder()
             let feed = try? decoder.decode(noaSetting.self, from: response.data!)
             print(feed as Any)
-            print(feed?.Items[0].wake as Any)//{"S":9:00}みたいに出てくる
+            print(feed?.Items[0].wake!["S"] as Any)//{"S":9:00}みたいに出てくる
             
         }
 
