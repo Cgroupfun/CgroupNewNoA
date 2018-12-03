@@ -67,21 +67,46 @@ class InterfaceController: WKInterfaceController {
             }.resume()*/
         //データの受信
         
-        let url: URL = URL(string: "https://2kzwczqeb4.execute-api.ap-northeast-1.amazonaws.com/NoA")!
+        struct noaSetting : Codable{
+            var ScannedCount : Int
+            var Items : [noaItems]
+            var Count : Int
+        }
+        
+        struct noaItems : Codable{
+            var ID :  Dictionary<String, String>?
+            var breakfast :  Dictionary<String, String>?
+            var dineer :  Dictionary<String, String>?
+            var drug_breakfast :  Dictionary<String, String>?
+            var drug_dineer :  Dictionary<String, String>?
+            var drug_lunch :  Dictionary<String, String>?
+            var lunch :  Dictionary<String, String>?
+            var sleep :  Dictionary<String, String>?
+            var tooth :  Dictionary<String, String>?
+            var tooth2 :  Dictionary<String, String>?
+            var tooth3 :  Dictionary<String, String>?
+            var tooth4 :  Dictionary<String, String>?
+            var wake :  Dictionary<String, String>?
+        }
+        /*let url: URL = URL(string: "https://2kzwczqeb4.execute-api.ap-northeast-1.amazonaws.com/NoA/nomapping")!
         let task = URLSession.shared.dataTask(with: URLRequest(url: url), completionHandler: { (data, response, error) in
             if error != nil {
                 //print(error!.localizedDescription)
             } else {
-                print(type(of:data))
-                print(String(data: data!, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue)) as Any)
-    //            let jsonString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-//              let weatherNews = try! JSONDecoder().decode(Items.self, from: jsonString.data(using: .utf8)!)
-                
-                
-
+                let decoder = JSONDecoder()
+                let feed = try? decoder.decode(noaSetting.self, from: data!)
+                print(feed as Any)
             }
         })
-        task.resume()
+        task.resume()*/
+        
+        Alamofire.request("https://2kzwczqeb4.execute-api.ap-northeast-1.amazonaws.com/NoA/nomapping").responseJSON {response in
+            let decoder = JSONDecoder()
+            let feed = try? decoder.decode(noaSetting.self, from: response.data!)
+            print(feed as Any)
+            print(feed?.Items[0].wake as Any)//{"S":9:00}みたいに出てくる
+            
+        }
 
         musicSet(name:"NoA挨拶サンプル", type:"mp3")
 
