@@ -20,8 +20,6 @@
 		2861503721A2A43400251AD8 /* ketteion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2861503621A2A43400251AD8 /* ketteion.mp3 */; };
 		2864D96E2170866F0003E01C /* KisekaeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2864D96D2170866F0003E01C /* KisekaeViewController.swift */; };
 		2864D972217086AE0003E01C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2864D971217086AE0003E01C /* SettingViewController.swift */; };
-		289E21A5219AC62B002175D8 /* se.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289E21A3219AC62B002175D8 /* se.wav */; };
-		289E21A6219AC62B002175D8 /* se2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289E21A4219AC62B002175D8 /* se2.wav */; };
 		28DDDE5B2179B1F100C679D8 /* Kisekae.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DDDE5A2179B1F100C679D8 /* Kisekae.storyboard */; };
 		28DDDE5D2179B20300C679D8 /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DDDE5C2179B20300C679D8 /* Shop.storyboard */; };
 		28DDDE5F2179B22600C679D8 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DDDE5E2179B22600C679D8 /* Setting.storyboard */; };
@@ -39,6 +37,12 @@
 		4D13B5CD215DFE6800095F97 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13B5CC215DFE6800095F97 /* ExtensionDelegate.swift */; };
 		4D13B5CF215DFE6800095F97 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13B5CE215DFE6800095F97 /* NotificationController.swift */; };
 		4D13B5D1215DFE6800095F97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D13B5D0215DFE6800095F97 /* Assets.xcassets */; };
+		4D39DEA821B4F90600333F16 /* yoruneruyo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEA721B4F90600333F16 /* yoruneruyo.mp3 */; };
+		4D39DEAA21B4F90B00333F16 /* hawomigaku.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEA921B4F90B00333F16 /* hawomigaku.mp3 */; };
+		4D39DEAC21B4F91600333F16 /* benkyousiro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEAB21B4F91600333F16 /* benkyousiro.mp3 */; };
+		4D39DEAE21B4F91D00333F16 /* oyasumi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEAD21B4F91D00333F16 /* oyasumi.mp3 */; };
+		4D39DEB021B4F92200333F16 /* asadayo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEAF21B4F92200333F16 /* asadayo.mp3 */; };
+		4D39DEB221B4F92800333F16 /* mesi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEB121B4F92700333F16 /* mesi.mp3 */; };
 		4DE29FF2219BEE7500650264 /* NoA挨拶サンプル.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4DE29FF1219BEE7500650264 /* NoA挨拶サンプル.mp3 */; };
 		A64FA4157A8703FDBFB936AA /* Pods_Project_NoA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39BE910690AACB9B67EB2383 /* Pods_Project_NoA.framework */; };
 		D860FD20142E872B98BE8AB9 /* Pods_Project_NoA_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE20229AB3FB1F42E1C61B9C /* Pods_Project_NoA_WatchKit_Extension.framework */; };
@@ -101,8 +105,6 @@
 		2861503621A2A43400251AD8 /* ketteion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ketteion.mp3; sourceTree = "<group>"; };
 		2864D96D2170866F0003E01C /* KisekaeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisekaeViewController.swift; sourceTree = "<group>"; };
 		2864D971217086AE0003E01C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		289E21A3219AC62B002175D8 /* se.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = se.wav; sourceTree = "<group>"; };
-		289E21A4219AC62B002175D8 /* se2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = se2.wav; sourceTree = "<group>"; };
 		28DDDE5A2179B1F100C679D8 /* Kisekae.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Kisekae.storyboard; sourceTree = "<group>"; };
 		28DDDE5C2179B20300C679D8 /* Shop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shop.storyboard; sourceTree = "<group>"; };
 		28DDDE5E2179B22600C679D8 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
@@ -126,6 +128,12 @@
 		4D13B5D0215DFE6800095F97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D13B5D2215DFE6800095F97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D13B5D3215DFE6800095F97 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		4D39DEA721B4F90600333F16 /* yoruneruyo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yoruneruyo.mp3; sourceTree = "<group>"; };
+		4D39DEA921B4F90B00333F16 /* hawomigaku.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hawomigaku.mp3; sourceTree = "<group>"; };
+		4D39DEAB21B4F91600333F16 /* benkyousiro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = benkyousiro.mp3; sourceTree = "<group>"; };
+		4D39DEAD21B4F91D00333F16 /* oyasumi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = oyasumi.mp3; sourceTree = "<group>"; };
+		4D39DEAF21B4F92200333F16 /* asadayo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = asadayo.mp3; sourceTree = "<group>"; };
+		4D39DEB121B4F92700333F16 /* mesi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mesi.mp3; sourceTree = "<group>"; };
 		4DE29FF1219BEE7500650264 /* NoA挨拶サンプル.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "NoA挨拶サンプル.mp3"; sourceTree = "<group>"; };
 		5F81160F82FF5C3E6FAAFD4F /* Pods-Project_NoA WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_NoA WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-Project_NoA WatchKit App/Pods-Project_NoA WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		804841CD152270CD655446E5 /* libPods-Project_NoA WatchKit App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project_NoA WatchKit App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -268,9 +276,7 @@
 		4D13B5C9215DFE6800095F97 /* Project_NoA WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				4DE29FF1219BEE7500650264 /* NoA挨拶サンプル.mp3 */,
-				289E21A3219AC62B002175D8 /* se.wav */,
-				289E21A4219AC62B002175D8 /* se2.wav */,
+				4D39DEA421B4F3A700333F16 /* sound */,
 				4D13B5CA215DFE6800095F97 /* InterfaceController.swift */,
 				4D01F35621A5708700910567 /* soundController.swift */,
 				4D13B5CC215DFE6800095F97 /* ExtensionDelegate.swift */,
@@ -280,6 +286,20 @@
 				4D13B5D3215DFE6800095F97 /* PushNotificationPayload.apns */,
 			);
 			path = "Project_NoA WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		4D39DEA421B4F3A700333F16 /* sound */ = {
+			isa = PBXGroup;
+			children = (
+				4D39DEA921B4F90B00333F16 /* hawomigaku.mp3 */,
+				4D39DEAB21B4F91600333F16 /* benkyousiro.mp3 */,
+				4D39DEB121B4F92700333F16 /* mesi.mp3 */,
+				4D39DEAF21B4F92200333F16 /* asadayo.mp3 */,
+				4D39DEA721B4F90600333F16 /* yoruneruyo.mp3 */,
+				4D39DEAD21B4F91D00333F16 /* oyasumi.mp3 */,
+				4DE29FF1219BEE7500650264 /* NoA挨拶サンプル.mp3 */,
+			);
+			name = sound;
 			sourceTree = "<group>";
 		};
 		CA7632EC8C3C613B6B40AD0B /* Pods */ = {
@@ -428,10 +448,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				289E21A6219AC62B002175D8 /* se2.wav in Resources */,
-				289E21A5219AC62B002175D8 /* se.wav in Resources */,
+				4D39DEAE21B4F91D00333F16 /* oyasumi.mp3 in Resources */,
+				4D39DEAA21B4F90B00333F16 /* hawomigaku.mp3 in Resources */,
+				4D39DEB221B4F92800333F16 /* mesi.mp3 in Resources */,
 				4DE29FF2219BEE7500650264 /* NoA挨拶サンプル.mp3 in Resources */,
 				4D13B5D1215DFE6800095F97 /* Assets.xcassets in Resources */,
+				4D39DEA821B4F90600333F16 /* yoruneruyo.mp3 in Resources */,
+				4D39DEAC21B4F91600333F16 /* benkyousiro.mp3 in Resources */,
+				4D39DEB021B4F92200333F16 /* asadayo.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

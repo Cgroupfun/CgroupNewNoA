@@ -12,7 +12,7 @@
         <!--Oyasumi-->
         <scene sceneID="S4U-Ch-NFl">
             <objects>
-                <controller identifier="Oyasumi" id="Kra-HJ-O9O">
+                <controller identifier="Oyasumi" id="Kra-HJ-O9O" customClass="sleepNoASController" customModule="Project_NoA_WatchKit_Extension">
                     <items>
                         <group width="1" height="169" alignment="left" backgroundImage="AppleWatch_睡眠" animationDuration="3" id="auQ-Q4-1x7"/>
                     </items>
@@ -38,7 +38,7 @@
                                 <action selector="outSound" destination="AgC-eL-Hgc" id="qvt-k4-Ubx"/>
                             </connections>
                         </button>
-                        <imageView width="93" height="140" alignment="center" verticalAlignment="bottom" id="jiQ-kT-Pdd">
+                        <imageView width="93" height="130" alignment="center" verticalAlignment="bottom" id="jiQ-kT-Pdd">
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="vFx-wn-hOh">
                                     <connections>
@@ -53,7 +53,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="226" y="398"/>
+            <point key="canvasLocation" x="226" y="393"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -113,14 +113,37 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="806" y="393.5"/>
+            <point key="canvasLocation" x="1061" y="70"/>
+        </scene>
+        <!--agree-->
+        <scene sceneID="B3E-ba-dbk">
+            <objects>
+                <controller identifier="agree" id="s3F-nx-AyU" customClass="agreeController" customModule="Project_NoA_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="おめでとう" id="2gF-nV-bV8">
+                            <connections>
+                                <action selector="backHome" destination="s3F-nx-AyU" id="qRJ-26-VhV"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="816" y="378"/>
         </scene>
         <!--drug-->
         <scene sceneID="Qz7-bY-7w4">
             <objects>
                 <controller identifier="drug" id="Quj-he-ck9" customClass="drugController" customModule="Project_NoA_WatchKit_Extension">
                     <items>
-                        <group width="1" height="155" alignment="left" backgroundImage="seikatsu_kusuri" animationDuration="2" id="rr4-bg-LEn"/>
+                        <group width="1" height="155" alignment="left" backgroundImage="seikatsu_kusuri" animationDuration="2" id="rr4-bg-LEn">
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="hn6-hK-5yl">
+                                    <connections>
+                                        <action selector="agree:" destination="Quj-he-ck9" id="IIG-yS-wCE"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                            </gestureRecognizers>
+                        </group>
                     </items>
                 </controller>
             </objects>
@@ -131,7 +154,15 @@
             <objects>
                 <controller identifier="Ouenn" title="Ouenn" id="Tkc-re-DAx" customClass="ouennController" customModule="Project_NoA_WatchKit_Extension">
                     <items>
-                        <group width="1" height="168" alignment="left" backgroundImage="AppleWatch_応援" animationDuration="7" id="ErO-K7-2Jz"/>
+                        <group width="1" height="168" alignment="left" backgroundImage="AppleWatch_応援" animationDuration="7" id="ErO-K7-2Jz">
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="Kur-k4-rww">
+                                    <connections>
+                                        <action selector="agree:" destination="Tkc-re-DAx" id="NAB-8Y-cWs"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                            </gestureRecognizers>
+                        </group>
                     </items>
                 </controller>
             </objects>
