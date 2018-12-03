@@ -238,17 +238,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="NoA_item" destination="a8c-7F-wUi" id="2AX-k0-xJ8"/>
-                        <outlet property="itemnumber10" destination="qyb-9P-cQk" id="wd5-Vi-sGa"/>
-                        <outlet property="itemnumber11" destination="sNe-wX-iDp" id="R2U-YV-0yL"/>
-                        <outlet property="itemnumber12" destination="LI0-mB-A7L" id="oYZ-VS-sTv"/>
-                        <outlet property="itemnumber13" destination="DJQ-8d-HKJ" id="wwY-cP-D8Y"/>
-                        <outlet property="itemnumber14" destination="cPH-CF-OZG" id="LSP-El-qhk"/>
-                        <outlet property="itemnumber15" destination="LaY-ar-E2t" id="R17-3u-uBj"/>
-                        <outlet property="itemnumber16" destination="kNl-1J-TWd" id="Uyx-qI-MGv"/>
-                        <outlet property="itemnumber8" destination="pNz-DU-jgv" id="Ysu-lk-3oo"/>
-                        <outlet property="itemnumber9" destination="rqe-gE-4Yo" id="vhe-xg-sdt"/>
                         <outlet property="megane_image" destination="fug-d4-aE2" id="CMr-dD-KmL"/>
                         <outlet property="ribbon_image" destination="pdQ-Kp-U3y" id="iid-XE-DOe"/>
+                        <outletCollection property="NoA_additem" destination="pNz-DU-jgv" collectionClass="NSMutableArray" id="fiD-rK-v77"/>
+                        <outletCollection property="NoA_additem" destination="rqe-gE-4Yo" collectionClass="NSMutableArray" id="aJo-M4-wo8"/>
+                        <outletCollection property="NoA_additem" destination="qyb-9P-cQk" collectionClass="NSMutableArray" id="Q07-mv-Zhy"/>
+                        <outletCollection property="NoA_additem" destination="sNe-wX-iDp" collectionClass="NSMutableArray" id="J1o-ZP-tir"/>
+                        <outletCollection property="NoA_additem" destination="LI0-mB-A7L" collectionClass="NSMutableArray" id="izf-7A-7sZ"/>
+                        <outletCollection property="NoA_additem" destination="DJQ-8d-HKJ" collectionClass="NSMutableArray" id="kuc-VA-mbe"/>
+                        <outletCollection property="NoA_additem" destination="cPH-CF-OZG" collectionClass="NSMutableArray" id="D1o-uU-4I8"/>
+                        <outletCollection property="NoA_additem" destination="LaY-ar-E2t" collectionClass="NSMutableArray" id="P3R-B5-55F"/>
+                        <outletCollection property="NoA_additem" destination="kNl-1J-TWd" collectionClass="NSMutableArray" id="gPJ-kM-VLg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJV-35-D9X" userLabel="First Responder" sceneMemberID="firstResponder"/>

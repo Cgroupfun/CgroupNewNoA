@@ -30,11 +30,11 @@ class ShopPopupViewController: UIViewController {
     //かうボタン
     @IBAction func nextButton(_ sender: UIButton) {
         if(myAp.NoAcoin_compare[myAp.shop_item_number] == 1){
+            userDefaults.set(1, forKey: myAp.shopbuynumber[myAp.shop_item_number])
+            userDefaults.synchronize()
             //売り切れか判定する
-            myAp.shop_buy_number[myAp.shop_item_number] = 1
             userDefaults.set(myAp.shop_buy_number[myAp.shop_item_number], forKey: myAp.shop_item[myAp.shop_item_number])
             userDefaults.synchronize()
-            
             //コイン減少
             coin_down()
             if let controller = self.presentingViewController as? ShopViewController {
@@ -68,50 +68,23 @@ class ShopPopupViewController: UIViewController {
         }
     }
     
+    func NoAcoin_down(dowm:Int){
+        myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - dowm
+        userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
+        userDefaults.synchronize()
+    }
+    
     func coin_down(){
         let imagename = myAp.shop_item[myAp.shop_item_number]
-        if  (imagename == "つの") {
-            myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - 10
-            userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
-            userDefaults.synchronize()
-        }else if(imagename == "めがね_あお"){
-            myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - 20
-            userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
-            userDefaults.synchronize()
-        }else if(imagename == "めがね_あか"){
-            myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - 20
-            userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
-            userDefaults.synchronize()
-        }else if(imagename == "はっと"){
-            myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - 30
-            userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
-            userDefaults.synchronize()
-        }else if(imagename == "はな"){
-            myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - 30
-            userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
-            userDefaults.synchronize()
-        }else if(imagename == "おにのお面"){
-            myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - 50
-            userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
-            userDefaults.synchronize()
-        }else if(imagename == "ねこ"){
-            myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - 50
-            userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
-            userDefaults.synchronize()
-        }else if(imagename == "ティアラ"){
-            myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - 80
-            userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
-            userDefaults.synchronize()
-        }else if(imagename == "おうかん"){
-            myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - 100
-            userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
-            userDefaults.synchronize()
+        for i in (0...8){
+            if(imagename == myAp.shop_item[i]){
+                NoAcoin_down(dowm: myAp.shopitem_price[i])
+            }
         }
     }
     
     //買うボタン非表示・表示
     func buybutton(){
-        //買うボタン表示
         if (myAp.NoAcoin_compare[myAp.shop_item_number] == 1){
             buy_image.image = UIImage(named: "kaubotan")
             buyquestion.text = "このアイテムをかう？"

@@ -13,10 +13,8 @@ import AVFoundation
 class MovieViewController: UIViewController {
     
     var audioPlayer: AVAudioPlayer!
-    //応援ボタン
-    @IBAction func ouenButton(_ sender: UIButton) {
-        playSound(name: "sousaon")
-    }
+    let userDefaults = UserDefaults.standard
+    var myAp = UIApplication.shared.delegate as! AppDelegate
     //吸入ボタン
     @IBAction func breathe(_ sender: UIButton) {
         moviePlay(movieURL: "https://s3-ap-northeast-1.amazonaws.com/noastorage/NoA%E5%90%B8%E5%85%A5%E9%9F%B3%E3%81%82%E3%82%8Av1.mp4")
@@ -29,8 +27,13 @@ class MovieViewController: UIViewController {
     @IBAction func mri(_ sender: UIButton) {
         moviePlay(movieURL: "")
     }
-    //動画再生
+    
     func moviePlay(movieURL: String){
+        //ノアコイン増加
+        myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int + 10
+        userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
+        userDefaults.synchronize()
+        //動画再生
         guard let url = URL(string: movieURL) else {
             return
         }
@@ -55,13 +58,9 @@ extension MovieViewController: AVAudioPlayerDelegate {
             print("音源ファイルが見つかりません")
             return
         }
-        
         do {
-            // AVAudioPlayerのインスタンス化
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            // AVAudioPlayerのデリゲートをセット
             audioPlayer.delegate = self
-            // 音声の再生
             audioPlayer.play()
         } catch {
         }

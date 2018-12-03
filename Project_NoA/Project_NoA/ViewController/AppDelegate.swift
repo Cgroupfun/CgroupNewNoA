@@ -35,15 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ]
     //アイテム購入判定番号
     var shop_buy_number:[Int] = [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        0,0,0,0,0,0,0,0,0
+    ]
+    //アイテム価格
+    var shopitem_price:[Int] = [
+        10,20,20,30,30,50,50,80,100
     ]
     //ノアのアイテム
     var item_image:[String] = [
@@ -66,6 +62,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         "ねこ",
         "ティアラ",
         "おうかん"
+    ]
+    
+    var shopbuynumber:[String] = [
+        "tsuno",
+        "bulemegane",
+        "redmegane",
+        "hat",
+        "flower",
+        "omen",
+        "cat",
+        "tiara",
+        "crown"
     ]
     //所持アイテム番号
     var NoA_image_number = 0
