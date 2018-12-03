@@ -58,18 +58,27 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        userDefaults.register(defaults: [myAp.buyitem_key[0] : ""])
-        userDefaults.register(defaults: [myAp.buyitem_key[1] : ""])
-        userDefaults.register(defaults: [myAp.buyitem_key[2] : ""])
-        userDefaults.register(defaults: [myAp.buyitem_key[3] : ""])
-        userDefaults.register(defaults: [myAp.buyitem_key[4] : ""])
-        userDefaults.register(defaults: [myAp.buyitem_key[5] : ""])
-        userDefaults.register(defaults: [myAp.buyitem_key[6] : ""])
-        userDefaults.register(defaults: [myAp.buyitem_key[7] : ""])
-        userDefaults.register(defaults: [myAp.buyitem_key[8] : ""])
-        userDefaults.register(defaults: ["buyturn" : 0])
-        
+        //永続データの初期値
+        userDefaults.register(defaults: [myAp.buyitem_key[0]   : "",
+                                         myAp.buyitem_key[1]   : "",
+                                         myAp.buyitem_key[2]   : "",
+                                         myAp.buyitem_key[3]   : "",
+                                         myAp.buyitem_key[4]   : "",
+                                         myAp.buyitem_key[5]   : "",
+                                         myAp.buyitem_key[6]   : "",
+                                         myAp.buyitem_key[7]   : "",
+                                         myAp.buyitem_key[8]   : "",
+                                         "NoA_coin"            : 300,
+                                         myAp.shopbuynumber[0] : 0,
+                                         myAp.shopbuynumber[1] : 0,
+                                         myAp.shopbuynumber[2] : 0,
+                                         myAp.shopbuynumber[3] : 0,
+                                         myAp.shopbuynumber[4] : 0,
+                                         myAp.shopbuynumber[5] : 0,
+                                         myAp.shopbuynumber[6] : 0,
+                                         myAp.shopbuynumber[7] : 0,
+                                         myAp.shopbuynumber[8] : 0,
+                                         "buyturn"             : 0])
         //ホーム画面の背景
         let bg = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
         bg.image = UIImage(named: "iPhone6_Top.png")

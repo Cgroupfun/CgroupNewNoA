@@ -109,22 +109,16 @@ class KisekaeViewController: UIViewController {
         popup()
     }
     
+    @IBOutlet var NoA_additem: [UIImageView]!
+    
+//    @IBOutlet var KisekaeitemAfter: [UIImageView]!
+    
     //ノアアイテム
     @IBOutlet weak var NoA_item: UIImageView!
     //リボン
     @IBOutlet weak var ribbon_image: UIImageView!
     //眼鏡
     @IBOutlet weak var megane_image: UIImageView!
-    
-    @IBOutlet weak var itemnumber8: UIImageView!
-    @IBOutlet weak var itemnumber9: UIImageView!
-    @IBOutlet weak var itemnumber10: UIImageView!
-    @IBOutlet weak var itemnumber11: UIImageView!
-    @IBOutlet weak var itemnumber12: UIImageView!
-    @IBOutlet weak var itemnumber13: UIImageView!
-    @IBOutlet weak var itemnumber14: UIImageView!
-    @IBOutlet weak var itemnumber15: UIImageView!
-    @IBOutlet weak var itemnumber16: UIImageView!
     //画像番号定数
     var item_number:Int = 0
     //選択アイテム
@@ -267,75 +261,54 @@ class KisekaeViewController: UIViewController {
         additemPresent(number: 15)
     }
     
+    let item_xpoint:[Int] = [
+        282,28,113,197,282,28,113,197,282
+    ]
+    
+    let item_ypoint:[Int] = [
+        404,490,490,490,490,575,575,575,575
+    ]
+    
+    let item_addX:[Int] = [
+        18,2,2,2,2,2,6,2,2
+    ]
+    
+    let item_addY:[Int] = [
+        0,23,23,8,3,-11,3,16,6
+    ]
+    //インベントリ表示画像のx幅
+    let xitem_width:[Int] = [
+        25,60,60,60,60,59,53,60,60
+    ]
+    //インベントリ表示画像のy幅
+    let yitem_width:[Int] = [
+        64,22,22,50,60,90,60,34,52
+    ]
     //追加アイテムの表示位置
     func additem(){
-        if(userDefaults.object(forKey: myAp.buyitem_key[0]) as! String != ""){
-            itemnumber8.image = UIImage(named: userDefaults.object(forKey: myAp.buyitem_key[0]) as! String)
-            item_place(additem: userDefaults.object(forKey: myAp.buyitem_key[0]) as! String, addImageView: itemnumber8, x_point: 282, y_point: 404)
-        }
-        if(userDefaults.object(forKey: myAp.buyitem_key[1]) as! String != ""){
-            itemnumber9.image = UIImage(named: userDefaults.object(forKey: myAp.buyitem_key[1]) as! String)
-            item_place(additem: userDefaults.object(forKey: myAp.buyitem_key[1]) as! String, addImageView: itemnumber9, x_point: 28, y_point: 490)
-        }
-        if(userDefaults.object(forKey: myAp.buyitem_key[2]) as! String != ""){
-            itemnumber10.image = UIImage(named: userDefaults.object(forKey: myAp.buyitem_key[2]) as! String)
-            item_place(additem: userDefaults.object(forKey: myAp.buyitem_key[2]) as! String, addImageView: itemnumber10, x_point: 113, y_point: 490)
-        }
-        if(userDefaults.object(forKey: myAp.buyitem_key[3]) as! String != ""){
-            itemnumber11.image = UIImage(named: userDefaults.object(forKey: myAp.buyitem_key[3]) as! String)
-            item_place(additem: userDefaults.object(forKey: myAp.buyitem_key[3]) as! String, addImageView: itemnumber11, x_point: 197, y_point: 490)
-        }
-        if(userDefaults.object(forKey: myAp.buyitem_key[4]) as! String != ""){
-            itemnumber12.image = UIImage(named: userDefaults.object(forKey: myAp.buyitem_key[4]) as! String)
-            item_place(additem: userDefaults.object(forKey: myAp.buyitem_key[4]) as! String, addImageView: itemnumber12, x_point: 282, y_point: 490)
-        }
-        if(userDefaults.object(forKey: myAp.buyitem_key[5]) as! String != ""){
-            itemnumber13.image = UIImage(named: userDefaults.object(forKey: myAp.buyitem_key[5]) as! String)
-            item_place(additem: userDefaults.object(forKey: myAp.buyitem_key[5]) as! String, addImageView: itemnumber13, x_point: 28, y_point: 575)
-        }
-        if(userDefaults.object(forKey: myAp.buyitem_key[6]) as! String != ""){
-            itemnumber14.image = UIImage(named: userDefaults.object(forKey: myAp.buyitem_key[6]) as! String)
-            item_place(additem: userDefaults.object(forKey: myAp.buyitem_key[6]) as! String, addImageView: itemnumber14, x_point: 113, y_point: 575)
-        }
-        if(userDefaults.object(forKey: myAp.buyitem_key[7]) as! String != ""){
-            itemnumber15.image = UIImage(named: userDefaults.object(forKey: myAp.buyitem_key[7]) as! String)
-            item_place(additem: userDefaults.object(forKey: myAp.buyitem_key[7]) as! String, addImageView: itemnumber15, x_point: 197, y_point: 575)
-        }
-        if(userDefaults.object(forKey: myAp.buyitem_key[8]) as! String != ""){
-            itemnumber16.image = UIImage(named: userDefaults.object(forKey: myAp.buyitem_key[8]) as! String)
-            item_place(additem: userDefaults.object(forKey: myAp.buyitem_key[8]) as! String, addImageView: itemnumber16, x_point: 282, y_point: 575)
+        for i in (0...8){
+            if(userDefaults.object(forKey: myAp.buyitem_key[i]) as! String != ""){
+                NoA_additem[i].image = UIImage(named: userDefaults.object(forKey: myAp.buyitem_key[i]) as! String)
+                item_place(additem: userDefaults.object(forKey: myAp.buyitem_key[i]) as! String, addImageView: NoA_additem[i], x_point: item_xpoint[i], y_point: item_ypoint[i])
+            }
         }
     }
     
     //アイテム欄に表示する画像の位置
     func item_place(additem: String, addImageView: UIImageView, x_point:Int, y_point:Int){
-        if (additem == "おうかん"){
-            addImageView.frame = CGRect(x:x_point + 2, y:y_point + 6, width:60, height:52)
-        }else if (additem == "ティアラ"){
-            addImageView.frame = CGRect(x:x_point + 2, y:y_point + 16, width:60, height:34)
-        }else if (additem == "つの"){
-            addImageView.frame = CGRect(x:x_point + 18, y:y_point, width:25, height:64)
-        }else if (additem == "ねこ"){
-            addImageView.frame = CGRect(x:x_point + 6, y:y_point + 3, width:53, height:60)
-        }else if (additem == "はっと"){
-            addImageView.frame = CGRect(x:x_point + 2, y:y_point + 8, width:60, height:50)
-        }else if (additem == "めがね_あか") || (additem == "めがね_あお"){
-            addImageView.frame = CGRect(x:x_point + 2, y:y_point + 23, width:60, height:22)
-        }else if (additem == "はな"){
-            addImageView.frame = CGRect(x:x_point + 2, y:y_point + 3, width:60, height:60)
-        }else if (additem == "おにのお面"){
-            addImageView.frame = CGRect(x:x_point + 3, y:y_point - 11, width:59, height:90)
+        for i in (0...8){
+            if (additem == myAp.shop_item[i]){
+                addImageView.frame = CGRect(x:x_point + item_addX[i], y:y_point + item_addY[i], width:xitem_width[i], height:yitem_width[i])
+            }
         }
     }
     
     //次のポップアップ表示
     func popup() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Kisekae", bundle: nil)
-        
         let popupView2: KisekaePopupViewController = storyBoard.instantiateViewController(withIdentifier: "KisekaePopup") as! KisekaePopupViewController
         popupView2.modalPresentationStyle = .overFullScreen
         popupView2.modalTransitionStyle = .crossDissolve
-        
         self.present(popupView2, animated: false, completion: nil)
     }
     
@@ -360,11 +333,8 @@ extension KisekaeViewController: AVAudioPlayerDelegate {
         }
         
         do {
-            // AVAudioPlayerのインスタンス化
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            // AVAudioPlayerのデリゲートをセット
             audioPlayer.delegate = self
-            // 音声の再生
             audioPlayer.play()
         } catch {
         }

@@ -28,12 +28,10 @@ class NoAClass: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     @objc var drug_dinner: String?
     
     class func dynamoDBTableName() -> String {
-        
         return "NoATable"
     }
     
     class func hashKeyAttribute() -> String {
-        
         return "ID"
     }
 }
@@ -42,53 +40,31 @@ class NoAClass: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
 class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var audioPlayer: AVAudioPlayer!
+    let userDefaults = UserDefaults.standard
     
     @IBAction func goSetting(segue: UIStoryboardSegue) {
         playSound(name: "sousaon")
     }
     
-    @IBAction func backButton(_ sender: UIButton) {
-        playSound(name: "sousaon")
-    }
     @IBAction func ketteiButton(_ sender: UIButton) {
-        
-        
-        //保存データ作成
-        
-        /*let NoA_TimeSchedule = [
-            "wAke":textField,
-            "sleep":textField2,
-            "breakfast":textField3,
-            "lunch":textField4,
-            "dineer":textField5,
-            "tooth":textField6,
-            "tooth2":textField7,
-            "tooth3":textField8,
-            "tooth4":textField9,
-            "drug_breakfast":textField10,
-            "drug_lunch":textField11,
-            "drug_dinner":textField12
-        ]*/
-        
         //DBに保存
-        
         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
         
         // Create data object using data models you downloaded from Mobile Hub
         let NoAItem = NoAClass()
         NoAItem?.ID = "NoA"
-        NoAItem?.wake = kisyo.text
-        NoAItem?.sleep = neru.text
-        NoAItem?.breakfast = breakfast.text//textField3
-        NoAItem?.lunch = lunch.text//textField4
-        NoAItem?.dineer = dinner.text//textField5
-        NoAItem?.tooth = tooth.text//textField6
-        NoAItem?.tooth2 = tooth2.text//textField7
-        NoAItem?.tooth3 = tooth3.text//textField8
-        NoAItem?.tooth4 = tooth4.text//textField9
-        NoAItem?.drug_breakfast = medi_breakfast.text //textField10
-        NoAItem?.drug_lunch = medi_lunch.text //textField11
-        NoAItem?.drug_dinner = medi_dinner.text//textField12
+        NoAItem?.wake           = lifeTextField[0].text
+        NoAItem?.sleep          = lifeTextField[1].text
+        NoAItem?.breakfast      = lifeTextField[2].text
+        NoAItem?.lunch          = lifeTextField[3].text
+        NoAItem?.dineer         = lifeTextField[4].text
+        NoAItem?.tooth          = lifeTextField[5].text
+        NoAItem?.tooth2         = lifeTextField[6].text
+        NoAItem?.tooth3         = lifeTextField[7].text
+        NoAItem?.tooth4         = lifeTextField[8].text
+        NoAItem?.drug_breakfast = lifeTextField[9].text
+        NoAItem?.drug_lunch     = lifeTextField[10].text
+        NoAItem?.drug_dinner    = lifeTextField[11].text
         
         //Save a new item
         dynamoDbObjectMapper.save(NoAItem!).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
@@ -100,10 +76,10 @@ class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             return nil
         })
         
-        
         playSound(name: "ketteion")
         popup()
     }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return pickOption.count
     }
@@ -119,196 +95,65 @@ class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let color = pickOption[0][pickerView.selectedRow(inComponent: 0)]
         let model = pickOption[1][pickerView.selectedRow(inComponent: 1)]
-        if pickerView.tag == 1{
-            textField = color + " : " + model
-            userDefaults.set(textField, forKey:"kisyo")
-            userDefaults.synchronize()
-            kisyo.text = userDefaults.object(forKey: "kisyo") as? String
-        }
-        if pickerView.tag == 2{
-            textField2 = color + " : " + model
-            userDefaults.set(textField2, forKey:"neru")
-            userDefaults.synchronize()
-            neru.text = userDefaults.object(forKey: "neru") as? String
-        }
-        if pickerView.tag == 3{
-            textField3 = color + " : " + model
-            userDefaults.set(textField3, forKey:"breakfast")
-            userDefaults.synchronize()
-            breakfast.text = userDefaults.object(forKey: "breakfast") as? String
-        }
-        if pickerView.tag == 4{
-            textField4 = color + " : " + model
-            userDefaults.set(textField4, forKey:"lunch")
-            userDefaults.synchronize()
-            lunch.text = userDefaults.object(forKey: "lunch") as? String
-        }
-        if pickerView.tag == 5{
-            textField5 = color + " : " + model
-            userDefaults.set(textField5, forKey:"dinner")
-            userDefaults.synchronize()
-            dinner.text = userDefaults.object(forKey: "dinner") as? String
-        }
-        if pickerView.tag == 6{
-            textField6 = color + " : " + model
-            userDefaults.set(textField6, forKey:"tooth")
-            userDefaults.synchronize()
-            tooth.text = userDefaults.object(forKey: "tooth") as? String
-        }
-        if pickerView.tag == 7{
-            textField7 = color + " : " + model
-            userDefaults.set(textField7, forKey:"tooth2")
-            userDefaults.synchronize()
-            tooth2.text = userDefaults.object(forKey: "tooth2") as? String
-        }
-        if pickerView.tag == 8{
-            textField8 = color + " : " + model
-            userDefaults.set(textField8, forKey:"tooth3")
-            userDefaults.synchronize()
-            tooth3.text = userDefaults.object(forKey: "tooth3") as? String
-        }
-        if pickerView.tag == 9{
-            textField9 = color + " : " + model
-            userDefaults.set(textField9, forKey:"tooth4")
-            userDefaults.synchronize()
-            tooth4.text = userDefaults.object(forKey: "tooth4") as? String
-        }
-        if pickerView.tag == 10{
-            textField10 = color + " : " + model
-            userDefaults.set(textField10, forKey:"medi_breakfast")
-            userDefaults.synchronize()
-            medi_breakfast.text = userDefaults.object(forKey: "medi_breakfast") as? String
-        }
-        if pickerView.tag == 11{
-            textField11 = color + " : " + model
-            userDefaults.set(textField11, forKey:"medi_lunch")
-            userDefaults.synchronize()
-            medi_lunch.text = userDefaults.object(forKey: "medi_lunch") as? String
-        }
-        if pickerView.tag == 12{
-            textField12 = color + " : " + model
-            userDefaults.set(textField12, forKey:"medi_dinner")
-            userDefaults.synchronize()
-            medi_dinner.text = userDefaults.object(forKey: "medi_dinner") as? String
+        for i in (1...12){
+            if pickerView.tag == i{
+                textStore(color: color, model: model, textnumber: i-1, textField: lifeTextField[i-1], textKey: lifeStyle[i-1]["textKey"] as! String)
+            }
         }
     }
-   
-    @IBOutlet weak var kisyo: UITextField!
-    @IBOutlet weak var neru: UITextField!
-    @IBOutlet weak var breakfast: UITextField!
-    @IBOutlet weak var lunch: UITextField!
-    @IBOutlet weak var dinner: UITextField!
-    @IBOutlet weak var tooth: UITextField!
-    @IBOutlet weak var tooth2: UITextField!
-    @IBOutlet weak var tooth3: UITextField!
-    @IBOutlet weak var tooth4: UITextField!
-    @IBOutlet weak var medi_breakfast: UITextField!
-    @IBOutlet weak var medi_lunch: UITextField!
-    @IBOutlet weak var medi_dinner: UITextField!
+    //テキストデータ永続化関数
+    func textStore(color:String ,model:String ,textnumber:Int, textField:UITextField, textKey:String){
+        textData[textnumber] = color + " : " + model
+        userDefaults.set(textData[textnumber], forKey:textKey)
+        userDefaults.synchronize()
+        textField.text = userDefaults.object(forKey: textKey) as? String
+    }
+
     
-    let userDefaults = UserDefaults.standard
+    let lifeStyle = [
+        ["textKey" : "kisyo", "pick" : UIPickerView()],
+        ["textKey" : "neru", "pick" : UIPickerView()],
+        ["textKey" : "breakfast","pick" : UIPickerView()],
+        ["textKey" : "lunch","pick" : UIPickerView()],
+        ["textKey" : "dineer","pick" : UIPickerView()],
+        ["textKey" : "tooth","pick" : UIPickerView()],
+        ["textKey" : "tooth2","pick" : UIPickerView()],
+        ["textKey" : "tooth3","pick" : UIPickerView()],
+        ["textKey" : "tooth4","pick" : UIPickerView()],
+        ["textKey" : "medi_breakfast","pick" : UIPickerView()],
+        ["textKey" : "medi_lunch","pick" : UIPickerView()],
+        ["textKey" : "medi_dineer","pick" : UIPickerView()]
+    ]
     
-    var textField:String = ""
-    var textField2:String = ""
-    var textField3:String = ""
-    var textField4:String = ""
-    var textField5:String = ""
-    var textField6:String = ""
-    var textField7:String = ""
-    var textField8:String = ""
-    var textField9:String = ""
-    var textField10:String = ""
-    var textField11:String = ""
-    var textField12:String = ""
+    @IBOutlet var lifeTextField: [UITextField]!
+    
+    var textData:[String] = [
+        "","","","","","","","","","","",""
+    ]
     
     var pickOption = [["7","8","9","10","11", "12", "13","14","15","16","17","18","19","20","21"], ["00", "15","30","45",]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //背景
-        view.backgroundColor = UIColor(red: 0.984, green: 0.956, blue: 0.866, alpha: 1.0)
-        //起床
-        let pickerView = UIPickerView()
+        
+        for i in (1...12){
+            textPresent(pickerView: lifeStyle[i-1]["pick"] as! UIPickerView, tag: i, textField: lifeTextField[i-1], textKey: lifeStyle[i-1]["textKey"] as! String)
+        }
+    }
+    //テキストデータ表示関数
+    func textPresent(pickerView:UIPickerView, tag:Int, textField:UITextField, textKey:String){
         pickerView.delegate = self
-        pickerView.tag = 1
-        kisyo.inputView = pickerView
-        kisyo.text = userDefaults.object(forKey: "kisyo") as? String
-        //就寝
-        let pickerView2 = UIPickerView()
-        pickerView2.delegate = self
-        pickerView2.tag = 2
-        neru.inputView = pickerView2
-        neru.text = userDefaults.object(forKey: "neru") as? String
-        //朝食
-        let pickerView3 = UIPickerView()
-        pickerView3.delegate = self
-        pickerView3.tag = 3
-        breakfast.inputView = pickerView3
-        breakfast.text = userDefaults.object(forKey: "breakfast") as? String
-        //昼食
-        let pickerView4 = UIPickerView()
-        pickerView4.delegate = self
-        pickerView4.tag = 4
-        lunch.inputView = pickerView4
-        lunch.text = userDefaults.object(forKey: "lunch") as? String
-        //夕食
-        let pickerView5 = UIPickerView()
-        pickerView5.delegate = self
-        pickerView5.tag = 5
-        dinner.inputView = pickerView5
-        dinner.text = userDefaults.object(forKey: "dinner") as? String
-        //歯磨き
-        let pickerView6 = UIPickerView()
-        pickerView6.delegate = self
-        pickerView6.tag = 6
-        tooth.inputView = pickerView6
-        tooth.text = userDefaults.object(forKey: "tooth") as? String
-        //歯磨き2
-        let pickerView7 = UIPickerView()
-        pickerView7.delegate = self
-        pickerView7.tag = 7
-        tooth2.inputView = pickerView7
-        tooth2.text = userDefaults.object(forKey: "tooth2") as? String
-        //歯磨き3
-        let pickerView8 = UIPickerView()
-        pickerView8.delegate = self
-        pickerView8.tag = 8
-        tooth3.inputView = pickerView8
-        tooth3.text = userDefaults.object(forKey: "tooth3") as? String
-        //歯磨き4
-        let pickerView9 = UIPickerView()
-        pickerView9.delegate = self
-        pickerView9.tag = 9
-        tooth4.inputView = pickerView9
-        tooth4.text = userDefaults.object(forKey: "tooth4") as? String
-        //薬_朝食
-        let pickerView10 = UIPickerView()
-        pickerView10.delegate = self
-        pickerView10.tag = 10
-        medi_breakfast.inputView = pickerView10
-        medi_breakfast.text = userDefaults.object(forKey: "medi_breakfast") as? String
-        //薬_昼食
-        let pickerView11 = UIPickerView()
-        pickerView11.delegate = self
-        pickerView11.tag = 11
-        medi_lunch.inputView = pickerView11
-        medi_lunch.text = userDefaults.object(forKey: "medi_lunch") as? String
-        //薬_夕食
-        let pickerView12 = UIPickerView()
-        pickerView12.delegate = self
-        pickerView12.tag = 12
-        medi_dinner.inputView = pickerView12
-        medi_dinner.text = userDefaults.object(forKey: "medi_dinner") as? String
+        pickerView.tag = tag
+        textField.inputView = pickerView
+        textField.text = userDefaults.object(forKey: textKey) as? String
     }
     
     //次のポップアップ表示
     func popup() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Setting", bundle: nil)
-
         let popupView2: SettingPopupViewController = storyBoard.instantiateViewController(withIdentifier: "SettingPopup") as! SettingPopupViewController
         popupView2.modalPresentationStyle = .overFullScreen
         popupView2.modalTransitionStyle = .crossDissolve
-
         self.present(popupView2, animated: false, completion: nil)
     }
     //画面クリックしたらピッカービューを閉じる
@@ -330,11 +175,8 @@ extension SettingViewController: AVAudioPlayerDelegate {
         }
         
         do {
-            // AVAudioPlayerのインスタンス化
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            // AVAudioPlayerのデリゲートをセット
             audioPlayer.delegate = self
-            // 音声の再生
             audioPlayer.play()
         } catch {
         }

@@ -51,35 +51,16 @@ class ShopViewController: UIViewController {
         itemReaction(buynumber: 8, price: 100)
     }
     
-    @IBOutlet weak var tsuno_buy_after: UIImageView!
-    @IBOutlet weak var bluemegane_buy_after: UIImageView!
-    @IBOutlet weak var redmegane_buy_after: UIImageView!
-    @IBOutlet weak var hat_buy_after: UIImageView!
-    @IBOutlet weak var flower_buy_after: UIImageView!
-    @IBOutlet weak var omen_buy_after: UIImageView!
-    @IBOutlet weak var cat_buy_after: UIImageView!
-    @IBOutlet weak var tiara_buy_after: UIImageView!
-    @IBOutlet weak var crown_buy_after: UIImageView!
-    
-    @IBOutlet weak var tsuno_view: UIView!
-    @IBOutlet weak var bluemegane_view: UIView!
-    @IBOutlet weak var redmegane_view: UIView!
-    @IBOutlet weak var hat_view: UIView!
-    @IBOutlet weak var flower_view: UIView!
-    @IBOutlet weak var omen_view: UIView!
-    @IBOutlet weak var cat_view: UIView!
-    @IBOutlet weak var tiara_view: UIView!
-    @IBOutlet weak var crown_view: UIView!
+    @IBOutlet var item_buyafter: [UIImageView]!
+    @IBOutlet var backView: [UIView]!
+
     //ノアコインテキスト
     @IBOutlet weak var NoAcoin: UILabel!
     
-    @IBAction func goShop(segue: UIStoryboardSegue){
-    }
+    @IBAction func goShop(segue: UIStoryboardSegue){}
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        userDefaults.register(defaults: ["NoA_coin" : 300])
         
         buy_after()
         NoAcoin_show()
@@ -88,13 +69,12 @@ class ShopViewController: UIViewController {
     func itemReaction(buynumber:Int, price:Int){
         myAp.shop_item_number = buynumber
         myAp.NoAcoin_compare[buynumber] = 0
-        if(myAp.shop_buy_number[buynumber] == 0){
+        if(userDefaults.object(forKey: myAp.shopbuynumber[buynumber]) as! Int == 0){
             if(userDefaults.object(forKey: "NoA_coin") as! Int >= price){
                 myAp.NoAcoin_compare[buynumber] = 1
                 playSound(name: "sousaon")
                 popup()
-            }
-            if (myAp.shop_buy_number[buynumber] == 0){
+            }else {
                 playSound(name: "sousaon")
                 popup()
             }
@@ -112,11 +92,9 @@ class ShopViewController: UIViewController {
     //次のポップアップ表示
     func popup() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Shop", bundle: nil)
-        
         let popupView2: ShopPopupViewController = storyBoard.instantiateViewController(withIdentifier: "ShopPopup") as! ShopPopupViewController
         popupView2.modalPresentationStyle = .overFullScreen
         popupView2.modalTransitionStyle = .crossDissolve
-        
         self.present(popupView2, animated: false, completion: nil)
     }
     //売り切れ画像の反映
@@ -127,32 +105,10 @@ class ShopViewController: UIViewController {
     }
     //売り切れボタンの反映
     func buy_after(){
-        if(userDefaults.object(forKey: "つの") as? Int == 1){
-            buyover(buyimage: tsuno_buy_after, clearView: tsuno_view)
-        }
-        if(userDefaults.object(forKey: "めがね_あお") as? Int == 1){
-            buyover(buyimage: bluemegane_buy_after, clearView: bluemegane_view)
-        }
-        if(userDefaults.object(forKey: "めがね_あか") as? Int == 1){
-            buyover(buyimage: redmegane_buy_after, clearView: redmegane_view)
-        }
-        if(userDefaults.object(forKey: "はっと") as? Int == 1){
-            buyover(buyimage: hat_buy_after, clearView: hat_view)
-        }
-        if(userDefaults.object(forKey: "はな") as? Int == 1){
-            buyover(buyimage: flower_buy_after, clearView: flower_view)
-        }
-        if(userDefaults.object(forKey: "おにのお面") as? Int == 1){
-            buyover(buyimage: omen_buy_after, clearView: omen_view)
-        }
-        if(userDefaults.object(forKey: "ねこ") as? Int == 1){
-            buyover(buyimage: cat_buy_after, clearView: cat_view)
-        }
-        if(userDefaults.object(forKey: "ティアラ") as? Int == 1){
-            buyover(buyimage: tiara_buy_after, clearView: tiara_view)
-        }
-        if(userDefaults.object(forKey: "おうかん") as? Int == 1){
-            buyover(buyimage: crown_buy_after, clearView: crown_view)
+        for i in (0...8){
+            if(userDefaults.object(forKey: myAp.shopbuynumber[i]) as! Int == 1){
+                buyover(buyimage: item_buyafter[i], clearView: backView[i])
+            }
         }
     }
 }
