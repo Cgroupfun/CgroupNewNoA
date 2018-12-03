@@ -10,6 +10,7 @@ import WatchKit
 import Foundation
 import UIKit
 import AVFoundation
+import Alamofire
 
 class InterfaceController: WKInterfaceController {
     var batteryLevel: Float = WKInterfaceDevice.current().batteryLevel
@@ -71,9 +72,12 @@ class InterfaceController: WKInterfaceController {
             if error != nil {
                 //print(error!.localizedDescription)
             } else {
+                print(type(of:data))
                 print(String(data: data!, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue)) as Any)
     //            let jsonString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
 //              let weatherNews = try! JSONDecoder().decode(Items.self, from: jsonString.data(using: .utf8)!)
+                
+                
 
             }
         })

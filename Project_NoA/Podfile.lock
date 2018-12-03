@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.7.3)
   - AWSCognito (2.6.35):
     - AWSCore (= 2.6.35)
   - AWSCore (2.6.35)
@@ -8,23 +9,26 @@ PODS:
     - AWSCore (= 2.6.35)
 
 DEPENDENCIES:
+  - Alamofire
   - AWSCognito
   - AWSDynamoDB
   - AWSS3
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - AWSCognito
     - AWSCore
     - AWSDynamoDB
     - AWSS3
 
 SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AWSCognito: 6b96ae976b5f59881c1bb406e0c7d08494651dee
   AWSCore: 2dab62ef2e5ca5d8c72c6cbdb3a6ea1532c27c2b
   AWSDynamoDB: f4902fc37384dcf9547e2d8a32a5b208d4d1d996
   AWSS3: 282a590bb47e9cd88de24979fb28954399c41c52
 
-PODFILE CHECKSUM: c8460241ea4f2960912a06288684d7d51bd9fdd6
+PODFILE CHECKSUM: 08dab509934e2bfa090a11c4ac89d055d48505b3
 
 COCOAPODS: 1.6.0.beta.2

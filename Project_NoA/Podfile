@@ -25,4 +25,5 @@ target 'Project_NoA WatchKit Extension' do
   use_frameworks!
   
   # Pods for Project_NoA WatchKit Extension
+  pod 'Alamofire'
 end
