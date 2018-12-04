@@ -25,7 +25,7 @@
             <objects>
                 <controller identifier="home" backgroundImage="heya" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Project_NoA_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <imageView width="28" height="25" alignment="left" image="応援ボタン" id="jlQ-wN-dib">
+                        <imageView width="28" height="25" alignment="left" image="OuenButton" id="jlQ-wN-dib">
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="c5L-Zi-CUX">
                                     <connections>
