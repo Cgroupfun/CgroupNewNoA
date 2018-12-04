@@ -51,14 +51,15 @@ class ViewController: UIViewController {
                        options: [.curveEaseInOut],
                        animations: {
                         self.NoA_Karada.center = tapPoint
+                        self.playSound(name: self.NoA_voice.randomElement()!)
         },
                        completion: nil)
         }
     }
-    //ノアをタップしたら
-    @IBAction func voicePlay(_ sender: UITapGestureRecognizer) {
-        
-    }
+    
+    let NoA_voice:[String] = [
+        "vc1","vc2","vc3","vc4","vc5","vc6","vc7","vc8","vc9","vc10","vc11","vc12"
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,11 +139,8 @@ extension ViewController: AVAudioPlayerDelegate {
             return
         }
         do {
-            // AVAudioPlayerのインスタンス化
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            // AVAudioPlayerのデリゲートをセット
             audioPlayer.delegate = self
-            // 音声の再生
             audioPlayer.play()
         } catch {
         }

@@ -21,11 +21,7 @@ class MovieViewController: UIViewController {
     }
     //採血ボタン
     @IBAction func blood(_ sender: UIButton) {
-        moviePlay(movieURL: "")
-    }
-    //MRIボタン
-    @IBAction func mri(_ sender: UIButton) {
-        moviePlay(movieURL: "")
+        moviePlay(movieURL: "https://s3-ap-northeast-1.amazonaws.com/noastorage/saiketu.mp4")
     }
     
     func moviePlay(movieURL: String){
