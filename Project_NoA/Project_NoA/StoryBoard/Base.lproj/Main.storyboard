@@ -25,6 +25,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMZ-nk-yfx">
                                 <rect key="frame" x="128" y="277" width="118" height="113"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="W3v-ea-50v" appends="YES" id="0Ue-Qv-CeA"/>
+                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kha-eH-5rU">
                                 <rect key="frame" x="10" y="517" width="113" height="112"/>
@@ -80,6 +84,11 @@
                 <tapGestureRecognizer id="nZI-jl-EdO">
                     <connections>
                         <action selector="tapView:" destination="BYZ-38-t0r" id="wea-L7-weG"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="W3v-ea-50v">
+                    <connections>
+                        <action selector="voicePlay:" destination="BYZ-38-t0r" id="uTv-F8-wIo"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

@@ -55,6 +55,10 @@ class ViewController: UIViewController {
                        completion: nil)
         }
     }
+    //ノアをタップしたら
+    @IBAction func voicePlay(_ sender: UITapGestureRecognizer) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

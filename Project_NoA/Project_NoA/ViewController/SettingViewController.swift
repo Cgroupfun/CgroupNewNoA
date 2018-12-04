@@ -19,10 +19,10 @@ class NoAClass: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     @objc var breakfast: String?
     @objc var lunch: String?
     @objc var dineer: String?
+    @objc var study: String?
     @objc var tooth: String?
     @objc var tooth2: String?
     @objc var tooth3: String?
-    @objc var tooth4: String?
     @objc var drug_breakfast: String?
     @objc var drug_lunch: String?
     @objc var drug_dinner: String?
@@ -58,10 +58,10 @@ class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         NoAItem?.breakfast      = lifeTextField[2].text
         NoAItem?.lunch          = lifeTextField[3].text
         NoAItem?.dineer         = lifeTextField[4].text
-        NoAItem?.tooth          = lifeTextField[5].text
-        NoAItem?.tooth2         = lifeTextField[6].text
-        NoAItem?.tooth3         = lifeTextField[7].text
-        NoAItem?.tooth4         = lifeTextField[8].text
+        NoAItem?.study          = lifeTextField[5].text
+        NoAItem?.tooth          = lifeTextField[6].text
+        NoAItem?.tooth2         = lifeTextField[7].text
+        NoAItem?.tooth3         = lifeTextField[8].text
         NoAItem?.drug_breakfast = lifeTextField[9].text
         NoAItem?.drug_lunch     = lifeTextField[10].text
         NoAItem?.drug_dinner    = lifeTextField[11].text
@@ -116,10 +116,10 @@ class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         ["textKey" : "breakfast","pick" : UIPickerView()],
         ["textKey" : "lunch","pick" : UIPickerView()],
         ["textKey" : "dineer","pick" : UIPickerView()],
+        ["textKey" : "study","pick" : UIPickerView()],
         ["textKey" : "tooth","pick" : UIPickerView()],
         ["textKey" : "tooth2","pick" : UIPickerView()],
         ["textKey" : "tooth3","pick" : UIPickerView()],
-        ["textKey" : "tooth4","pick" : UIPickerView()],
         ["textKey" : "medi_breakfast","pick" : UIPickerView()],
         ["textKey" : "medi_lunch","pick" : UIPickerView()],
         ["textKey" : "medi_dineer","pick" : UIPickerView()]
