@@ -46,7 +46,7 @@ class toothController:WKInterfaceController,AVAudioPlayerDelegate {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        ouennController().loopSound(name:"hawomigaku")//音声を変える
+        ouennController().loopSound(name:"hawomigaku")
     }
 }
 class drugController:WKInterfaceController,AVAudioPlayerDelegate {
@@ -55,7 +55,7 @@ class drugController:WKInterfaceController,AVAudioPlayerDelegate {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        ouennController().loopSound(name:"kusuri")//音声を変える
+        ouennController().loopSound(name:"kusuri")
     }
     @IBAction func agree(_ sender: Any) {
          presentController(withName: "agree", context: "none")
@@ -67,7 +67,7 @@ class wakeController:WKInterfaceController,AVAudioPlayerDelegate {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        ouennController().loopSound(name:"asadayo")//音声を変える
+        ouennController().loopSound(name:"asadayo")
     }
 }
 class studyController:WKInterfaceController,AVAudioPlayerDelegate {
@@ -76,7 +76,16 @@ class studyController:WKInterfaceController,AVAudioPlayerDelegate {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        ouennController().loopSound(name:"benkyousiro")//音声を変える
+        ouennController().loopSound(name:"benkyousiro")
+    }
+}
+class eatController:WKInterfaceController,AVAudioPlayerDelegate {
+    //音声に関する変数の生成
+    var audioPlayer: AVAudioPlayer!
+    
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
+        ouennController().loopSound(name:"mesi")
     }
 }
 class sleepController:WKInterfaceController,AVAudioPlayerDelegate {
