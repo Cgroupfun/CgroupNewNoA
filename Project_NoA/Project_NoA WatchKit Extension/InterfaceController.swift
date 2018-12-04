@@ -13,11 +13,9 @@ import AVFoundation
 import Alamofire
 
 class InterfaceController: WKInterfaceController {
-    var batteryLevel: Float = WKInterfaceDevice.current().batteryLevel
-
     //時間関係の変数
     var TimeSchedule : [String:String] = ["wake":"19:11","sleep":"20:00","breakfast":"08:00","lunch":"08:00","dinner":"08:00","study":"16:26","drug_breakfast":"16:32","drug_lunch":"16:32","drug_dinner":"16:32","tooth":"19:34","tooth2":"19:34","tooth3":"19:34","tooth4":"19:34"]
-    var string :String = "20 : 00"
+    var string :String = "0 : 00"
     
     //音声に関する変数の生成
     let engine = AVAudioEngine()
@@ -49,7 +47,7 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func ouenn() {
-        pushController(withName: "Ouenn", context: "none")
+        presentController(withName: "Ouenn", context: "none")
     }
     
     override func awake(withContext context: Any?) {
@@ -80,6 +78,7 @@ class InterfaceController: WKInterfaceController {
             var wake :  Dictionary<String, String>?
             var study :  Dictionary<String, String>?
         }
+        
         Alamofire.request("https://2kzwczqeb4.execute-api.ap-northeast-1.amazonaws.com/NoA/nomapping").responseJSON {response in
             let decoder = JSONDecoder()
             let feed = try? decoder.decode(noaSetting.self, from: response.data!)
@@ -88,7 +87,7 @@ class InterfaceController: WKInterfaceController {
             //self.TimeSchedule["study"] = feed?.Items[0].study!["S"]
             self.TimeSchedule["breakfast"] = feed?.Items[0].breakfast!["S"]
             self.TimeSchedule["lunch"] = feed?.Items[0].lunch!["S"]
-            self.TimeSchedule["dinner"] = feed?.Items[0].dinner!["S"]
+            //self.TimeSchedule["dinner"] = feed?.Items[0].dinner!["S"]
             self.TimeSchedule["drug_breakfast"] = feed?.Items[0].drug_breakfast!["S"]
             self.TimeSchedule["drug_dinner"] = feed?.Items[0].drug_dinner!["S"]
             self.TimeSchedule["drug_lunch"] = feed?.Items[0].drug_lunch!["S"]
@@ -165,6 +164,7 @@ class InterfaceController: WKInterfaceController {
                     }
                 }
            }
+    //充電状態取得の関数
     @objc func zyuudenn(){
         let batteryState: WKInterfaceDeviceBatteryState = WKInterfaceDevice.current().batteryState
 
