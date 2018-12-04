@@ -8,6 +8,10 @@
 
 import UIKit
 import AVFoundation
+import AWSDynamoDB
+import AWSCore
+
+
 
 class ShopViewController: UIViewController {
     
@@ -61,6 +65,30 @@ class ShopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var NoAState = NoAClass()
+        
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        
+        // Create data object using data models you downloaded from Mobile Hub
+        let newsItem = NoAClass()
+        newsItem!.ID = "NoA"
+        
+        dynamoDbObjectMapper.load(
+            NoAClass.self,
+            hashKey: newsItem!.ID as Any,
+            rangeKey: nil,
+            completionHandler: {
+                (objectModel: AWSDynamoDBObjectModel?, error: Error?) -> Void in
+                if let error = error {
+                    print("Amazon DynamoDB Read Error: \(error)")
+                    return
+                }
+                print("An item was read.")
+                print(objectModel as Any)
+                NoAState = (objectModel as! NoAClass)
+                print(NoAState?.noaCoin)//この値を使ってNoAコインの+-をやってほしい(わかんなかったら明日で)
+        })
         
         buy_after()
         NoAcoin_show()

@@ -26,6 +26,8 @@ class NoAClass: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     @objc var drug_breakfast: String?
     @objc var drug_lunch: String?
     @objc var drug_dinner: String?
+    @objc var noaCoin: Int = 0
+    
     
     class func dynamoDBTableName() -> String {
         return "NoATable"
