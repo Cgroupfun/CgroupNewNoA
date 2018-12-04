@@ -18,7 +18,7 @@ class NoAClass: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     @objc var sleep: String?
     @objc var breakfast: String?
     @objc var lunch: String?
-    @objc var dineer: String?
+    @objc var dinner: String?
     @objc var study: String?
     @objc var tooth: String?
     @objc var tooth2: String?
@@ -57,7 +57,7 @@ class SettingViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         NoAItem?.sleep          = lifeTextField[1].text
         NoAItem?.breakfast      = lifeTextField[2].text
         NoAItem?.lunch          = lifeTextField[3].text
-        NoAItem?.dineer         = lifeTextField[4].text
+        NoAItem?.dinner         = lifeTextField[4].text
         NoAItem?.study          = lifeTextField[5].text
         NoAItem?.tooth          = lifeTextField[6].text
         NoAItem?.tooth2         = lifeTextField[7].text
