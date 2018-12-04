@@ -32,12 +32,6 @@
                                 <segue destination="Tkc-re-DAx" kind="modal" id="sKu-A8-MnF"/>
                             </connections>
                         </button>
-                        <button width="1" height="24" alignment="left" title="画像取得" id="tP5-0X-J28">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="outSound" destination="AgC-eL-Hgc" id="qvt-k4-Ubx"/>
-                            </connections>
-                        </button>
                         <imageView width="93" height="130" alignment="center" verticalAlignment="bottom" id="jiQ-kT-Pdd">
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="vFx-wn-hOh">
@@ -53,7 +47,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="226" y="393"/>
+            <point key="canvasLocation" x="220" y="353"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -109,7 +103,7 @@
             <objects>
                 <controller identifier="sleep" id="Eqs-mU-N7W" customClass="sleepController" customModule="Project_NoA_WatchKit_Extension">
                     <items>
-                        <group width="1" height="162" alignment="left" backgroundImage="seikatsu_syushin" animationDuration="2" id="ZZi-DI-gh4"/>
+                        <group width="1" height="162" alignment="left" backgroundImage="seikatsu_shushin" contentMode="scaleAspectFit" animationDuration="2" id="ZZi-DI-gh4"/>
                     </items>
                 </controller>
             </objects>
@@ -120,15 +114,22 @@
             <objects>
                 <controller identifier="agree" id="s3F-nx-AyU" customClass="agreeController" customModule="Project_NoA_WatchKit_Extension">
                     <items>
-                        <button width="1" alignment="left" title="おめでとう" id="2gF-nV-bV8">
-                            <connections>
-                                <action selector="backHome" destination="s3F-nx-AyU" id="qRJ-26-VhV"/>
-                            </connections>
-                        </button>
+                        <group width="1" height="149" alignment="left" id="lPm-Oe-jRv"/>
                     </items>
                 </controller>
             </objects>
             <point key="canvasLocation" x="816" y="378"/>
+        </scene>
+        <!--mesi-->
+        <scene sceneID="dqJ-OX-1Zi">
+            <objects>
+                <controller identifier="mesi" id="cLe-Rt-lD1" customClass="eatController" customModule="Project_NoA_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="157" alignment="left" backgroundImage="seikatsu_gohan" animationDuration="2" id="y40-Fk-5FS"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1065" y="389"/>
         </scene>
         <!--drug-->
         <scene sceneID="Qz7-bY-7w4">

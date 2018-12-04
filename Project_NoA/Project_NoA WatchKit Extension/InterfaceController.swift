@@ -16,25 +16,8 @@ class InterfaceController: WKInterfaceController {
     var batteryLevel: Float = WKInterfaceDevice.current().batteryLevel
 
     //時間関係の変数
-    var TimeSchedule : [String:String] = ["wake":"19:11","sleep":"20:00","breakfast":"08:00","study":"16:26","drug":"16:32","tooth1":"19:34"]
-    var string = "00:00"
-    //構造体
-    struct Items : Codable{
-        var name : String
-        var breakast :String
-        var dinner :String
-        var drug_breakfast :String
-        var drug_dinner :String
-        var drug_lunch :String
-        var lunch :String
-        var sleep :String
-        var tooth :String
-        var tooth2 :String
-        var tooth3 :String
-        var tooth4 :String
-        var wake :String
-        }
-    
+    var TimeSchedule : [String:String] = ["wake":"19:11","sleep":"20:00","breakfast":"08:00","lunch":"08:00","dinner":"08:00","study":"16:26","drug_breakfast":"16:32","drug_lunch":"16:32","drug_dinner":"16:32","tooth":"19:34","tooth2":"19:34","tooth3":"19:34","tooth4":"19:34"]
+    var string :String = "20 : 00"
     
     //音声に関する変数の生成
     let engine = AVAudioEngine()
@@ -49,65 +32,7 @@ class InterfaceController: WKInterfaceController {
     
     //タッチで喋る、動く
     @IBAction func Move(_ sender: Any) {
-        /*let listUrl = "https://2kzwczqeb4.execute-api.ap-northeast-1.amazonaws.com/NoA/"
-        
-        guard let url = URL(string: listUrl) else { return }
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if error != nil {
-                print(error!.localizedDescription)
-            }
-            
-            guard data != nil else { return }
-            print("成功")
-            print()
-            let json = try? JSONDecoder().decode([Items].self, from: data!)
-            //print(InterfaceController().Items.name)
-            
-            }.resume()*/
-        //データの受信
-        
-        struct noaSetting : Codable{
-            var ScannedCount : Int
-            var Items : [noaItems]
-            var Count : Int
-        }
-        
-        struct noaItems : Codable{
-            var ID :  Dictionary<String, String>?
-            var breakfast :  Dictionary<String, String>?
-            var dineer :  Dictionary<String, String>?
-            var drug_breakfast :  Dictionary<String, String>?
-            var drug_dineer :  Dictionary<String, String>?
-            var drug_lunch :  Dictionary<String, String>?
-            var lunch :  Dictionary<String, String>?
-            var sleep :  Dictionary<String, String>?
-            var tooth :  Dictionary<String, String>?
-            var tooth2 :  Dictionary<String, String>?
-            var tooth3 :  Dictionary<String, String>?
-            var tooth4 :  Dictionary<String, String>?
-            var wake :  Dictionary<String, String>?
-        }
-        /*let url: URL = URL(string: "https://2kzwczqeb4.execute-api.ap-northeast-1.amazonaws.com/NoA/nomapping")!
-        let task = URLSession.shared.dataTask(with: URLRequest(url: url), completionHandler: { (data, response, error) in
-            if error != nil {
-                //print(error!.localizedDescription)
-            } else {
-                let decoder = JSONDecoder()
-                let feed = try? decoder.decode(noaSetting.self, from: data!)
-                print(feed as Any)
-            }
-        })
-        task.resume()*/
-        
-        Alamofire.request("https://2kzwczqeb4.execute-api.ap-northeast-1.amazonaws.com/NoA/nomapping").responseJSON {response in
-            let decoder = JSONDecoder()
-            let feed = try? decoder.decode(noaSetting.self, from: response.data!)
-            print(feed as Any)
-            print(feed?.Items[0].wake!["S"] as Any)//コンソールに("7:30")のようにでるが7;30として使えるか確認よろ
-            
-        }
-
+        getImage()
         musicSet(name:"NoA挨拶サンプル", type:"mp3")
 
     animate(withDuration: 0.5) { () -> Void in
@@ -134,6 +59,44 @@ class InterfaceController: WKInterfaceController {
         WKInterfaceDevice.current().isBatteryMonitoringEnabled = true
         //初期の画像取得
         getImage()
+        struct noaSetting : Codable{
+            var ScannedCount : Int
+            var Items : [noaItems]
+            var Count : Int
+        }
+        struct noaItems : Codable{
+            var ID :  Dictionary<String, String>?
+            var breakfast :  Dictionary<String, String>?
+            var dinner :  Dictionary<String, String>?
+            var drug_breakfast :  Dictionary<String, String>?
+            var drug_dinner :  Dictionary<String, String>?
+            var drug_lunch :  Dictionary<String, String>?
+            var lunch :  Dictionary<String, String>?
+            var sleep :  Dictionary<String, String>?
+            var tooth :  Dictionary<String, String>?
+            var tooth2 :  Dictionary<String, String>?
+            var tooth3 :  Dictionary<String, String>?
+            var tooth4 :  Dictionary<String, String>?
+            var wake :  Dictionary<String, String>?
+            var study :  Dictionary<String, String>?
+        }
+        Alamofire.request("https://2kzwczqeb4.execute-api.ap-northeast-1.amazonaws.com/NoA/nomapping").responseJSON {response in
+            let decoder = JSONDecoder()
+            let feed = try? decoder.decode(noaSetting.self, from: response.data!)
+            self.TimeSchedule["wake"] = feed?.Items[0].wake!["S"]
+            self.TimeSchedule["sleep"] = feed?.Items[0].sleep!["S"]
+            //self.TimeSchedule["study"] = feed?.Items[0].study!["S"]
+            self.TimeSchedule["breakfast"] = feed?.Items[0].breakfast!["S"]
+            self.TimeSchedule["lunch"] = feed?.Items[0].lunch!["S"]
+            self.TimeSchedule["dinner"] = feed?.Items[0].dinner!["S"]
+            self.TimeSchedule["drug_breakfast"] = feed?.Items[0].drug_breakfast!["S"]
+            self.TimeSchedule["drug_dinner"] = feed?.Items[0].drug_dinner!["S"]
+            self.TimeSchedule["drug_lunch"] = feed?.Items[0].drug_lunch!["S"]
+            self.TimeSchedule["tooth"] = feed?.Items[0].wake!["tooth"]
+            self.TimeSchedule["tooth2"] = feed?.Items[0].wake!["tooth2"]
+            self.TimeSchedule["tooth3"] = feed?.Items[0].wake!["tooth3"]
+            self.TimeSchedule["tooth4"] = feed?.Items[0].wake!["tooth4"]
+        }
     }
     
     override func willActivate() {
@@ -146,8 +109,6 @@ class InterfaceController: WKInterfaceController {
         Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(InterfaceController.zyuudenn), userInfo: nil, repeats: true)
         //画像取得に関するもの
         isActive = true
-        
-    
     }
     
     override func didDeactivate() {
@@ -161,12 +122,6 @@ class InterfaceController: WKInterfaceController {
             }
     }
     }
-    
-    @IBAction func outSound() {
-        print("画像取得")
-       getImage()
-    }
-    
     //音楽をながす関数の作成
     func musicSet (name:String, type:String){
         do {
@@ -194,12 +149,15 @@ class InterfaceController: WKInterfaceController {
     
     //生活支援に関する関数
     @objc func support (){
+        print(TimeSchedule)
                 for (Schedule,ScheduleTime)in  TimeSchedule{
                     if string == ScheduleTime{
-                        if (Schedule == "tooth1")||(Schedule == "tooth2")||(Schedule == "tooth3")||(Schedule == "tooth4"){
+                        if (Schedule == "tooth")||(Schedule == "tooth2")||(Schedule == "tooth3")||(Schedule == "tooth4"){
                              pushController(withName: "tooth", context: "none")
                         }else if (Schedule == "drug_breakfast")||(Schedule == "drug_lunch")||(Schedule == "drug_dinner"){
                             pushController(withName: "drug", context: "none")
+                        }else if (Schedule == "breakfast")||(Schedule == "lunch")||(Schedule == "dinner"){
+                            pushController(withName: "mesi", context: "none")
                         }else{
                  pushController(withName: "\(Schedule)", context: "none")
                         print("\(Schedule)")
