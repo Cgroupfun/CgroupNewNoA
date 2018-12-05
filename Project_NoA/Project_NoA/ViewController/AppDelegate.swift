@@ -23,8 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     var window: UIWindow?
-    //ノアコイン
-    var NoA_coin:Int = 100
     
     //コイン足りるか判定
     var NoAcoin_compare:[Int] = [
@@ -82,6 +80,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var shop_item_number = 0
     //アイテム追加する順番
     var item_addnumber = 0
+    
+    var noaCoin = 0
     
     var NoA_compose:UIImage?
     

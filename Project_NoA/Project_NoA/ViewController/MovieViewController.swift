@@ -9,6 +9,8 @@
 import UIKit
 import AVKit
 import AVFoundation
+import AWSDynamoDB
+import Alamofire
 
 class MovieViewController: UIViewController {
     
@@ -21,18 +23,16 @@ class MovieViewController: UIViewController {
     }
     //採血ボタン
     @IBAction func blood(_ sender: UIButton) {
-        moviePlay(movieURL: "")
-    }
-    //MRIボタン
-    @IBAction func mri(_ sender: UIButton) {
-        moviePlay(movieURL: "")
+        moviePlay(movieURL: "https://s3-ap-northeast-1.amazonaws.com/noastorage/saiketuv2.mp4")
     }
     
     func moviePlay(movieURL: String){
+        
+        Alamofire.request("https://2kzwczqeb4.execute-api.ap-northeast-1.amazonaws.com/NoA/10").responseJSON {response in
+        }
         //ノアコイン増加
-        myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int + 10
-        userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
-        userDefaults.synchronize()
+        myAp.noaCoin = myAp.noaCoin + 10
+        
         //動画再生
         guard let url = URL(string: movieURL) else {
             return

@@ -15,6 +15,18 @@
 		28143C8521A52E28008636C9 /* KisekaePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28143C8421A52E28008636C9 /* KisekaePopupViewController.swift */; };
 		28143C8721A53B77008636C9 /* SettingPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28143C8621A53B77008636C9 /* SettingPopupViewController.swift */; };
 		28143C8921A53DED008636C9 /* itemselectSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 28143C8821A53DED008636C9 /* itemselectSound.mp3 */; };
+		2850780F21B67387000248C3 /* vc4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2850780421B67385000248C3 /* vc4.mp3 */; };
+		2850781021B67387000248C3 /* vc6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2850780521B67385000248C3 /* vc6.mp3 */; };
+		2850781121B67387000248C3 /* vc2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2850780621B67385000248C3 /* vc2.mp3 */; };
+		2850781221B67387000248C3 /* vc7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2850780721B67386000248C3 /* vc7.mp3 */; };
+		2850781321B67387000248C3 /* vc9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2850780821B67386000248C3 /* vc9.mp3 */; };
+		2850781421B67387000248C3 /* vc1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2850780921B67386000248C3 /* vc1.mp3 */; };
+		2850781521B67387000248C3 /* vc3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2850780A21B67386000248C3 /* vc3.mp3 */; };
+		2850781621B67387000248C3 /* vc8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2850780B21B67386000248C3 /* vc8.mp3 */; };
+		2850781721B67387000248C3 /* vc10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2850780C21B67386000248C3 /* vc10.mp3 */; };
+		2850781821B67387000248C3 /* vc11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2850780D21B67386000248C3 /* vc11.mp3 */; };
+		2850781921B67387000248C3 /* vc5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2850780E21B67387000248C3 /* vc5.mp3 */; };
+		2850781B21B6959C000248C3 /* vc12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2850781A21B6959C000248C3 /* vc12.mp3 */; };
 		285748572179BAA500FB7C6C /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285748562179BAA500FB7C6C /* ShopViewController.swift */; };
 		2861503521A2A36F00251AD8 /* sousaon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2861503421A2A36F00251AD8 /* sousaon.mp3 */; };
 		2861503721A2A43400251AD8 /* ketteion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2861503621A2A43400251AD8 /* ketteion.mp3 */; };
@@ -45,6 +57,17 @@
 		4D39DEB221B4F92800333F16 /* mesi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEB121B4F92700333F16 /* mesi.mp3 */; };
 		4D39DEB621B692A400333F16 /* homeru.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEB521B692A400333F16 /* homeru.mp3 */; };
 		4D39DEB821B6AD5000333F16 /* ganbre.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEB721B6AD4F00333F16 /* ganbre.mp3 */; };
+		4D39DEC421B7E77300333F16 /* VC11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEB921B7E77000333F16 /* VC11.mp3 */; };
+		4D39DEC521B7E77300333F16 /* VC7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEBA21B7E77000333F16 /* VC7.mp3 */; };
+		4D39DEC621B7E77300333F16 /* VC10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEBB21B7E77100333F16 /* VC10.mp3 */; };
+		4D39DEC721B7E77300333F16 /* VC4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEBC21B7E77100333F16 /* VC4.mp3 */; };
+		4D39DEC821B7E77300333F16 /* VC3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEBD21B7E77100333F16 /* VC3.mp3 */; };
+		4D39DEC921B7E77300333F16 /* VC8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEBE21B7E77100333F16 /* VC8.mp3 */; };
+		4D39DECA21B7E77300333F16 /* VC6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEBF21B7E77200333F16 /* VC6.mp3 */; };
+		4D39DECB21B7E77300333F16 /* VC5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEC021B7E77200333F16 /* VC5.mp3 */; };
+		4D39DECC21B7E77300333F16 /* VC1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEC121B7E77200333F16 /* VC1.mp3 */; };
+		4D39DECD21B7E77300333F16 /* VC9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEC221B7E77200333F16 /* VC9.mp3 */; };
+		4D39DECE21B7E77300333F16 /* VC2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEC321B7E77200333F16 /* VC2.mp3 */; };
 		4DE29FF2219BEE7500650264 /* NoA挨拶サンプル.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4DE29FF1219BEE7500650264 /* NoA挨拶サンプル.mp3 */; };
 		A64FA4157A8703FDBFB936AA /* Pods_Project_NoA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39BE910690AACB9B67EB2383 /* Pods_Project_NoA.framework */; };
 		D860FD20142E872B98BE8AB9 /* Pods_Project_NoA_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE20229AB3FB1F42E1C61B9C /* Pods_Project_NoA_WatchKit_Extension.framework */; };
@@ -102,6 +125,18 @@
 		28143C8421A52E28008636C9 /* KisekaePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisekaePopupViewController.swift; sourceTree = "<group>"; };
 		28143C8621A53B77008636C9 /* SettingPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPopupViewController.swift; sourceTree = "<group>"; };
 		28143C8821A53DED008636C9 /* itemselectSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = itemselectSound.mp3; sourceTree = "<group>"; };
+		2850780421B67385000248C3 /* vc4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vc4.mp3; sourceTree = "<group>"; };
+		2850780521B67385000248C3 /* vc6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vc6.mp3; sourceTree = "<group>"; };
+		2850780621B67385000248C3 /* vc2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vc2.mp3; sourceTree = "<group>"; };
+		2850780721B67386000248C3 /* vc7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vc7.mp3; sourceTree = "<group>"; };
+		2850780821B67386000248C3 /* vc9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vc9.mp3; sourceTree = "<group>"; };
+		2850780921B67386000248C3 /* vc1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vc1.mp3; sourceTree = "<group>"; };
+		2850780A21B67386000248C3 /* vc3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vc3.mp3; sourceTree = "<group>"; };
+		2850780B21B67386000248C3 /* vc8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vc8.mp3; sourceTree = "<group>"; };
+		2850780C21B67386000248C3 /* vc10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vc10.mp3; sourceTree = "<group>"; };
+		2850780D21B67386000248C3 /* vc11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vc11.mp3; sourceTree = "<group>"; };
+		2850780E21B67387000248C3 /* vc5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vc5.mp3; sourceTree = "<group>"; };
+		2850781A21B6959C000248C3 /* vc12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vc12.mp3; sourceTree = "<group>"; };
 		285748562179BAA500FB7C6C /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		2861503421A2A36F00251AD8 /* sousaon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sousaon.mp3; sourceTree = "<group>"; };
 		2861503621A2A43400251AD8 /* ketteion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ketteion.mp3; sourceTree = "<group>"; };
@@ -138,6 +173,17 @@
 		4D39DEB121B4F92700333F16 /* mesi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mesi.mp3; sourceTree = "<group>"; };
 		4D39DEB521B692A400333F16 /* homeru.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = homeru.mp3; sourceTree = "<group>"; };
 		4D39DEB721B6AD4F00333F16 /* ganbre.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ganbre.mp3; sourceTree = "<group>"; };
+		4D39DEB921B7E77000333F16 /* VC11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VC11.mp3; sourceTree = "<group>"; };
+		4D39DEBA21B7E77000333F16 /* VC7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VC7.mp3; sourceTree = "<group>"; };
+		4D39DEBB21B7E77100333F16 /* VC10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VC10.mp3; sourceTree = "<group>"; };
+		4D39DEBC21B7E77100333F16 /* VC4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VC4.mp3; sourceTree = "<group>"; };
+		4D39DEBD21B7E77100333F16 /* VC3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VC3.mp3; sourceTree = "<group>"; };
+		4D39DEBE21B7E77100333F16 /* VC8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VC8.mp3; sourceTree = "<group>"; };
+		4D39DEBF21B7E77200333F16 /* VC6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VC6.mp3; sourceTree = "<group>"; };
+		4D39DEC021B7E77200333F16 /* VC5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VC5.mp3; sourceTree = "<group>"; };
+		4D39DEC121B7E77200333F16 /* VC1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VC1.mp3; sourceTree = "<group>"; };
+		4D39DEC221B7E77200333F16 /* VC9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VC9.mp3; sourceTree = "<group>"; };
+		4D39DEC321B7E77200333F16 /* VC2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VC2.mp3; sourceTree = "<group>"; };
 		4DE29FF1219BEE7500650264 /* NoA挨拶サンプル.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "NoA挨拶サンプル.mp3"; sourceTree = "<group>"; };
 		5F81160F82FF5C3E6FAAFD4F /* Pods-Project_NoA WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_NoA WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-Project_NoA WatchKit App/Pods-Project_NoA WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		804841CD152270CD655446E5 /* libPods-Project_NoA WatchKit App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project_NoA WatchKit App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +221,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2850780321B67352000248C3 /* Voice */ = {
+			isa = PBXGroup;
+			children = (
+				2850780921B67386000248C3 /* vc1.mp3 */,
+				2850780621B67385000248C3 /* vc2.mp3 */,
+				2850780A21B67386000248C3 /* vc3.mp3 */,
+				2850780421B67385000248C3 /* vc4.mp3 */,
+				2850780E21B67387000248C3 /* vc5.mp3 */,
+				2850780521B67385000248C3 /* vc6.mp3 */,
+				2850780721B67386000248C3 /* vc7.mp3 */,
+				2850780B21B67386000248C3 /* vc8.mp3 */,
+				2850780821B67386000248C3 /* vc9.mp3 */,
+				2850780C21B67386000248C3 /* vc10.mp3 */,
+				2850780D21B67386000248C3 /* vc11.mp3 */,
+				2850781A21B6959C000248C3 /* vc12.mp3 */,
+			);
+			path = Voice;
+			sourceTree = "<group>";
+		};
 		2857485C2179C04700FB7C6C /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +322,7 @@
 		4D13B5A6215DFE6400095F97 /* Project_NoA */ = {
 			isa = PBXGroup;
 			children = (
+				2850780321B67352000248C3 /* Voice */,
 				2861503321A2A34A00251AD8 /* Sound */,
 				2857485D2179C06000FB7C6C /* ViewController */,
 				2857485C2179C04700FB7C6C /* StoryBoard */,
@@ -295,6 +361,17 @@
 		4D39DEA421B4F3A700333F16 /* sound */ = {
 			isa = PBXGroup;
 			children = (
+				4D39DEC121B7E77200333F16 /* VC1.mp3 */,
+				4D39DEC321B7E77200333F16 /* VC2.mp3 */,
+				4D39DEBD21B7E77100333F16 /* VC3.mp3 */,
+				4D39DEBC21B7E77100333F16 /* VC4.mp3 */,
+				4D39DEC021B7E77200333F16 /* VC5.mp3 */,
+				4D39DEBF21B7E77200333F16 /* VC6.mp3 */,
+				4D39DEBA21B7E77000333F16 /* VC7.mp3 */,
+				4D39DEBE21B7E77100333F16 /* VC8.mp3 */,
+				4D39DEC221B7E77200333F16 /* VC9.mp3 */,
+				4D39DEBB21B7E77100333F16 /* VC10.mp3 */,
+				4D39DEB921B7E77000333F16 /* VC11.mp3 */,
 				4D39DEB721B6AD4F00333F16 /* ganbre.mp3 */,
 				4D39DEB521B692A400333F16 /* homeru.mp3 */,
 				4D39DEA921B4F90B00333F16 /* hawomigaku.mp3 */,
@@ -429,16 +506,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2850781021B67387000248C3 /* vc6.mp3 in Resources */,
+				2850781821B67387000248C3 /* vc11.mp3 in Resources */,
 				4D13B5B2215DFE6700095F97 /* LaunchScreen.storyboard in Resources */,
 				2861503521A2A36F00251AD8 /* sousaon.mp3 in Resources */,
 				28123EE8219AC14D001D5D04 /* Movie.storyboard in Resources */,
+				2850780F21B67387000248C3 /* vc4.mp3 in Resources */,
+				2850781B21B6959C000248C3 /* vc12.mp3 in Resources */,
 				2861503721A2A43400251AD8 /* ketteion.mp3 in Resources */,
+				2850781621B67387000248C3 /* vc8.mp3 in Resources */,
 				28DDDE5D2179B20300C679D8 /* Shop.storyboard in Resources */,
+				2850781921B67387000248C3 /* vc5.mp3 in Resources */,
+				2850781221B67387000248C3 /* vc7.mp3 in Resources */,
 				28143C8921A53DED008636C9 /* itemselectSound.mp3 in Resources */,
+				2850781321B67387000248C3 /* vc9.mp3 in Resources */,
 				4D13B5AF215DFE6700095F97 /* Assets.xcassets in Resources */,
+				2850781121B67387000248C3 /* vc2.mp3 in Resources */,
+				2850781521B67387000248C3 /* vc3.mp3 in Resources */,
 				28DDDE5B2179B1F100C679D8 /* Kisekae.storyboard in Resources */,
 				4D13B5AD215DFE6400095F97 /* Main.storyboard in Resources */,
 				28DDDE5F2179B22600C679D8 /* Setting.storyboard in Resources */,
+				2850781721B67387000248C3 /* vc10.mp3 in Resources */,
+				2850781421B67387000248C3 /* vc1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,14 +545,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D39DEAE21B4F91D00333F16 /* oyasumi.mp3 in Resources */,
+				4D39DEC621B7E77300333F16 /* VC10.mp3 in Resources */,
 				4D39DEB621B692A400333F16 /* homeru.mp3 in Resources */,
+				4D39DECC21B7E77300333F16 /* VC1.mp3 in Resources */,
 				4D39DEAA21B4F90B00333F16 /* hawomigaku.mp3 in Resources */,
+				4D39DEC721B7E77300333F16 /* VC4.mp3 in Resources */,
+				4D39DECE21B7E77300333F16 /* VC2.mp3 in Resources */,
+				4D39DEC421B7E77300333F16 /* VC11.mp3 in Resources */,
+				4D39DEC921B7E77300333F16 /* VC8.mp3 in Resources */,
 				4D39DEB221B4F92800333F16 /* mesi.mp3 in Resources */,
 				4DE29FF2219BEE7500650264 /* NoA挨拶サンプル.mp3 in Resources */,
 				4D13B5D1215DFE6800095F97 /* Assets.xcassets in Resources */,
+				4D39DECD21B7E77300333F16 /* VC9.mp3 in Resources */,
 				4D39DEA821B4F90600333F16 /* yoruneruyo.mp3 in Resources */,
 				4D39DEB821B6AD5000333F16 /* ganbre.mp3 in Resources */,
+				4D39DEC521B7E77300333F16 /* VC7.mp3 in Resources */,
+				4D39DEC821B7E77300333F16 /* VC3.mp3 in Resources */,
 				4D39DEAC21B4F91600333F16 /* benkyousiro.mp3 in Resources */,
+				4D39DECB21B7E77300333F16 /* VC5.mp3 in Resources */,
+				4D39DECA21B7E77300333F16 /* VC6.mp3 in Resources */,
 				4D39DEB021B4F92200333F16 /* asadayo.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

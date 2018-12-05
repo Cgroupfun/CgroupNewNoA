@@ -8,6 +8,9 @@
 
 import UIKit
 import AVFoundation
+import AWSDynamoDB
+import AWSCore
+import Alamofire
 
 class ShopPopupViewController: UIViewController {
     
@@ -69,11 +72,15 @@ class ShopPopupViewController: UIViewController {
     }
     
     func NoAcoin_down(dowm:Int){
-        myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - dowm
-        userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
-        userDefaults.synchronize()
+        
+        let coin_url:String = "https://2kzwczqeb4.execute-api.ap-northeast-1.amazonaws.com/NoA" + "/-" + String(dowm)
+        
+        Alamofire.request(coin_url).responseJSON {response in
+        }
+        
+        myAp.noaCoin = myAp.noaCoin - dowm
     }
-    
+    //ノアコイン減少
     func coin_down(){
         let imagename = myAp.shop_item[myAp.shop_item_number]
         for i in (0...8){
@@ -83,19 +90,21 @@ class ShopPopupViewController: UIViewController {
         }
     }
     
+    //ポップアップのカスタマイズ
+    func buyjudge(buytext:String){
+        buyquestion.text = buytext
+        buyquestion.font = buyquestion.font.withSize(20)
+        buyquestion.textColor = UIColor.white
+        buyquestion.textAlignment = NSTextAlignment.center
+    }
+    
     //買うボタン非表示・表示
     func buybutton(){
         if (myAp.NoAcoin_compare[myAp.shop_item_number] == 1){
             buy_image.image = UIImage(named: "kaubotan")
-            buyquestion.text = "このアイテムをかう？"
-            buyquestion.font = buyquestion.font.withSize(20)
-            buyquestion.textColor = UIColor.white
-            buyquestion.textAlignment = NSTextAlignment.center
+            buyjudge(buytext: "このアイテムをかう？")
         }else if(myAp.NoAcoin_compare[myAp.shop_item_number] == 0){
-            buyquestion.text = "コインがたりないよ"
-            buyquestion.font = buyquestion.font.withSize(20)
-            buyquestion.textColor = UIColor.white
-            buyquestion.textAlignment = NSTextAlignment.center
+            buyjudge(buytext: "コインがたりないよ")
         }
     }
     //アイテム画像の位置
