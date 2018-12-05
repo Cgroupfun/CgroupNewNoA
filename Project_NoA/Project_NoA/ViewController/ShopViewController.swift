@@ -87,7 +87,7 @@ class ShopViewController: UIViewController {
                 print("An item was read.")
                 print(objectModel as Any)
                 NoAState = (objectModel as! NoAClass)
-                print(NoAState?.noaCoin)//この値を使ってNoAコインの+-をやってほしい(わかんなかったら明日で)
+                print(NoAState?.noaCoin as Any)//この値を使ってNoAコインの+-をやってほしい(わかんなかったら明日で)
         })
         
         buy_after()
