@@ -63,6 +63,8 @@ class ShopViewController: UIViewController {
     
     @IBAction func goShop(segue: UIStoryboardSegue){}
     
+    var noaCoinCount:Int
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -87,7 +89,9 @@ class ShopViewController: UIViewController {
                 print("An item was read.")
                 print(objectModel as Any)
                 NoAState = (objectModel as! NoAClass)
+                self.noaCoinCount = (NoAState?.noaCoin)!
                 print(NoAState?.noaCoin as Any)//この値を使ってNoAコインの+-をやってほしい(わかんなかったら明日で)
+                
         })
         
         buy_after()
