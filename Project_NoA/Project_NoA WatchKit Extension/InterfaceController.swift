@@ -23,7 +23,7 @@ class InterfaceController: WKInterfaceController {
     var audioFile:AVAudioFile!
     //画像取得のための変数2つ
     var task: URLSessionDataTask?
-    var isActive: Bool = false
+    var isActive: Bool = true
 
     //NoAの画像
     @IBOutlet var NoA: WKInterfaceImage!
@@ -31,7 +31,9 @@ class InterfaceController: WKInterfaceController {
     //タッチで喋る、動く
     @IBAction func Move(_ sender: Any) {
         getImage()
-        musicSet(name:"NoA挨拶サンプル", type:"mp3")
+        let voice = ["VC1", "VC2","VC3","VC4","VC5","VC6","VC7","VC8","VC9","VC10","VC11"]
+        
+        musicSet(name:voice.randomElement()!, type:"mp3")
 
     animate(withDuration: 0.5) { () -> Void in
             self.NoA.setHorizontalAlignment(WKInterfaceObjectHorizontalAlignment.right)
@@ -77,6 +79,7 @@ class InterfaceController: WKInterfaceController {
             var tooth4 :  Dictionary<String, String>?
             var wake :  Dictionary<String, String>?
             var study :  Dictionary<String, String>?
+            var Coin : Dictionary<String,Int>?
         }
         
         Alamofire.request("https://2kzwczqeb4.execute-api.ap-northeast-1.amazonaws.com/NoA/nomapping").responseJSON {response in
@@ -84,10 +87,10 @@ class InterfaceController: WKInterfaceController {
             let feed = try? decoder.decode(noaSetting.self, from: response.data!)
             self.TimeSchedule["wake"] = feed?.Items[0].wake!["S"]
             self.TimeSchedule["sleep"] = feed?.Items[0].sleep!["S"]
-            //self.TimeSchedule["study"] = feed?.Items[0].study!["S"]
+            self.TimeSchedule["study"] = feed?.Items[0].study!["S"]
             self.TimeSchedule["breakfast"] = feed?.Items[0].breakfast!["S"]
             self.TimeSchedule["lunch"] = feed?.Items[0].lunch!["S"]
-            //self.TimeSchedule["dinner"] = feed?.Items[0].dinner!["S"]
+            self.TimeSchedule["dinner"] = feed?.Items[0].dinner!["S"]
             self.TimeSchedule["drug_breakfast"] = feed?.Items[0].drug_breakfast!["S"]
             self.TimeSchedule["drug_dinner"] = feed?.Items[0].drug_dinner!["S"]
             self.TimeSchedule["drug_lunch"] = feed?.Items[0].drug_lunch!["S"]
@@ -102,7 +105,6 @@ class InterfaceController: WKInterfaceController {
         // アプリが起動している時の動作
         super.willActivate()
     
-        
         Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(InterfaceController.getTime), userInfo: nil, repeats: true)
        Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(InterfaceController.support), userInfo: nil, repeats: true)
         Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(InterfaceController.zyuudenn), userInfo: nil, repeats: true)
@@ -196,9 +198,9 @@ class InterfaceController: WKInterfaceController {
             if let d = data {
                 let image = UIImage(data: d)
                 DispatchQueue.main.async(execute: {
-                    if self.isActive {
+                   
                         self.NoA.setImage(image)
-                    }
+                    
                 })
             }
         }
