@@ -43,6 +43,8 @@
 		4D39DEAE21B4F91D00333F16 /* oyasumi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEAD21B4F91D00333F16 /* oyasumi.mp3 */; };
 		4D39DEB021B4F92200333F16 /* asadayo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEAF21B4F92200333F16 /* asadayo.mp3 */; };
 		4D39DEB221B4F92800333F16 /* mesi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEB121B4F92700333F16 /* mesi.mp3 */; };
+		4D39DEB621B692A400333F16 /* homeru.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEB521B692A400333F16 /* homeru.mp3 */; };
+		4D39DEB821B6AD5000333F16 /* ganbre.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEB721B6AD4F00333F16 /* ganbre.mp3 */; };
 		4DE29FF2219BEE7500650264 /* NoA挨拶サンプル.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4DE29FF1219BEE7500650264 /* NoA挨拶サンプル.mp3 */; };
 		A64FA4157A8703FDBFB936AA /* Pods_Project_NoA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39BE910690AACB9B67EB2383 /* Pods_Project_NoA.framework */; };
 		D860FD20142E872B98BE8AB9 /* Pods_Project_NoA_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE20229AB3FB1F42E1C61B9C /* Pods_Project_NoA_WatchKit_Extension.framework */; };
@@ -134,6 +136,8 @@
 		4D39DEAD21B4F91D00333F16 /* oyasumi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = oyasumi.mp3; sourceTree = "<group>"; };
 		4D39DEAF21B4F92200333F16 /* asadayo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = asadayo.mp3; sourceTree = "<group>"; };
 		4D39DEB121B4F92700333F16 /* mesi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mesi.mp3; sourceTree = "<group>"; };
+		4D39DEB521B692A400333F16 /* homeru.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = homeru.mp3; sourceTree = "<group>"; };
+		4D39DEB721B6AD4F00333F16 /* ganbre.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ganbre.mp3; sourceTree = "<group>"; };
 		4DE29FF1219BEE7500650264 /* NoA挨拶サンプル.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "NoA挨拶サンプル.mp3"; sourceTree = "<group>"; };
 		5F81160F82FF5C3E6FAAFD4F /* Pods-Project_NoA WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_NoA WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-Project_NoA WatchKit App/Pods-Project_NoA WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		804841CD152270CD655446E5 /* libPods-Project_NoA WatchKit App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project_NoA WatchKit App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,6 +295,8 @@
 		4D39DEA421B4F3A700333F16 /* sound */ = {
 			isa = PBXGroup;
 			children = (
+				4D39DEB721B6AD4F00333F16 /* ganbre.mp3 */,
+				4D39DEB521B692A400333F16 /* homeru.mp3 */,
 				4D39DEA921B4F90B00333F16 /* hawomigaku.mp3 */,
 				4D39DEAB21B4F91600333F16 /* benkyousiro.mp3 */,
 				4D39DEB121B4F92700333F16 /* mesi.mp3 */,
@@ -450,11 +456,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D39DEAE21B4F91D00333F16 /* oyasumi.mp3 in Resources */,
+				4D39DEB621B692A400333F16 /* homeru.mp3 in Resources */,
 				4D39DEAA21B4F90B00333F16 /* hawomigaku.mp3 in Resources */,
 				4D39DEB221B4F92800333F16 /* mesi.mp3 in Resources */,
 				4DE29FF2219BEE7500650264 /* NoA挨拶サンプル.mp3 in Resources */,
 				4D13B5D1215DFE6800095F97 /* Assets.xcassets in Resources */,
 				4D39DEA821B4F90600333F16 /* yoruneruyo.mp3 in Resources */,
+				4D39DEB821B6AD5000333F16 /* ganbre.mp3 in Resources */,
 				4D39DEAC21B4F91600333F16 /* benkyousiro.mp3 in Resources */,
 				4D39DEB021B4F92200333F16 /* asadayo.mp3 in Resources */,
 			);

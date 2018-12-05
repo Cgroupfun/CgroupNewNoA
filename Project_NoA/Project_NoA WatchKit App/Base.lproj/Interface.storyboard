@@ -25,13 +25,15 @@
             <objects>
                 <controller identifier="home" backgroundImage="heya" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Project_NoA_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <button width="1" height="25" alignment="left" title="おうえん" id="fvM-xN-soM">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="ouenn" destination="AgC-eL-Hgc" id="hOu-5v-Vff"/>
-                                <segue destination="Tkc-re-DAx" kind="modal" id="sKu-A8-MnF"/>
-                            </connections>
-                        </button>
+                        <imageView width="28" height="25" alignment="left" image="OuenButton" id="jlQ-wN-dib">
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="c5L-Zi-CUX">
+                                    <connections>
+                                        <action selector="ouenn" destination="AgC-eL-Hgc" id="hNL-V2-Kuk"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                            </gestureRecognizers>
+                        </imageView>
                         <imageView width="93" height="130" alignment="center" verticalAlignment="bottom" id="jiQ-kT-Pdd">
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="vFx-wn-hOh">
@@ -47,7 +49,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="353"/>
+            <point key="canvasLocation" x="220" y="298"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -114,11 +116,15 @@
             <objects>
                 <controller identifier="agree" id="s3F-nx-AyU" customClass="agreeController" customModule="Project_NoA_WatchKit_Extension">
                     <items>
-                        <group width="1" height="149" alignment="left" id="lPm-Oe-jRv"/>
+                        <group width="1" height="149" alignment="left" backgroundImage="homeru" animationDuration="1" id="lPm-Oe-jRv">
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="Ugn-79-Dso"/>
+                            </gestureRecognizers>
+                        </group>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="816" y="378"/>
+            <point key="canvasLocation" x="790" y="378"/>
         </scene>
         <!--mesi-->
         <scene sceneID="dqJ-OX-1Zi">
