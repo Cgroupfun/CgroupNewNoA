@@ -63,16 +63,17 @@ class ShopViewController: UIViewController {
     
     @IBAction func goShop(segue: UIStoryboardSegue){}
     
+    var NoAState = NoAClass()
+    
+    let queue = DispatchQueue(label: "test_queue")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var NoAState = NoAClass()
-        
-        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
-        
-        // Create data object using data models you downloaded from Mobile Hub
         let newsItem = NoAClass()
         newsItem!.ID = "NoA"
+        
+         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
         
         dynamoDbObjectMapper.load(
             NoAClass.self,
@@ -84,10 +85,14 @@ class ShopViewController: UIViewController {
                     print("Amazon DynamoDB Read Error: \(error)")
                     return
                 }
-                print("An item was read.")
-                print(objectModel as Any)
-                NoAState = (objectModel as! NoAClass)
-                print(NoAState?.noaCoin)//この値を使ってNoAコインの+-をやってほしい(わかんなかったら明日で)
+                //                print("An item was read.")
+                //                print(objectModel as Any)
+                self.NoAState = (objectModel as! NoAClass)
+                self.noaCoinCount = self.NoAState!.noaCoin
+                print("なか")
+                print(self.noaCoinCount as Any)
+                
+                //print(self.NoAState!.noaCoin)//この値を使ってNoAコインの+-をやってほしい(わかんなかったら明日で)
         })
         
         buy_after()
@@ -108,9 +113,20 @@ class ShopViewController: UIViewController {
             }
         }
     }
+    
+    var noaCoinCount:Int?
+    
     //ノアコインの表示
     func NoAcoin_show(){
-        NoAcoin.text = String(userDefaults.object(forKey: "NoA_coin") as! Int)
+        
+       
+        
+        // Create data object using data models you downloaded from Mobile Hub
+        
+        print("外")
+        print(noaCoinCount as Any)
+//      NoAcoin.text = String(userDefaults.object(forKey: "NoA_coin") as! Int)
+        //NoAcoin.text = noaCoinCount
     }
     
     override func didReceiveMemoryWarning() {
