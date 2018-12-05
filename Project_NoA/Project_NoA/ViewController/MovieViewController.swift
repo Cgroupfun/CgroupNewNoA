@@ -22,7 +22,7 @@ class MovieViewController: UIViewController {
     }
     //採血ボタン
     @IBAction func blood(_ sender: UIButton) {
-        moviePlay(movieURL: "https://s3-ap-northeast-1.amazonaws.com/noastorage/saiketu.mp4")
+        moviePlay(movieURL: "https://s3-ap-northeast-1.amazonaws.com/noastorage/saiketuv2.mp4")
     }
     
     func moviePlay(movieURL: String){
