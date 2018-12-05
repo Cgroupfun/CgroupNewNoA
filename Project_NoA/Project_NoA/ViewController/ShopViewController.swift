@@ -85,11 +85,8 @@ class ShopViewController: UIViewController {
         }
     }
     
-    var noaCoinCount:Int?
-    
     //ノアコインの表示
     func NoAcoin_show(){
-        print(self.myAp.noaCoin)
         NoAcoin.text = String(self.myAp.noaCoin)
     }
     
