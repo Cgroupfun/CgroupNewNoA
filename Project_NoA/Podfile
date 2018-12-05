@@ -9,6 +9,7 @@ target 'Project_NoA' do
   pod 'AWSS3'
   pod 'AWSCognito'
   pod 'AWSDynamoDB'
+  pod 'Alamofire'
 
 end
 

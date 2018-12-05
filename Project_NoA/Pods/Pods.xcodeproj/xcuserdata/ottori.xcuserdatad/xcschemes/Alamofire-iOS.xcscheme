@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "353B84F3A6DC7E2BAFF491E3549D9444"
-               BuildableName = "Pods_Project_NoA_WatchKit_Extension.framework"
-               BlueprintName = "Pods-Project_NoA WatchKit Extension"
+               BlueprintIdentifier = "A4A44D1A5CDD960F8E04681AFE771E72"
+               BuildableName = "Alamofire.framework"
+               BlueprintName = "Alamofire-iOS"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "353B84F3A6DC7E2BAFF491E3549D9444"
-            BuildableName = "Pods_Project_NoA_WatchKit_Extension.framework"
-            BlueprintName = "Pods-Project_NoA WatchKit Extension"
+            BlueprintIdentifier = "A4A44D1A5CDD960F8E04681AFE771E72"
+            BuildableName = "Alamofire.framework"
+            BlueprintName = "Alamofire-iOS"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
