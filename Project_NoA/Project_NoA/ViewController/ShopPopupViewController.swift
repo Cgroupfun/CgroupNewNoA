@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import AWSDynamoDB
+import AWSCore
 
 class ShopPopupViewController: UIViewController {
     
@@ -69,11 +71,28 @@ class ShopPopupViewController: UIViewController {
     }
     
     func NoAcoin_down(dowm:Int){
-        myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int - dowm
-        userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
-        userDefaults.synchronize()
+        
+        myAp.noaCoin = myAp.noaCoin - dowm
+        
+        //DBに保存
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        
+        // Create data object using data models you downloaded from Mobile Hub
+        let NoAItem = NoAClass()
+        NoAItem?.ID = "NoACoin"
+        NoAItem?.Coin = myAp.noaCoin
+        
+        //Save a new item
+        dynamoDbObjectMapper.save(NoAItem!).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
+            if let error = task.error as NSError? {
+                print("The request failed. Error: \(error)")
+            } else {
+                print("できたよ")
+            }
+            return nil
+        })
     }
-    
+    //ノアコイン減少
     func coin_down(){
         let imagename = myAp.shop_item[myAp.shop_item_number]
         for i in (0...8){
@@ -83,19 +102,21 @@ class ShopPopupViewController: UIViewController {
         }
     }
     
+    //ポップアップのカスタマイズ
+    func buyjudge(buytext:String){
+        buyquestion.text = buytext
+        buyquestion.font = buyquestion.font.withSize(20)
+        buyquestion.textColor = UIColor.white
+        buyquestion.textAlignment = NSTextAlignment.center
+    }
+    
     //買うボタン非表示・表示
     func buybutton(){
         if (myAp.NoAcoin_compare[myAp.shop_item_number] == 1){
             buy_image.image = UIImage(named: "kaubotan")
-            buyquestion.text = "このアイテムをかう？"
-            buyquestion.font = buyquestion.font.withSize(20)
-            buyquestion.textColor = UIColor.white
-            buyquestion.textAlignment = NSTextAlignment.center
+            buyjudge(buytext: "このアイテムをかう？")
         }else if(myAp.NoAcoin_compare[myAp.shop_item_number] == 0){
-            buyquestion.text = "コインがたりないよ"
-            buyquestion.font = buyquestion.font.withSize(20)
-            buyquestion.textColor = UIColor.white
-            buyquestion.textAlignment = NSTextAlignment.center
+            buyjudge(buytext: "コインがたりないよ")
         }
     }
     //アイテム画像の位置

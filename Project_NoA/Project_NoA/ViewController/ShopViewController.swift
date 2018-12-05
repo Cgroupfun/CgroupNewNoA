@@ -63,46 +63,18 @@ class ShopViewController: UIViewController {
     
     @IBAction func goShop(segue: UIStoryboardSegue){}
     
-    var noaCoinCount:Int
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var NoAState = NoAClass()
-        
-        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
-        
-        // Create data object using data models you downloaded from Mobile Hub
-        let newsItem = NoAClass()
-        newsItem!.ID = "NoA"
-        
-        dynamoDbObjectMapper.load(
-            NoAClass.self,
-            hashKey: newsItem!.ID as Any,
-            rangeKey: nil,
-            completionHandler: {
-                (objectModel: AWSDynamoDBObjectModel?, error: Error?) -> Void in
-                if let error = error {
-                    print("Amazon DynamoDB Read Error: \(error)")
-                    return
-                }
-                print("An item was read.")
-                print(objectModel as Any)
-                NoAState = (objectModel as! NoAClass)
-                self.noaCoinCount = (NoAState?.noaCoin)!
-                print(NoAState?.noaCoin as Any)//この値を使ってNoAコインの+-をやってほしい(わかんなかったら明日で)
-                
-        })
-        
-        buy_after()
+
         NoAcoin_show()
+        buy_after()
     }
     //購入アイテムを押した時の関数
     func itemReaction(buynumber:Int, price:Int){
         myAp.shop_item_number = buynumber
         myAp.NoAcoin_compare[buynumber] = 0
         if(userDefaults.object(forKey: myAp.shopbuynumber[buynumber]) as! Int == 0){
-            if(userDefaults.object(forKey: "NoA_coin") as! Int >= price){
+            if(myAp.noaCoin >= price){
                 myAp.NoAcoin_compare[buynumber] = 1
                 playSound(name: "sousaon")
                 popup()
@@ -112,9 +84,13 @@ class ShopViewController: UIViewController {
             }
         }
     }
+    
+    var noaCoinCount:Int?
+    
     //ノアコインの表示
     func NoAcoin_show(){
-        NoAcoin.text = String(userDefaults.object(forKey: "NoA_coin") as! Int)
+        print(self.myAp.noaCoin)
+        NoAcoin.text = String(self.myAp.noaCoin)
     }
     
     override func didReceiveMemoryWarning() {

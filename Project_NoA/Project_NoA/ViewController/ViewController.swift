@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import AWSDynamoDB
+import AWSCore
 
 class ViewController: UIViewController {
     
@@ -57,7 +59,29 @@ class ViewController: UIViewController {
     }
     //ノアをタップしたら
     @IBAction func voicePlay(_ sender: UITapGestureRecognizer) {
+    }
+    
+    var NoAState = NoAClass()
+    
+    func NoAcoin_data(){
+        let newsItem = NoAClass()
+        newsItem!.ID = "NoACoin"
         
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        
+        dynamoDbObjectMapper.load(
+            NoAClass.self,
+            hashKey: newsItem!.ID as Any,
+            rangeKey: nil,
+            completionHandler: {
+                (objectModel: AWSDynamoDBObjectModel?, error: Error?) -> Void in
+                if let error = error {
+                    print("Amazon DynamoDB Read Error: \(error)")
+                    return
+                }
+                self.NoAState = (objectModel as! NoAClass)
+                self.myAp.noaCoin = self.NoAState!.Coin
+        })
     }
     
     override func viewDidLoad() {
@@ -88,6 +112,8 @@ class ViewController: UIViewController {
         bg.image = UIImage(named: "iPhone6_Top.png")
         bg.layer.zPosition = -1
         self.view.addSubview(bg)
+        
+        NoAcoin_data()
         
         NoA_Image()
     }

@@ -9,6 +9,7 @@
 import UIKit
 import AVKit
 import AVFoundation
+import AWSDynamoDB
 
 class MovieViewController: UIViewController {
     
@@ -30,9 +31,26 @@ class MovieViewController: UIViewController {
     
     func moviePlay(movieURL: String){
         //ノアコイン増加
-        myAp.NoA_coin = userDefaults.object(forKey: "NoA_coin") as! Int + 10
-        userDefaults.set(myAp.NoA_coin, forKey: "NoA_coin")
-        userDefaults.synchronize()
+        myAp.noaCoin = myAp.noaCoin + 10
+        
+        //DBに保存
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        
+        // Create data object using data models you downloaded from Mobile Hub
+        let NoAItem = NoAClass()
+        NoAItem?.ID = "NoACoin"
+        NoAItem?.Coin = myAp.noaCoin
+        
+        //Save a new item
+        dynamoDbObjectMapper.save(NoAItem!).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
+            if let error = task.error as NSError? {
+                print("The request failed. Error: \(error)")
+            } else {
+                print("できたよ")
+            }
+            return nil
+        })
+        
         //動画再生
         guard let url = URL(string: movieURL) else {
             return

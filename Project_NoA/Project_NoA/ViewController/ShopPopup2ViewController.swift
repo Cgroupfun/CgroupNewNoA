@@ -35,13 +35,8 @@ extension ShopPopup2ViewController: AVAudioPlayerDelegate {
         }
         
         do {
-            // AVAudioPlayerのインスタンス化
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            
-            // AVAudioPlayerのデリゲートをセット
             audioPlayer.delegate = self
-            
-            // 音声の再生
             audioPlayer.play()
         } catch {
         }
