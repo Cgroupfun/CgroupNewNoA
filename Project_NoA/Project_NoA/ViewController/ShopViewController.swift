@@ -61,14 +61,35 @@ class ShopViewController: UIViewController {
     
     @IBAction func goShop(segue: UIStoryboardSegue){}
     
+    var NoAState = NoAClass()
+    
+    func NoAcoin_data(){
+        let newsItem = NoAClass()
+        newsItem!.ID = "NoA"
+        
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        
+        dynamoDbObjectMapper.load(
+            NoAClass.self,
+            hashKey: newsItem!.ID as Any,
+            rangeKey: nil,
+            completionHandler: {
+                (objectModel: AWSDynamoDBObjectModel?, error: Error?) -> Void in
+                if let error = error {
+                    print("Amazon DynamoDB Read Error: \(error)")
+                    return
+                }
+                self.NoAState = (objectModel as! NoAClass)
+                self.myAp.noaCoin = self.NoAState!.Coin
+        })
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        NoAcoin_data()
         
-        if let controller = self.presentingViewController as? ViewController {
-            controller.NoAcoin_data()
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
             self.NoAcoin_show()
         }
         buy_after()

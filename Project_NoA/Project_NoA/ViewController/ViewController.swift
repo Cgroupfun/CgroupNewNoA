@@ -73,29 +73,6 @@ class ViewController: UIViewController {
         "vc1","vc2","vc3","vc4","vc5","vc6","vc7","vc8","vc9","vc10","vc11","vc12"
     ]
     
-    var NoAState = NoAClass()
-    
-    func NoAcoin_data(){
-        let newsItem = NoAClass()
-        newsItem!.ID = "NoA"
-        
-        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
-        
-        dynamoDbObjectMapper.load(
-            NoAClass.self,
-            hashKey: newsItem!.ID as Any,
-            rangeKey: nil,
-            completionHandler: {
-                (objectModel: AWSDynamoDBObjectModel?, error: Error?) -> Void in
-                if let error = error {
-                    print("Amazon DynamoDB Read Error: \(error)")
-                    return
-                }
-                self.NoAState = (objectModel as! NoAClass)
-                self.myAp.noaCoin = self.NoAState!.Coin
-        })
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //永続データの初期値
@@ -123,8 +100,7 @@ class ViewController: UIViewController {
         bg.image = UIImage(named: "iPhone6_Top.png")
         bg.layer.zPosition = -1
         self.view.addSubview(bg)
-        
-        NoAcoin_data()
+
         NoA_Image()
     }
     
