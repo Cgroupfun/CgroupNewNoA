@@ -18,12 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iPhone_splash" translatesAutoresizingMaskIntoConstraints="NO" id="OFq-v7-lTH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone_splash" translatesAutoresizingMaskIntoConstraints="NO" id="CIb-VN-pEm">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CIb-VN-pEm" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5yu-ei-Fge"/>
+                            <constraint firstItem="CIb-VN-pEm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FCO-9v-yC8"/>
+                            <constraint firstItem="CIb-VN-pEm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PcJ-6E-gYr"/>
+                            <constraint firstItem="CIb-VN-pEm" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="fDx-OE-g6L"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>

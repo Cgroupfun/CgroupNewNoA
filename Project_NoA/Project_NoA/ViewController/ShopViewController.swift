@@ -89,7 +89,7 @@ class ShopViewController: UIViewController {
 
         NoAcoin_data()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
             self.NoAcoin_show()
         }
         buy_after()

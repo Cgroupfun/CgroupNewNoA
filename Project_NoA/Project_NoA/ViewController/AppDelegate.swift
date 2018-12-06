@@ -88,6 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var NoA_name:String?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        sleep(2);
         
         // Amazon Cognito 認証情報プロバイダーを初期化します
         
