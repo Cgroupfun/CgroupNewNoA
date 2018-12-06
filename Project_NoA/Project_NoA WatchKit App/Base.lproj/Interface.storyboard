@@ -18,7 +18,48 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="226" y="60"/>
+            <point key="canvasLocation" x="220" y="33"/>
+        </scene>
+        <!--demoButton-->
+        <scene sceneID="6wt-JN-qVP">
+            <objects>
+                <controller identifier="demoButton" id="Ktt-5E-oLa" customClass="demo" customModule="Project_NoA_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="rKe-Ak-GZr"/>
+                        <button width="1" alignment="left" title="起床" id="gYP-OW-dmF">
+                            <connections>
+                                <segue destination="rwI-05-1Gd" kind="modal" id="BDB-G1-735"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="食事" id="Mfw-Bp-LAB">
+                            <connections>
+                                <segue destination="cLe-Rt-lD1" kind="modal" id="mxu-ko-U1W"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="歯磨き" id="7LM-sm-h39">
+                            <connections>
+                                <segue destination="HnK-WY-riQ" kind="modal" id="LwJ-sD-Hrd"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="服薬" id="c3C-zo-8RJ">
+                            <connections>
+                                <segue destination="Quj-he-ck9" kind="modal" id="zp0-4J-7AB"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="勉強" id="d5e-pq-Ba3">
+                            <connections>
+                                <segue destination="RL0-1y-4Mt" kind="modal" id="eEu-FF-qWz"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="睡眠" id="lLD-NR-Jgw">
+                            <connections>
+                                <segue destination="Eqs-mU-N7W" kind="modal" id="Es3-hH-cqU"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="506" y="299"/>
         </scene>
         <!--home-->
         <scene sceneID="aou-V4-d1y">
@@ -34,7 +75,13 @@
                                 </tapGestureRecognizer>
                             </gestureRecognizers>
                         </imageView>
-                        <imageView width="93" height="130" alignment="center" verticalAlignment="bottom" id="jiQ-kT-Pdd">
+                        <button width="1" alignment="left" title="Demo用ボタン" id="jvS-VI-niV">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="demo" destination="AgC-eL-Hgc" id="rfo-Ew-x4n"/>
+                            </connections>
+                        </button>
+                        <imageView width="76" height="111" alignment="center" verticalAlignment="bottom" id="jiQ-kT-Pdd">
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="vFx-wn-hOh">
                                     <connections>
@@ -49,7 +96,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="298"/>
+            <point key="canvasLocation" x="220" y="322"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -76,7 +123,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="506" y="56.5"/>
+            <point key="canvasLocation" x="856" y="794"/>
         </scene>
         <!--tooth-->
         <scene sceneID="tnh-zm-yFA">
@@ -87,7 +134,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="816" y="-245"/>
+            <point key="canvasLocation" x="856" y="175"/>
         </scene>
         <!--wake-->
         <scene sceneID="CfE-gX-K3Y">
@@ -98,7 +145,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="816" y="68.5"/>
+            <point key="canvasLocation" x="790" y="-431"/>
         </scene>
         <!--sleep-->
         <scene sceneID="g3y-a4-1L6">
@@ -109,7 +156,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1061" y="70"/>
+            <point key="canvasLocation" x="856" y="1099"/>
         </scene>
         <!--agree-->
         <scene sceneID="B3E-ba-dbk">
@@ -124,7 +171,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="790" y="378"/>
+            <point key="canvasLocation" x="1080" y="370"/>
         </scene>
         <!--mesi-->
         <scene sceneID="dqJ-OX-1Zi">
@@ -135,7 +182,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1065" y="389"/>
+            <point key="canvasLocation" x="790" y="-141"/>
         </scene>
         <!--drug-->
         <scene sceneID="Qz7-bY-7w4">
@@ -154,7 +201,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="790" y="664"/>
+            <point key="canvasLocation" x="867" y="477"/>
         </scene>
         <!--Ouenn-->
         <scene sceneID="OpR-vb-9cZ">
@@ -165,7 +212,7 @@
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="Kur-k4-rww">
                                     <connections>
-                                        <action selector="agree:" destination="Tkc-re-DAx" id="NAB-8Y-cWs"/>
+                                        <action selector="agree:" destination="Tkc-re-DAx" id="5S6-8Q-ouL"/>
                                     </connections>
                                 </tapGestureRecognizer>
                             </gestureRecognizers>
@@ -173,7 +220,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="506" y="387"/>
+            <point key="canvasLocation" x="220" y="-284"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">

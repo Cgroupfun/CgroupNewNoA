@@ -14,7 +14,7 @@ import Alamofire
 class ouennController:WKInterfaceController,AVAudioPlayerDelegate {
     //音声に関する変数の生成
     var audioPlayer: AVAudioPlayer!
-    var seni:Int = 0
+    var seni :Int = 0
     override func awake(withContext context: Any?) {
          super.awake(withContext: context)
         loopSound(name:"ganbre")//後で音声追加
@@ -42,16 +42,20 @@ class ouennController:WKInterfaceController,AVAudioPlayerDelegate {
         } catch {
         }
     }
-    @IBAction func agree(_ sender: Any) {
-                presentController(withName: "agree", context: "none")
-        //ノアコインの送信？
-        Alamofire.request("https://2kzwczqeb4.execute-api.ap-northeast-1.amazonaws.com/NoA/").responseJSON {response in
-        }
-        seni = 1
-        print("ノアコインゲット")
-        audioPlayer.stop()
+ 
+        @IBAction func agree(_ sender: Any) {
+            audioPlayer.stop()
+            presentController(withName: "agree", context: "none")
+            //ノアコインの送信？
+            Alamofire.request("https://2kzwczqeb4.execute-api.ap-northeast-1.amazonaws.com/NoA/").responseJSON {response in
+            }
+            seni = 1
+            print("ノアコインゲット")
+            //audioPlayer.stop()
     }
-}
+        }
+    
+
 class toothController:WKInterfaceController,AVAudioPlayerDelegate {
     //音声に関する変数の生成
     var audioPlayer: AVAudioPlayer!
@@ -70,6 +74,7 @@ class drugController:WKInterfaceController,AVAudioPlayerDelegate {
         ouennController().loopSound(name:"kusuri")
     }
     @IBAction func agree(_ sender: Any) {
+        audioPlayer.stop()
          presentController(withName: "agree", context: "none")
     }
 }

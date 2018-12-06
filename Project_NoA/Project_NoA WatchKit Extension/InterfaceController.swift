@@ -206,4 +206,14 @@ class InterfaceController: WKInterfaceController {
         }
         return task!.resume()
     }
+    
+    @IBAction func demo() {
+        presentController(withName: "demoButton", context: "none")
+    }
+}
+class demo : WKInterfaceController {
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
+        print("demo画面")
+    }
 }

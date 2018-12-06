@@ -68,6 +68,7 @@
 		4D39DECC21B7E77300333F16 /* VC1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEC121B7E77200333F16 /* VC1.mp3 */; };
 		4D39DECD21B7E77300333F16 /* VC9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEC221B7E77200333F16 /* VC9.mp3 */; };
 		4D39DECE21B7E77300333F16 /* VC2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEC321B7E77200333F16 /* VC2.mp3 */; };
+		4D39DED221B8FABD00333F16 /* kusuri.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DED121B8FABD00333F16 /* kusuri.mp3 */; };
 		4DE29FF2219BEE7500650264 /* NoA挨拶サンプル.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4DE29FF1219BEE7500650264 /* NoA挨拶サンプル.mp3 */; };
 		A64FA4157A8703FDBFB936AA /* Pods_Project_NoA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39BE910690AACB9B67EB2383 /* Pods_Project_NoA.framework */; };
 		D860FD20142E872B98BE8AB9 /* Pods_Project_NoA_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE20229AB3FB1F42E1C61B9C /* Pods_Project_NoA_WatchKit_Extension.framework */; };
@@ -184,6 +185,7 @@
 		4D39DEC121B7E77200333F16 /* VC1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VC1.mp3; sourceTree = "<group>"; };
 		4D39DEC221B7E77200333F16 /* VC9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VC9.mp3; sourceTree = "<group>"; };
 		4D39DEC321B7E77200333F16 /* VC2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VC2.mp3; sourceTree = "<group>"; };
+		4D39DED121B8FABD00333F16 /* kusuri.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kusuri.mp3; sourceTree = "<group>"; };
 		4DE29FF1219BEE7500650264 /* NoA挨拶サンプル.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "NoA挨拶サンプル.mp3"; sourceTree = "<group>"; };
 		5F81160F82FF5C3E6FAAFD4F /* Pods-Project_NoA WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_NoA WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-Project_NoA WatchKit App/Pods-Project_NoA WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		804841CD152270CD655446E5 /* libPods-Project_NoA WatchKit App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project_NoA WatchKit App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -372,6 +374,7 @@
 				4D39DEC221B7E77200333F16 /* VC9.mp3 */,
 				4D39DEBB21B7E77100333F16 /* VC10.mp3 */,
 				4D39DEB921B7E77000333F16 /* VC11.mp3 */,
+				4D39DED121B8FABD00333F16 /* kusuri.mp3 */,
 				4D39DEB721B6AD4F00333F16 /* ganbre.mp3 */,
 				4D39DEB521B692A400333F16 /* homeru.mp3 */,
 				4D39DEA921B4F90B00333F16 /* hawomigaku.mp3 */,
@@ -555,6 +558,7 @@
 				4D39DEC921B7E77300333F16 /* VC8.mp3 in Resources */,
 				4D39DEB221B4F92800333F16 /* mesi.mp3 in Resources */,
 				4DE29FF2219BEE7500650264 /* NoA挨拶サンプル.mp3 in Resources */,
+				4D39DED221B8FABD00333F16 /* kusuri.mp3 in Resources */,
 				4D13B5D1215DFE6800095F97 /* Assets.xcassets in Resources */,
 				4D39DECD21B7E77300333F16 /* VC9.mp3 in Resources */,
 				4D39DEA821B4F90600333F16 /* yoruneruyo.mp3 in Resources */,
