@@ -66,7 +66,7 @@
             <objects>
                 <controller identifier="home" backgroundImage="heya" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Project_NoA_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <imageView width="28" height="25" alignment="left" image="OuenButton" id="jlQ-wN-dib">
+                        <imageView width="38" height="37" alignment="left" image="OuenButton" id="jlQ-wN-dib">
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="c5L-Zi-CUX">
                                     <connections>
@@ -75,13 +75,13 @@
                                 </tapGestureRecognizer>
                             </gestureRecognizers>
                         </imageView>
-                        <button width="1" alignment="left" title="Demo用ボタン" id="jvS-VI-niV">
+                        <button width="1" height="15" alignment="left" title="Demo用ボタン" id="jvS-VI-niV">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="demo" destination="AgC-eL-Hgc" id="rfo-Ew-x4n"/>
                             </connections>
                         </button>
-                        <imageView width="76" height="111" alignment="center" verticalAlignment="bottom" id="jiQ-kT-Pdd">
+                        <imageView width="73" height="112" alignment="center" verticalAlignment="bottom" id="jiQ-kT-Pdd">
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="vFx-wn-hOh">
                                     <connections>
@@ -96,7 +96,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="322"/>
+            <point key="canvasLocation" x="220" y="316.5"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

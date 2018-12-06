@@ -49,6 +49,7 @@
 		4D13B5CD215DFE6800095F97 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13B5CC215DFE6800095F97 /* ExtensionDelegate.swift */; };
 		4D13B5CF215DFE6800095F97 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13B5CE215DFE6800095F97 /* NotificationController.swift */; };
 		4D13B5D1215DFE6800095F97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D13B5D0215DFE6800095F97 /* Assets.xcassets */; };
+		4D32D33721B975DC00883280 /* ganbare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D32D33621B975DC00883280 /* ganbare.mp3 */; };
 		4D39DEA821B4F90600333F16 /* yoruneruyo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEA721B4F90600333F16 /* yoruneruyo.mp3 */; };
 		4D39DEAA21B4F90B00333F16 /* hawomigaku.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEA921B4F90B00333F16 /* hawomigaku.mp3 */; };
 		4D39DEAC21B4F91600333F16 /* benkyousiro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEAB21B4F91600333F16 /* benkyousiro.mp3 */; };
@@ -56,7 +57,6 @@
 		4D39DEB021B4F92200333F16 /* asadayo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEAF21B4F92200333F16 /* asadayo.mp3 */; };
 		4D39DEB221B4F92800333F16 /* mesi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEB121B4F92700333F16 /* mesi.mp3 */; };
 		4D39DEB621B692A400333F16 /* homeru.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEB521B692A400333F16 /* homeru.mp3 */; };
-		4D39DEB821B6AD5000333F16 /* ganbre.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEB721B6AD4F00333F16 /* ganbre.mp3 */; };
 		4D39DEC421B7E77300333F16 /* VC11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEB921B7E77000333F16 /* VC11.mp3 */; };
 		4D39DEC521B7E77300333F16 /* VC7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEBA21B7E77000333F16 /* VC7.mp3 */; };
 		4D39DEC621B7E77300333F16 /* VC10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEBB21B7E77100333F16 /* VC10.mp3 */; };
@@ -166,6 +166,7 @@
 		4D13B5D0215DFE6800095F97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D13B5D2215DFE6800095F97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D13B5D3215DFE6800095F97 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		4D32D33621B975DC00883280 /* ganbare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ganbare.mp3; sourceTree = "<group>"; };
 		4D39DEA721B4F90600333F16 /* yoruneruyo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yoruneruyo.mp3; sourceTree = "<group>"; };
 		4D39DEA921B4F90B00333F16 /* hawomigaku.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hawomigaku.mp3; sourceTree = "<group>"; };
 		4D39DEAB21B4F91600333F16 /* benkyousiro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = benkyousiro.mp3; sourceTree = "<group>"; };
@@ -173,7 +174,6 @@
 		4D39DEAF21B4F92200333F16 /* asadayo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = asadayo.mp3; sourceTree = "<group>"; };
 		4D39DEB121B4F92700333F16 /* mesi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mesi.mp3; sourceTree = "<group>"; };
 		4D39DEB521B692A400333F16 /* homeru.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = homeru.mp3; sourceTree = "<group>"; };
-		4D39DEB721B6AD4F00333F16 /* ganbre.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ganbre.mp3; sourceTree = "<group>"; };
 		4D39DEB921B7E77000333F16 /* VC11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VC11.mp3; sourceTree = "<group>"; };
 		4D39DEBA21B7E77000333F16 /* VC7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VC7.mp3; sourceTree = "<group>"; };
 		4D39DEBB21B7E77100333F16 /* VC10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VC10.mp3; sourceTree = "<group>"; };
@@ -366,6 +366,7 @@
 				4D39DEC121B7E77200333F16 /* VC1.mp3 */,
 				4D39DEC321B7E77200333F16 /* VC2.mp3 */,
 				4D39DEBD21B7E77100333F16 /* VC3.mp3 */,
+				4D32D33621B975DC00883280 /* ganbare.mp3 */,
 				4D39DEBC21B7E77100333F16 /* VC4.mp3 */,
 				4D39DEC021B7E77200333F16 /* VC5.mp3 */,
 				4D39DEBF21B7E77200333F16 /* VC6.mp3 */,
@@ -375,7 +376,6 @@
 				4D39DEBB21B7E77100333F16 /* VC10.mp3 */,
 				4D39DEB921B7E77000333F16 /* VC11.mp3 */,
 				4D39DED121B8FABD00333F16 /* kusuri.mp3 */,
-				4D39DEB721B6AD4F00333F16 /* ganbre.mp3 */,
 				4D39DEB521B692A400333F16 /* homeru.mp3 */,
 				4D39DEA921B4F90B00333F16 /* hawomigaku.mp3 */,
 				4D39DEAB21B4F91600333F16 /* benkyousiro.mp3 */,
@@ -562,11 +562,11 @@
 				4D13B5D1215DFE6800095F97 /* Assets.xcassets in Resources */,
 				4D39DECD21B7E77300333F16 /* VC9.mp3 in Resources */,
 				4D39DEA821B4F90600333F16 /* yoruneruyo.mp3 in Resources */,
-				4D39DEB821B6AD5000333F16 /* ganbre.mp3 in Resources */,
 				4D39DEC521B7E77300333F16 /* VC7.mp3 in Resources */,
 				4D39DEC821B7E77300333F16 /* VC3.mp3 in Resources */,
 				4D39DEAC21B4F91600333F16 /* benkyousiro.mp3 in Resources */,
 				4D39DECB21B7E77300333F16 /* VC5.mp3 in Resources */,
+				4D32D33721B975DC00883280 /* ganbare.mp3 in Resources */,
 				4D39DECA21B7E77300333F16 /* VC6.mp3 in Resources */,
 				4D39DEB021B4F92200333F16 /* asadayo.mp3 in Resources */,
 			);

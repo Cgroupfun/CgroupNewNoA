@@ -17,7 +17,7 @@ class ouennController:WKInterfaceController,AVAudioPlayerDelegate {
     var seni :Int = 0
     override func awake(withContext context: Any?) {
          super.awake(withContext: context)
-        loopSound(name:"ganbre")//後で音声追加
+        loopSound(name:"ganbare")//後で音声追加
     }
     override func willActivate() {
         super.willActivate()
