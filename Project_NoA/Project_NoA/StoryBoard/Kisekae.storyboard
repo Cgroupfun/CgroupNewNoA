@@ -55,8 +55,8 @@
                                 <rect key="frame" x="1" y="425" width="109" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="星" translatesAutoresizingMaskIntoConstraints="NO" id="TQ2-9v-FkT">
-                                <rect key="frame" x="113" y="412" width="61" height="51"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="TQ2-9v-FkT">
+                                <rect key="frame" x="113" y="412" width="61" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="おばけ" translatesAutoresizingMaskIntoConstraints="NO" id="mx5-WK-NB5">
@@ -296,12 +296,12 @@
     <resources>
         <image name="iPhone_お着替え" width="750" height="1334"/>
         <image name="popup_kigae" width="630" height="763"/>
+        <image name="star" width="136" height="130"/>
         <image name="おばけ" width="103" height="114"/>
         <image name="かえる帽子" width="248" height="58"/>
         <image name="リボン_赤" width="46" height="29"/>
         <image name="リボン_青" width="46" height="29"/>
         <image name="帽子_赤" width="121" height="43"/>
         <image name="帽子_青" width="122" height="43"/>
-        <image name="星" width="137" height="130"/>
     </resources>
 </document>

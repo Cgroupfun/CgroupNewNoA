@@ -35,7 +35,7 @@ class KisekaeViewController: UIViewController {
             ufoImg?.draw(in: CGRect(x: 33, y: 37, width:83, height:27))
         }else if (itemname == "かえる帽子"){
             ufoImg?.draw(in: CGRect(x: 6, y: 38, width:111, height:21))
-        }else if (itemname == "星") || (itemname == "おばけ"){
+        }else if (itemname == "star") || (itemname == "おばけ"){
             ufoImg?.draw(in: CGRect(x: 83, y: 55, width:29, height:25))
         }else if (itemname == "おうかん"){
             ufoImg?.draw(in: CGRect(x: 37, y: 15, width:55, height:44))
@@ -142,7 +142,7 @@ class KisekaeViewController: UIViewController {
         }else if (imagename == "かえる帽子"){
             itemname = imagename
             NoA_item.frame = CGRect(x:100, y:112, width:161, height:33)
-        }else if (imagename == "星") || (imagename == "おばけ"){
+        }else if (imagename == "star") || (imagename == "おばけ"){
             itemname = imagename
             NoA_item.frame = CGRect(x:212, y:129, width:43, height:40)
         }else if (imagename == "おうかん"){

@@ -11,8 +11,6 @@ import AVFoundation
 import AWSDynamoDB
 import AWSCore
 
-
-
 class ShopViewController: UIViewController {
     
     var audioPlayer: AVAudioPlayer!
@@ -65,8 +63,14 @@ class ShopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        NoAcoin_show()
+        
+        if let controller = self.presentingViewController as? ViewController {
+            controller.NoAcoin_data()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.NoAcoin_show()
+        }
         buy_after()
     }
     //購入アイテムを押した時の関数

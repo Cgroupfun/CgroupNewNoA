@@ -14,12 +14,22 @@ import AWSCore
 class ViewController: UIViewController {
     
     var audioPlayer: AVAudioPlayer!
+    var NoA_audioPlayer: AVAudioPlayer!
     var myAp = UIApplication.shared.delegate as! AppDelegate
     let userDefaults = UserDefaults.standard
     //画像取得のための変数
     var task: URLSessionDataTask?
     var isActive: Bool = true
-    
+    //デモ用リセットボタン
+    @IBAction func resetButton(_ sender: UIButton) {
+        //永続データの初期値
+        for i in 0...8{
+            userDefaults.set("", forKey: myAp.buyitem_key[i])
+            userDefaults.set(0, forKey: myAp.shopbuynumber[i])
+        }
+        userDefaults.set(0, forKey: "buyturn")
+        userDefaults.synchronize()
+    }
     //お着替えボタン
     @IBAction func gookigae(_ sender: UIButton) {
         playSound(name: "sousaon")
@@ -98,7 +108,6 @@ class ViewController: UIViewController {
                                          myAp.buyitem_key[6]   : "",
                                          myAp.buyitem_key[7]   : "",
                                          myAp.buyitem_key[8]   : "",
-                                         "NoA_coin"            : 300,
                                          myAp.shopbuynumber[0] : 0,
                                          myAp.shopbuynumber[1] : 0,
                                          myAp.shopbuynumber[2] : 0,
@@ -165,9 +174,24 @@ extension ViewController: AVAudioPlayerDelegate {
             return
         }
         do {
+//            NoA_audioPlayer.stop()
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
             audioPlayer.delegate = self
+            audioPlayer.volume = 1
             audioPlayer.play()
+        } catch {
+        }
+    }
+    func NoA_Sound(name: String) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+            print("音源ファイルが見つかりません")
+            return
+        }
+        do {
+            NoA_audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            NoA_audioPlayer.delegate = self
+            NoA_audioPlayer.volume = 10
+            NoA_audioPlayer.play()
         } catch {
         }
     }

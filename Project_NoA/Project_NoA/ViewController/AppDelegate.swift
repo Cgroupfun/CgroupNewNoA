@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         "リボン_赤",
         "リボン_青",
         "かえる帽子",
-        "星",
+        "star",
         "おばけ"
     ]
     //ショップアイテム
