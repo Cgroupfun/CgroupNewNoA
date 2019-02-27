@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hmh-ma-tQI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hmh-ma-tQI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,16 +20,109 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone_設定" translatesAutoresizingMaskIntoConstraints="NO" id="WVC-Sd-izZ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5g-ye-yWY">
-                                <rect key="frame" x="7" y="19" width="86" height="30"/>
+                                <rect key="frame" x="7" y="24" width="86" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <segue destination="FOW-qw-keV" kind="unwind" unwindAction="modoruWithSegue:" id="663-iM-xNH"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DDA-zH-CT4">
+                                <rect key="frame" x="162" y="71" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YsF-2d-WUM">
+                                <rect key="frame" x="162" y="113" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cZG-3s-WAc">
+                                <rect key="frame" x="162" y="155" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Evg-Rh-hgv">
+                                <rect key="frame" x="162" y="197" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SuZ-xM-dtN">
+                                <rect key="frame" x="162" y="238" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K5w-UA-rqj">
+                                <rect key="frame" x="162" y="364" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zYW-Jc-j5l">
+                                <rect key="frame" x="162" y="404" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uV9-SY-lQQ">
+                                <rect key="frame" x="162" y="445" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7nP-mR-GWk">
+                                <rect key="frame" x="162" y="530" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rnz-Ut-QvI">
+                                <rect key="frame" x="162" y="568" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pnw-iB-zHb">
+                                <rect key="frame" x="162" y="610" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEg-Vs-a1Z">
+                                <rect key="frame" x="283" y="24" width="85" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="ketteiButton:" destination="hmh-ma-tQI" eventType="touchUpInside" id="maD-aT-hqh"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EsQ-PZ-Yw2">
+                                <rect key="frame" x="162" y="280" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="WVC-Sd-izZ" firstAttribute="top" secondItem="Fqe-Ff-34t" secondAttribute="top" id="IEj-yS-bYI"/>
                             <constraint firstItem="WVC-Sd-izZ" firstAttribute="trailing" secondItem="tTW-6i-G0U" secondAttribute="trailing" id="SYG-Ix-MDo"/>
@@ -37,15 +130,74 @@
                             <constraint firstItem="WVC-Sd-izZ" firstAttribute="leading" secondItem="tTW-6i-G0U" secondAttribute="leading" id="pKz-5q-dvM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tTW-6i-G0U"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="zUK-cB-29p" appends="YES" id="oUM-yo-ceL"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outletCollection property="lifeTextField" destination="DDA-zH-CT4" collectionClass="NSMutableArray" id="qUt-23-1cS"/>
+                        <outletCollection property="lifeTextField" destination="YsF-2d-WUM" collectionClass="NSMutableArray" id="HKP-X3-eG9"/>
+                        <outletCollection property="lifeTextField" destination="cZG-3s-WAc" collectionClass="NSMutableArray" id="3wP-WC-fwJ"/>
+                        <outletCollection property="lifeTextField" destination="Evg-Rh-hgv" collectionClass="NSMutableArray" id="SWM-Xk-rsS"/>
+                        <outletCollection property="lifeTextField" destination="SuZ-xM-dtN" collectionClass="NSMutableArray" id="vtE-WA-BbJ"/>
+                        <outletCollection property="lifeTextField" destination="EsQ-PZ-Yw2" collectionClass="NSMutableArray" id="qIe-H1-eeR"/>
+                        <outletCollection property="lifeTextField" destination="K5w-UA-rqj" collectionClass="NSMutableArray" id="a6y-Cb-u9b"/>
+                        <outletCollection property="lifeTextField" destination="zYW-Jc-j5l" collectionClass="NSMutableArray" id="J9j-eW-fSH"/>
+                        <outletCollection property="lifeTextField" destination="uV9-SY-lQQ" collectionClass="NSMutableArray" id="QRt-Le-Yxh"/>
+                        <outletCollection property="lifeTextField" destination="7nP-mR-GWk" collectionClass="NSMutableArray" id="AB1-DH-C4z"/>
+                        <outletCollection property="lifeTextField" destination="Rnz-Ut-QvI" collectionClass="NSMutableArray" id="Q5s-io-VdQ"/>
+                        <outletCollection property="lifeTextField" destination="Pnw-iB-zHb" collectionClass="NSMutableArray" id="N62-jX-i2a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nXi-Hy-jfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FOW-qw-keV" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="zUK-cB-29p">
+                    <connections>
+                        <action selector="tapView:" destination="hmh-ma-tQI" id="Cv9-KM-eM8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="72.799999999999997" y="169.56521739130437"/>
+        </scene>
+        <!--Setting Popup View Controller-->
+        <scene sceneID="bg2-wn-Shg">
+            <objects>
+                <viewController storyboardIdentifier="SettingPopup" id="Ffm-0N-iNW" customClass="SettingPopupViewController" customModule="Project_NoA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0OE-Tr-iln">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="popup_settei" translatesAutoresizingMaskIntoConstraints="NO" id="dC8-zy-Jgz">
+                                <rect key="frame" x="43" y="150" width="289" height="367"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCg-qf-YxF">
+                                <rect key="frame" x="116" y="268" width="143" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="Oaa-LK-tye" kind="unwind" unwindAction="modoruWithSegue:" id="kh7-cQ-Rgc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GrC-BQ-guC">
+                                <rect key="frame" x="116" y="331" width="143" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="Oaa-LK-tye" kind="unwind" unwindAction="goSettingWithSegue:" id="Shz-mk-RwT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="Ked-ef-btV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7uz-V3-fMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Oaa-LK-tye" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="801" y="170"/>
         </scene>
     </scenes>
     <resources>
         <image name="iPhone_設定" width="750" height="1334"/>
+        <image name="popup_settei" width="630" height="763"/>
     </resources>
 </document>

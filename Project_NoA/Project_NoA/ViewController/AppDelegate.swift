@@ -7,15 +7,96 @@
 //
 
 import UIKit
+import WatchConnectivity
+import AWSCognito
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var window: UIWindow?
+    func detaSentFunc(){
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            session.delegate = self as? WCSessionDelegate
+            session.activate()
+        }
+    }
     
+    var window: UIWindow?
+    //ノアコイン
+    var NoA_coin:Int = 100
+    
+    //コイン足りるか判定
+    var NoAcoin_compare:[Int] = [
+        0,0,0,0,0,0,0,0,0
+    ]
+    //購入アイテムキー
+    var buyitem_key:[String] = [
+        "number8","number9","number10","number11","number12","number13","number14","number15","number16"
+    ]
+    //アイテム購入判定番号
+    var shop_buy_number:[Int] = [
+        0,0,0,0,0,0,0,0,0
+    ]
+    //アイテム価格
+    var shopitem_price:[Int] = [
+        10,20,20,30,30,50,50,80,100
+    ]
+    //ノアのアイテム
+    var item_image:[String] = [
+        "帽子_赤",
+        "帽子_青",
+        "リボン_赤",
+        "リボン_青",
+        "かえる帽子",
+        "星",
+        "おばけ"
+    ]
+    //ショップアイテム
+    var shop_item:[String] = [
+        "つの",
+        "めがね_あお",
+        "めがね_あか",
+        "はっと",
+        "はな",
+        "おにのお面",
+        "ねこ",
+        "ティアラ",
+        "おうかん"
+    ]
+    
+    var shopbuynumber:[String] = [
+        "tsuno",
+        "bulemegane",
+        "redmegane",
+        "hat",
+        "flower",
+        "omen",
+        "cat",
+        "tiara",
+        "crown"
+    ]
+    //所持アイテム番号
+    var NoA_image_number = 0
+    //ショップアイテム番号
+    var shop_item_number = 0
+    //アイテム追加する順番
+    var item_addnumber = 0
+    
+    var NoA_compose:UIImage?
+    
+    var NoA_name:String?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        // Amazon Cognito 認証情報プロバイダーを初期化します
+        
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.APNortheast1,
+                                                                identityPoolId:"ap-northeast-1:f87a1475-afa6-48f6-9a8e-e86448bba568")
+        
+        let configuration = AWSServiceConfiguration(region:.APNortheast1, credentialsProvider:credentialsProvider)
+        
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
+
         return true
     }
     

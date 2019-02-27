@@ -7,13 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A14184F80FE28EC8DCCAD98 /* libPods-Project_NoA WatchKit App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 804841CD152270CD655446E5 /* libPods-Project_NoA WatchKit App.a */; };
+		28123EE0219ABEDC001D5D04 /* ShopPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28123EDF219ABEDC001D5D04 /* ShopPopupViewController.swift */; };
+		28123EE2219ABF0C001D5D04 /* ShopPopup2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28123EE1219ABF0C001D5D04 /* ShopPopup2ViewController.swift */; };
+		28123EE4219AC0F9001D5D04 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28123EE3219AC0F9001D5D04 /* MovieViewController.swift */; };
+		28123EE8219AC14D001D5D04 /* Movie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28123EE7219AC14D001D5D04 /* Movie.storyboard */; };
+		28143C8521A52E28008636C9 /* KisekaePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28143C8421A52E28008636C9 /* KisekaePopupViewController.swift */; };
+		28143C8721A53B77008636C9 /* SettingPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28143C8621A53B77008636C9 /* SettingPopupViewController.swift */; };
+		28143C8921A53DED008636C9 /* itemselectSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 28143C8821A53DED008636C9 /* itemselectSound.mp3 */; };
 		285748572179BAA500FB7C6C /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285748562179BAA500FB7C6C /* ShopViewController.swift */; };
+		2861503521A2A36F00251AD8 /* sousaon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2861503421A2A36F00251AD8 /* sousaon.mp3 */; };
+		2861503721A2A43400251AD8 /* ketteion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2861503621A2A43400251AD8 /* ketteion.mp3 */; };
 		2864D96E2170866F0003E01C /* KisekaeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2864D96D2170866F0003E01C /* KisekaeViewController.swift */; };
 		2864D972217086AE0003E01C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2864D971217086AE0003E01C /* SettingViewController.swift */; };
-		28DDDE5721785B0600C679D8 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DDDE5621785B0600C679D8 /* NameViewController.swift */; };
 		28DDDE5B2179B1F100C679D8 /* Kisekae.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DDDE5A2179B1F100C679D8 /* Kisekae.storyboard */; };
 		28DDDE5D2179B20300C679D8 /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DDDE5C2179B20300C679D8 /* Shop.storyboard */; };
 		28DDDE5F2179B22600C679D8 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28DDDE5E2179B22600C679D8 /* Setting.storyboard */; };
+		4D01F35721A5708700910567 /* soundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01F35621A5708700910567 /* soundController.swift */; };
 		4D13B5A8215DFE6400095F97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13B5A7215DFE6400095F97 /* AppDelegate.swift */; };
 		4D13B5AA215DFE6400095F97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13B5A9215DFE6400095F97 /* ViewController.swift */; };
 		4D13B5AD215DFE6400095F97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D13B5AB215DFE6400095F97 /* Main.storyboard */; };
@@ -27,6 +37,17 @@
 		4D13B5CD215DFE6800095F97 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13B5CC215DFE6800095F97 /* ExtensionDelegate.swift */; };
 		4D13B5CF215DFE6800095F97 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13B5CE215DFE6800095F97 /* NotificationController.swift */; };
 		4D13B5D1215DFE6800095F97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D13B5D0215DFE6800095F97 /* Assets.xcassets */; };
+		4D39DEA821B4F90600333F16 /* yoruneruyo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEA721B4F90600333F16 /* yoruneruyo.mp3 */; };
+		4D39DEAA21B4F90B00333F16 /* hawomigaku.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEA921B4F90B00333F16 /* hawomigaku.mp3 */; };
+		4D39DEAC21B4F91600333F16 /* benkyousiro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEAB21B4F91600333F16 /* benkyousiro.mp3 */; };
+		4D39DEAE21B4F91D00333F16 /* oyasumi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEAD21B4F91D00333F16 /* oyasumi.mp3 */; };
+		4D39DEB021B4F92200333F16 /* asadayo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEAF21B4F92200333F16 /* asadayo.mp3 */; };
+		4D39DEB221B4F92800333F16 /* mesi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEB121B4F92700333F16 /* mesi.mp3 */; };
+		4D39DEB621B692A400333F16 /* homeru.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEB521B692A400333F16 /* homeru.mp3 */; };
+		4D39DEB821B6AD5000333F16 /* ganbre.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D39DEB721B6AD4F00333F16 /* ganbre.mp3 */; };
+		4DE29FF2219BEE7500650264 /* NoA挨拶サンプル.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4DE29FF1219BEE7500650264 /* NoA挨拶サンプル.mp3 */; };
+		A64FA4157A8703FDBFB936AA /* Pods_Project_NoA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39BE910690AACB9B67EB2383 /* Pods_Project_NoA.framework */; };
+		D860FD20142E872B98BE8AB9 /* Pods_Project_NoA_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE20229AB3FB1F42E1C61B9C /* Pods_Project_NoA_WatchKit_Extension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,13 +93,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		05E48EFE4FCDD7F088FF15F8 /* Pods-Project_NoA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_NoA.release.xcconfig"; path = "Target Support Files/Pods-Project_NoA/Pods-Project_NoA.release.xcconfig"; sourceTree = "<group>"; };
+		20EF08DF13C0C7C101741523 /* Pods-Project_NoA WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_NoA WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-Project_NoA WatchKit Extension/Pods-Project_NoA WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		28123EDF219ABEDC001D5D04 /* ShopPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopPopupViewController.swift; sourceTree = "<group>"; };
+		28123EE1219ABF0C001D5D04 /* ShopPopup2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopPopup2ViewController.swift; sourceTree = "<group>"; };
+		28123EE3219AC0F9001D5D04 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		28123EE7219AC14D001D5D04 /* Movie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movie.storyboard; sourceTree = "<group>"; };
+		28143C8421A52E28008636C9 /* KisekaePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisekaePopupViewController.swift; sourceTree = "<group>"; };
+		28143C8621A53B77008636C9 /* SettingPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPopupViewController.swift; sourceTree = "<group>"; };
+		28143C8821A53DED008636C9 /* itemselectSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = itemselectSound.mp3; sourceTree = "<group>"; };
 		285748562179BAA500FB7C6C /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		2861503421A2A36F00251AD8 /* sousaon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sousaon.mp3; sourceTree = "<group>"; };
+		2861503621A2A43400251AD8 /* ketteion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ketteion.mp3; sourceTree = "<group>"; };
 		2864D96D2170866F0003E01C /* KisekaeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisekaeViewController.swift; sourceTree = "<group>"; };
 		2864D971217086AE0003E01C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		28DDDE5621785B0600C679D8 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		28DDDE5A2179B1F100C679D8 /* Kisekae.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Kisekae.storyboard; sourceTree = "<group>"; };
 		28DDDE5C2179B20300C679D8 /* Shop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shop.storyboard; sourceTree = "<group>"; };
 		28DDDE5E2179B22600C679D8 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		39BE910690AACB9B67EB2383 /* Pods_Project_NoA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_NoA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D01F35621A5708700910567 /* soundController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = soundController.swift; sourceTree = "<group>"; };
 		4D13B5A4215DFE6400095F97 /* Project_NoA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_NoA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D13B5A7215DFE6400095F97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D13B5A9215DFE6400095F97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +130,21 @@
 		4D13B5D0215DFE6800095F97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D13B5D2215DFE6800095F97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D13B5D3215DFE6800095F97 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		4D39DEA721B4F90600333F16 /* yoruneruyo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yoruneruyo.mp3; sourceTree = "<group>"; };
+		4D39DEA921B4F90B00333F16 /* hawomigaku.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hawomigaku.mp3; sourceTree = "<group>"; };
+		4D39DEAB21B4F91600333F16 /* benkyousiro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = benkyousiro.mp3; sourceTree = "<group>"; };
+		4D39DEAD21B4F91D00333F16 /* oyasumi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = oyasumi.mp3; sourceTree = "<group>"; };
+		4D39DEAF21B4F92200333F16 /* asadayo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = asadayo.mp3; sourceTree = "<group>"; };
+		4D39DEB121B4F92700333F16 /* mesi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mesi.mp3; sourceTree = "<group>"; };
+		4D39DEB521B692A400333F16 /* homeru.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = homeru.mp3; sourceTree = "<group>"; };
+		4D39DEB721B6AD4F00333F16 /* ganbre.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ganbre.mp3; sourceTree = "<group>"; };
+		4DE29FF1219BEE7500650264 /* NoA挨拶サンプル.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "NoA挨拶サンプル.mp3"; sourceTree = "<group>"; };
+		5F81160F82FF5C3E6FAAFD4F /* Pods-Project_NoA WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_NoA WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-Project_NoA WatchKit App/Pods-Project_NoA WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		804841CD152270CD655446E5 /* libPods-Project_NoA WatchKit App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project_NoA WatchKit App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		89BDB9B5136F8C53AAFF6BCA /* Pods-Project_NoA WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_NoA WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-Project_NoA WatchKit Extension/Pods-Project_NoA WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		91AD09B7C204920A84FE6F10 /* Pods-Project_NoA WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_NoA WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-Project_NoA WatchKit App/Pods-Project_NoA WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		931D7DB60910D503D5F9B099 /* Pods-Project_NoA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_NoA.debug.xcconfig"; path = "Target Support Files/Pods-Project_NoA/Pods-Project_NoA.debug.xcconfig"; sourceTree = "<group>"; };
+		FE20229AB3FB1F42E1C61B9C /* Pods_Project_NoA_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_NoA_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A64FA4157A8703FDBFB936AA /* Pods_Project_NoA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +160,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D860FD20142E872B98BE8AB9 /* Pods_Project_NoA_WatchKit_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57EFFEFE87073755D2963952 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A14184F80FE28EC8DCCAD98 /* libPods-Project_NoA WatchKit App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +182,7 @@
 				28DDDE5A2179B1F100C679D8 /* Kisekae.storyboard */,
 				28DDDE5C2179B20300C679D8 /* Shop.storyboard */,
 				28DDDE5E2179B22600C679D8 /* Setting.storyboard */,
+				28123EE7219AC14D001D5D04 /* Movie.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -132,11 +191,15 @@
 			isa = PBXGroup;
 			children = (
 				4D13B5A7215DFE6400095F97 /* AppDelegate.swift */,
-				28DDDE5621785B0600C679D8 /* NameViewController.swift */,
 				4D13B5A9215DFE6400095F97 /* ViewController.swift */,
 				2864D96D2170866F0003E01C /* KisekaeViewController.swift */,
+				28143C8421A52E28008636C9 /* KisekaePopupViewController.swift */,
 				285748562179BAA500FB7C6C /* ShopViewController.swift */,
+				28123EDF219ABEDC001D5D04 /* ShopPopupViewController.swift */,
+				28123EE1219ABF0C001D5D04 /* ShopPopup2ViewController.swift */,
+				28123EE3219AC0F9001D5D04 /* MovieViewController.swift */,
 				2864D971217086AE0003E01C /* SettingViewController.swift */,
+				28143C8621A53B77008636C9 /* SettingPopupViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -149,6 +212,26 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		2861503321A2A34A00251AD8 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				28143C8821A53DED008636C9 /* itemselectSound.mp3 */,
+				2861503421A2A36F00251AD8 /* sousaon.mp3 */,
+				2861503621A2A43400251AD8 /* ketteion.mp3 */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		2D36554D9650108B10C9C6AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39BE910690AACB9B67EB2383 /* Pods_Project_NoA.framework */,
+				804841CD152270CD655446E5 /* libPods-Project_NoA WatchKit App.a */,
+				FE20229AB3FB1F42E1C61B9C /* Pods_Project_NoA_WatchKit_Extension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4D13B59B215DFE6400095F97 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +239,8 @@
 				4D13B5BA215DFE6700095F97 /* Project_NoA WatchKit App */,
 				4D13B5C9215DFE6800095F97 /* Project_NoA WatchKit Extension */,
 				4D13B5A5215DFE6400095F97 /* Products */,
+				CA7632EC8C3C613B6B40AD0B /* Pods */,
+				2D36554D9650108B10C9C6AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,6 +257,7 @@
 		4D13B5A6215DFE6400095F97 /* Project_NoA */ = {
 			isa = PBXGroup;
 			children = (
+				2861503321A2A34A00251AD8 /* Sound */,
 				2857485D2179C06000FB7C6C /* ViewController */,
 				2857485C2179C04700FB7C6C /* StoryBoard */,
 				2857485E2179C0A300FB7C6C /* Splash */,
@@ -194,7 +280,9 @@
 		4D13B5C9215DFE6800095F97 /* Project_NoA WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				4D39DEA421B4F3A700333F16 /* sound */,
 				4D13B5CA215DFE6800095F97 /* InterfaceController.swift */,
+				4D01F35621A5708700910567 /* soundController.swift */,
 				4D13B5CC215DFE6800095F97 /* ExtensionDelegate.swift */,
 				4D13B5CE215DFE6800095F97 /* NotificationController.swift */,
 				4D13B5D0215DFE6800095F97 /* Assets.xcassets */,
@@ -204,6 +292,35 @@
 			path = "Project_NoA WatchKit Extension";
 			sourceTree = "<group>";
 		};
+		4D39DEA421B4F3A700333F16 /* sound */ = {
+			isa = PBXGroup;
+			children = (
+				4D39DEB721B6AD4F00333F16 /* ganbre.mp3 */,
+				4D39DEB521B692A400333F16 /* homeru.mp3 */,
+				4D39DEA921B4F90B00333F16 /* hawomigaku.mp3 */,
+				4D39DEAB21B4F91600333F16 /* benkyousiro.mp3 */,
+				4D39DEB121B4F92700333F16 /* mesi.mp3 */,
+				4D39DEAF21B4F92200333F16 /* asadayo.mp3 */,
+				4D39DEA721B4F90600333F16 /* yoruneruyo.mp3 */,
+				4D39DEAD21B4F91D00333F16 /* oyasumi.mp3 */,
+				4DE29FF1219BEE7500650264 /* NoA挨拶サンプル.mp3 */,
+			);
+			name = sound;
+			sourceTree = "<group>";
+		};
+		CA7632EC8C3C613B6B40AD0B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				931D7DB60910D503D5F9B099 /* Pods-Project_NoA.debug.xcconfig */,
+				05E48EFE4FCDD7F088FF15F8 /* Pods-Project_NoA.release.xcconfig */,
+				91AD09B7C204920A84FE6F10 /* Pods-Project_NoA WatchKit App.debug.xcconfig */,
+				5F81160F82FF5C3E6FAAFD4F /* Pods-Project_NoA WatchKit App.release.xcconfig */,
+				89BDB9B5136F8C53AAFF6BCA /* Pods-Project_NoA WatchKit Extension.debug.xcconfig */,
+				20EF08DF13C0C7C101741523 /* Pods-Project_NoA WatchKit Extension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -211,10 +328,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D13B5DE215DFE6800095F97 /* Build configuration list for PBXNativeTarget "Project_NoA" */;
 			buildPhases = (
+				672CBC26EA24D12CADEC6448 /* [CP] Check Pods Manifest.lock */,
 				4D13B5A0215DFE6400095F97 /* Sources */,
 				4D13B5A1215DFE6400095F97 /* Frameworks */,
 				4D13B5A2215DFE6400095F97 /* Resources */,
 				4D13B5DD215DFE6800095F97 /* Embed Watch Content */,
+				2B45EADDC5B673A65D125FCE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,8 +349,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D13B5DA215DFE6800095F97 /* Build configuration list for PBXNativeTarget "Project_NoA WatchKit App" */;
 			buildPhases = (
+				DCBEAD50C840514196076A8E /* [CP] Check Pods Manifest.lock */,
 				4D13B5B4215DFE6700095F97 /* Resources */,
 				4D13B5D9215DFE6800095F97 /* Embed App Extensions */,
+				57EFFEFE87073755D2963952 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -247,9 +368,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D13B5D6215DFE6800095F97 /* Build configuration list for PBXNativeTarget "Project_NoA WatchKit Extension" */;
 			buildPhases = (
+				B3F66418DE5AF3CFF5272ABF /* [CP] Check Pods Manifest.lock */,
 				4D13B5C1215DFE6800095F97 /* Sources */,
 				4D13B5C2215DFE6800095F97 /* Frameworks */,
 				4D13B5C3215DFE6800095F97 /* Resources */,
+				9CB382C833334342C0165CD4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -307,7 +430,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D13B5B2215DFE6700095F97 /* LaunchScreen.storyboard in Resources */,
+				2861503521A2A36F00251AD8 /* sousaon.mp3 in Resources */,
+				28123EE8219AC14D001D5D04 /* Movie.storyboard in Resources */,
+				2861503721A2A43400251AD8 /* ketteion.mp3 in Resources */,
 				28DDDE5D2179B20300C679D8 /* Shop.storyboard in Resources */,
+				28143C8921A53DED008636C9 /* itemselectSound.mp3 in Resources */,
 				4D13B5AF215DFE6700095F97 /* Assets.xcassets in Resources */,
 				28DDDE5B2179B1F100C679D8 /* Kisekae.storyboard in Resources */,
 				4D13B5AD215DFE6400095F97 /* Main.storyboard in Resources */,
@@ -328,11 +455,139 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D39DEAE21B4F91D00333F16 /* oyasumi.mp3 in Resources */,
+				4D39DEB621B692A400333F16 /* homeru.mp3 in Resources */,
+				4D39DEAA21B4F90B00333F16 /* hawomigaku.mp3 in Resources */,
+				4D39DEB221B4F92800333F16 /* mesi.mp3 in Resources */,
+				4DE29FF2219BEE7500650264 /* NoA挨拶サンプル.mp3 in Resources */,
 				4D13B5D1215DFE6800095F97 /* Assets.xcassets in Resources */,
+				4D39DEA821B4F90600333F16 /* yoruneruyo.mp3 in Resources */,
+				4D39DEB821B6AD5000333F16 /* ganbre.mp3 in Resources */,
+				4D39DEAC21B4F91600333F16 /* benkyousiro.mp3 in Resources */,
+				4D39DEB021B4F92200333F16 /* asadayo.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B45EADDC5B673A65D125FCE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Project_NoA/Pods-Project_NoA-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSDynamoDB/AWSDynamoDB.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognito.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSDynamoDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project_NoA/Pods-Project_NoA-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		672CBC26EA24D12CADEC6448 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project_NoA-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CB382C833334342C0165CD4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Project_NoA WatchKit Extension/Pods-Project_NoA WatchKit Extension-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project_NoA WatchKit Extension/Pods-Project_NoA WatchKit Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3F66418DE5AF3CFF5272ABF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project_NoA WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCBEAD50C840514196076A8E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project_NoA WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4D13B5A0215DFE6400095F97 /* Sources */ = {
@@ -340,11 +595,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2864D96E2170866F0003E01C /* KisekaeViewController.swift in Sources */,
+				28123EE0219ABEDC001D5D04 /* ShopPopupViewController.swift in Sources */,
+				28143C8721A53B77008636C9 /* SettingPopupViewController.swift in Sources */,
+				28143C8521A52E28008636C9 /* KisekaePopupViewController.swift in Sources */,
 				4D13B5AA215DFE6400095F97 /* ViewController.swift in Sources */,
+				28123EE4219AC0F9001D5D04 /* MovieViewController.swift in Sources */,
 				285748572179BAA500FB7C6C /* ShopViewController.swift in Sources */,
 				4D13B5A8215DFE6400095F97 /* AppDelegate.swift in Sources */,
+				28123EE2219ABF0C001D5D04 /* ShopPopup2ViewController.swift in Sources */,
 				2864D972217086AE0003E01C /* SettingViewController.swift in Sources */,
-				28DDDE5721785B0600C679D8 /* NameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +612,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D13B5CF215DFE6800095F97 /* NotificationController.swift in Sources */,
+				4D01F35721A5708700910567 /* soundController.swift in Sources */,
 				4D13B5CD215DFE6800095F97 /* ExtensionDelegate.swift in Sources */,
 				4D13B5CB215DFE6800095F97 /* InterfaceController.swift in Sources */,
 			);
@@ -517,6 +777,7 @@
 		};
 		4D13B5D7215DFE6800095F97 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89BDB9B5136F8C53AAFF6BCA /* Pods-Project_NoA WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -539,6 +800,7 @@
 		};
 		4D13B5D8215DFE6800095F97 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20EF08DF13C0C7C101741523 /* Pods-Project_NoA WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -561,6 +823,7 @@
 		};
 		4D13B5DB215DFE6800095F97 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91AD09B7C204920A84FE6F10 /* Pods-Project_NoA WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -580,6 +843,7 @@
 		};
 		4D13B5DC215DFE6800095F97 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F81160F82FF5C3E6FAAFD4F /* Pods-Project_NoA WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -599,16 +863,18 @@
 		};
 		4D13B5DF215DFE6800095F97 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 931D7DB60910D503D5F9B099 /* Pods-Project_NoA.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F8T45UB3QV;
+				DEVELOPMENT_TEAM = FBX28493GR;
 				INFOPLIST_FILE = Project_NoA/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Keiya-Kato.Project-NoA";
+				PRODUCT_BUNDLE_IDENTIFIER = "Keiya-Kato";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -617,16 +883,18 @@
 		};
 		4D13B5E0215DFE6800095F97 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05E48EFE4FCDD7F088FF15F8 /* Pods-Project_NoA.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F8T45UB3QV;
+				DEVELOPMENT_TEAM = FBX28493GR;
 				INFOPLIST_FILE = Project_NoA/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Keiya-Kato.Project-NoA";
+				PRODUCT_BUNDLE_IDENTIFIER = "Keiya-Kato";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -1,47 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mmQ-1d-2wm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Name View Controller-->
-        <scene sceneID="tr7-bZ-7wg">
-            <objects>
-                <viewController id="mmQ-1d-2wm" customClass="NameViewController" customModule="Project_NoA" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Wju-3A-lVO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1iO-h1-Odh">
-                                <rect key="frame" x="139" y="194" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNo-cv-mal">
-                                <rect key="frame" x="172" y="318" width="31" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="決定"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="V6c-Tq-L5A"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="szI-Nl-1U7"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="m4T-zA-4p0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-700" y="133"/>
-        </scene>
         <!--ホーム画面-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -54,29 +22,44 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NoA_黄_全身1_嬉" translatesAutoresizingMaskIntoConstraints="NO" id="hMZ-nk-yfx">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMZ-nk-yfx">
                                 <rect key="frame" x="128" y="277" width="118" height="113"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="W3v-ea-50v" appends="YES" id="0Ue-Qv-CeA"/>
+                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kha-eH-5rU">
                                 <rect key="frame" x="10" y="517" width="113" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
+                                    <action selector="gookigae:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gbQ-gq-wPo"/>
                                     <segue destination="qoN-PH-Rcc" kind="presentation" id="gIj-9V-TBc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZiR-N1-nnD">
-                                <rect key="frame" x="131" y="517" width="112" height="112"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9v-m9-j8T">
+                                <rect key="frame" x="306" y="452" width="57" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="BBr-Ht-uCS" kind="presentation" id="RiH-Uw-gq0"/>
+                                    <action selector="gosetting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="him-at-9ZR"/>
+                                    <segue destination="eLJ-Tm-W5H" kind="presentation" id="DQA-PQ-feM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9v-m9-j8T">
-                                <rect key="frame" x="251" y="517" width="113" height="112"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PO-Za-9pT">
+                                <rect key="frame" x="252" y="517" width="111" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="eLJ-Tm-W5H" kind="presentation" id="DQA-PQ-feM"/>
+                                    <action selector="gomovie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Il3-0L-hjx"/>
+                                    <segue destination="hfs-fc-Ngn" kind="presentation" id="w6B-b5-jLj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZiR-N1-nnD">
+                                <rect key="frame" x="132" y="517" width="111" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="goshop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yF7-M2-Ntb"/>
+                                    <segue destination="BBr-Ht-uCS" kind="presentation" id="RiH-Uw-gq0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -103,6 +86,11 @@
                         <action selector="tapView:" destination="BYZ-38-t0r" id="wea-L7-weG"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="W3v-ea-50v">
+                    <connections>
+                        <action selector="voicePlay:" destination="BYZ-38-t0r" id="uTv-F8-wIo"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="140" y="132.68365817091455"/>
         </scene>
@@ -112,7 +100,7 @@
                 <viewControllerPlaceholder storyboardName="Kisekae" id="qoN-PH-Rcc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vme-gL-Gn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960" y="18"/>
+            <point key="canvasLocation" x="962" y="19"/>
         </scene>
         <!--Shop-->
         <scene sceneID="XtE-pg-are">
@@ -120,7 +108,7 @@
                 <viewControllerPlaceholder storyboardName="Shop" id="BBr-Ht-uCS" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g8x-5D-eiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="946" y="132"/>
+            <point key="canvasLocation" x="948" y="86"/>
         </scene>
         <!--Setting-->
         <scene sceneID="zgr-pw-YF9">
@@ -128,11 +116,18 @@
                 <viewControllerPlaceholder storyboardName="Setting" id="eLJ-Tm-W5H" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOF-KU-rG5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957" y="251"/>
+            <point key="canvasLocation" x="954" y="175"/>
+        </scene>
+        <!--Movie-->
+        <scene sceneID="MAk-a3-3cO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Movie" id="hfs-fc-Ngn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1W6-Xc-Sc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="952" y="264"/>
         </scene>
     </scenes>
     <resources>
-        <image name="NoA_黄_全身1_嬉" width="156" height="156"/>
         <image name="iPhone_top" width="750" height="1334"/>
     </resources>
 </document>
